@@ -91,7 +91,7 @@ body {
 
 /* LOGO */
 .img {
-    width: 165px;
+    width: 149px;
     position: relative;
     top: 56px;
 }
@@ -129,7 +129,7 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-    min-height: 100vh;
+    min-height: 84vh;
     display: flex;
     align-items: center;
     padding: 80px 40px;
