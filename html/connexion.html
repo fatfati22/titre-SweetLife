@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SweetLife – Connexion</title>
+        <link rel="stylesheet" href="../css/connexion.css" />
+    </head>
+    <body>
+        <!-- Éléments décoratifs flottants -->
+        <div class="flottant flottant-1"></div>
+        <div class="flottant flottant-2"></div>
+
+        <!-- Checkbox cachée pour menu burger -->
+        <input type="checkbox" id="menu-toggle" style="display: none" />
+
+        <!-- Page de connexion -->
+        <div class="page-connexion">
+            <div class="carte">
+                <div class="logo-carte">
+                    <img
+                        src="../image/logo.png"
+                        alt="logo de site SweetLife"
+                        onerror="
+                            this.src =
+                                'https://placehold.co/80x80/2d6a4f/white?text=🌸'
+                        "
+                    />
+                    <h1>Sweet<span>life</span></h1>
+                    <p>Ton espace bien-être & émotions</p>
+                </div>
+
+                <div class="avantages">
+                    <p>Retrouve ton suivi émotionnel</p>
+                    <p>Accède à tes exercices personnalisés</p>
+                    <p>Continue ton voyage bien-être</p>
+                </div>
+
+                <!-- Champ Email -->
+                <div class="champ">
+                    <label>Adresse e-mail</label>
+                    <input type="email" placeholder="sophie@email.com" />
+                </div>
+
+                <!-- Champ Mot de passe -->
+                <div class="champ">
+                    <label>Mot de passe</label>
+                    <input type="password" placeholder="••••••••" />
+                </div>
+
+                <!-- Options : Se souvenir + Mot de passe oublié -->
+                <div class="options">
+                    <label class="remember-me">
+                        <input type="checkbox" /> Se souvenir de moi
+                    </label>
+                    <a href="#" class="forgot-password"
+                        >Mot de passe oublié ?</a
+                    >
+                </div>
+
+                <!-- Bouton se connecter -->
+                <button class="btn-submit">🌸 Se connecter</button>
+
+                <div class="lien-inscription">
+                    Pas encore membre ?
+                    <a href="inscription.html">Créer un compte</a>
+                </div>
+
+                <div class="retour">
+                    <a href="index.html">← Retour à l'accueil</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

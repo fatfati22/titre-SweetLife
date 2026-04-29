@@ -186,6 +186,7 @@ p {
     position: relative;
     width: 260px;
     height: 260px;
+    margin: 0 auto;
 }
 
 /* boutons emoji */
