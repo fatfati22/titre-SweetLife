@@ -7,9 +7,30 @@
 
 body {
     font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
     transition: 0.3s;
+}
+
+/* IMPORTANT pour pousser le footer */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* centre horizontalement */
+    align-items: center; /* centre verticalement */
+    padding-top: 70px; /* évite la navbar fixe */
+}
+
+/* FIX FOOTER */
+footer {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 24px;
 }
 
 .aligner {
@@ -129,17 +150,18 @@ body {
 /* ================= HERO ================= */
 
 .hero {
-    min-height: 84vh;
+    flex: 1;
     display: flex;
-    align-items: center;
-    padding: 80px 40px;
     justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    gap: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    width: 81pc;
 }
 
 h1 {
@@ -254,12 +276,6 @@ p {
 }
 
 /* ================= FOOTER ================= */
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 footer img {
     width: 100px;
