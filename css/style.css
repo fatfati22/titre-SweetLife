@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+/* ================= THEMES ================= */
+
+/* 🌿 CALME */
+.theme-calme {
+    background: linear-gradient(135deg, #e8f5f0, #a8d8c0, #5aaa8a);
+    color: #0d2520;
+}
+
+.theme-calme .glass {
+    background: rgba(80, 180, 140, 0.15);
+    border: 1px solid rgba(100, 200, 160, 0.35);
+}
+
+.theme-calme .glass-card {
+    background: rgba(160, 220, 195, 0.3);
+}
+
+/* 😊 JOIE */
+.theme-joie {
+    background: linear-gradient(135deg, #fff9e6, #ffe066, #ffb347);
+    color: #2d2000;
+}
+
+.theme-joie .glass {
+    background: rgba(255, 230, 100, 0.2);
+}
+
+.theme-joie .glass-card {
+    background: rgba(255, 245, 180, 0.4);
+}
+
+/* 😢 TRISTESSE */
+.theme-tristesse {
+    background: linear-gradient(135deg, #e8ecf0, #b8cde0, #7096b8);
+    color: #1a2535;
+}
+
+/* 😠 COLÈRE */
+.theme-colere {
+    background: linear-gradient(135deg, #f5e8e8, #e8a0a0, #b22222);
+    color: #2d0a0a;
+}
+
+/* 😴 FATIGUE */
+.theme-fatigue {
+    background: linear-gradient(135deg, #eeeeee, #cccccc, #aaaaaa);
+    color: #222;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    backdrop-filter: blur(20px);
+}
+
+.nav-links {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* NAV HOVER */
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+/*
+
+
+class image img
+*/
+.img {
+    width: 100px;
+    position: relative;
+    top: 28px;
+}
+
+/* ================= BUTTONS ================= */
+.btn-primary {
+    background-color: #3a8a6a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.marg {
+    margin-top: 45px;
+}
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-ghost {
+    padding: 10px 20px;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ================= HERO ================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 40px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 50px;
+}
+
+h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+/* ================= MOOD WHEEL ================= */
+.mood-wheel {
+    position: relative;
+    width: 260px;
+    height: 260px;
+}
+
+/* EMOJIS */
+.mood-btn {
+    background: transparent;
+
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 2px solid #5aaa8a;
+    transform-origin: center;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/*  HOVER IDENTIQUE POUR TOUS */
+.mood-btn:hover {
+    transform: scale(1.25);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* POSITION CERCLE */
+.mood-btn:nth-child(1) {
+    bottom: 15pc;
+    left: 50%;
+}
+.mood-btn:nth-child(2) {
+    top: 15%;
+    left: 16pc;
+}
+.mood-btn:nth-child(3) {
+    bottom: 15%;
+    left: 16pc;
+}
+.mood-btn:nth-child(4) {
+    top: 16pc;
+    left: 50%;
+}
+.mood-btn:nth-child(5) {
+    bottom: 15%;
+    left: 0;
+}
+.mood-btn:nth-child(6) {
+    top: 15%;
+    left: 0;
+}
+
+/* ================= GLASS CARD ================= */
+.glass-card {
+    padding: 20px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= TODAY ================= */
+.today-section {
+    padding: 40px;
+}
+
+.quote-text {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.quote-author {
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}

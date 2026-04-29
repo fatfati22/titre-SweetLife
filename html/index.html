@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr" class="theme-calme">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SweetLife</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Cormorant+Garamond&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/style.css" />
+    </head>
+
+    <body class="theme-calme">
+        <!-- HEADER / NAV -->
+        <header>
+            <nav class="navbar glass">
+                <img
+                    class="img"
+                    src="../image/logo.png"
+                    alt=" logo de site SweetLife"
+                />
+
+                <ul class="nav-links">
+                    <li><a href="#">🏠 Accueil</a></li>
+                    <li><a href="#">🧘 Exercices</a></li>
+                    <li><a href="#">🥗 Repas</a></li>
+                    <li><a href="#">📊 Historique</a></li>
+                    <li><a href="#">👤 Profil</a></li>
+                </ul>
+
+                <button class="btn-primary">Connexion</button>
+            </nav>
+        </header>
+
+        <!-- CONTENU PRINCIPAL -->
+        <main>
+            <!-- HERO -->
+            <section class="hero">
+                <article class="hero-content">
+                    <!-- TEXTE -->
+                    <section>
+                        <h1>Comment vas-tu aujourd’hui ?</h1>
+
+                        <p>
+                            Choisis ton humeur pour recevoir des recommandations
+                            personnalisées.
+                        </p>
+
+                        <button class="btn-primary marg">
+                            Choisir mon humeur
+                        </button>
+                        <button class="btn-ghost">Mon profil</button>
+                    </section>
+
+                    <!-- MOOD WHEEL -->
+                    <section class="mood-wheel">
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-joie')"
+                        >
+                            😊
+                        </button>
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-tristesse')"
+                        >
+                            😢
+                        </button>
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-colere')"
+                        >
+                            😠
+                        </button>
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-fatigue')"
+                        >
+                            😴
+                        </button>
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-calme')"
+                        >
+                            😌
+                        </button>
+                        <button
+                            class="mood-btn"
+                            onclick="setTheme('theme-stress')"
+                        >
+                            😰
+                        </button>
+                    </section>
+                </article>
+            </section>
+
+            <!-- SECTION DU JOUR -->
+            <section class="today-section">
+                <article class="glass-card">
+                    <blockquote class="quote-text">
+                        « La paix intérieure commence quand tu t’écoutes
+                        vraiment. »
+                    </blockquote>
+                    <p class="quote-author">— Inspiration du jour</p>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <img
+                src="../image/logo.png"
+                alt="logo de site SweetLife dans le footer "
+            />
+            <div></div>
+        </footer>
+        <script src="../js/script.js"></script>
+    </body>
+</html>
