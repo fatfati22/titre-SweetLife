@@ -95,24 +95,21 @@ body {
     margin-top: 8px;
 }
 
-/* LISTE DES AVANTAGES */
-.avantages {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    padding: 15px 20px;
-    margin-bottom: 25px;
-    font-size: 13px;
+.card {
+    padding: 20px 25px;
+    border-radius: 15px;
+    background: rgba(76, 175, 80, 0.25); /* vert transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    color: #1b5e20;
+    width: 300px;
+    margin: 20px auto;
 }
 
-.avantages p {
-    margin: 8px 0;
-    color: #1b4332;
-}
-
-.avantages p::before {
-    content: "✓ ";
-    color: #2d6a4f;
-    font-weight: bold;
+.card p {
+    margin: 10px 0;
 }
 
 /* CHAMPS DE FORMULAIRE */
