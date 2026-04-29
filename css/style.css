@@ -12,6 +12,10 @@ body {
     transition: 0.3s;
 }
 
+.aligner {
+    margin-bottom: 78px;
+}
+
 /* ================= THEMES ================= */
 
 .theme-calme {
@@ -183,6 +187,11 @@ p {
         transform 0.25s ease,
         box-shadow 0.25s ease;
     transform-origin: center;
+}
+
+.alig {
+    margin-left: 188px;
+    margin-top: 37px;
 }
 
 /* POSITION CERCLE (IMPORTANT) */
