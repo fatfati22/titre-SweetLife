@@ -1,3 +1,4 @@
+/* RESET */
 * {
     margin: 0;
     padding: 0;
@@ -13,54 +14,46 @@ body {
 
 /* ================= THEMES ================= */
 
-/* 🌿 CALME */
 .theme-calme {
     background: linear-gradient(135deg, #e8f5f0, #a8d8c0, #5aaa8a);
     color: #0d2520;
 }
 
-.theme-calme .glass {
-    background: rgba(80, 180, 140, 0.15);
-    border: 1px solid rgba(100, 200, 160, 0.35);
-}
-
-.theme-calme .glass-card {
-    background: rgba(160, 220, 195, 0.3);
-}
-
-/* 😊 JOIE */
 .theme-joie {
     background: linear-gradient(135deg, #fff9e6, #ffe066, #ffb347);
     color: #2d2000;
 }
 
-.theme-joie .glass {
-    background: rgba(255, 230, 100, 0.2);
-}
-
-.theme-joie .glass-card {
-    background: rgba(255, 245, 180, 0.4);
-}
-
-/* 😢 TRISTESSE */
 .theme-tristesse {
     background: linear-gradient(135deg, #e8ecf0, #b8cde0, #7096b8);
     color: #1a2535;
 }
 
-/* 😠 COLÈRE */
 .theme-colere {
     background: linear-gradient(135deg, #f5e8e8, #e8a0a0, #b22222);
     color: #2d0a0a;
 }
 
-/* 😴 FATIGUE */
 .theme-fatigue {
     background: linear-gradient(135deg, #eeeeee, #cccccc, #aaaaaa);
     color: #222;
 }
 
+.theme-stress {
+    background: linear-gradient(135deg, #e0f0ff, #89c2ff, #3a86ff);
+    color: #0a1f44;
+}
+
+/* ================= GLASS ================= */
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
 /* ================= NAVBAR ================= */
+
 .navbar {
     position: fixed;
     top: 0;
@@ -70,7 +63,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 24px;
-    backdrop-filter: blur(20px);
+    z-index: 100;
 }
 
 .nav-links {
@@ -87,24 +80,20 @@ body {
     transition: 0.3s;
 }
 
-/* NAV HOVER */
 .nav-links a:hover {
     background: rgba(255, 255, 255, 0.4);
     transform: translateY(-2px);
 }
 
-/*
-
-
-class image img
-*/
+/* LOGO */
 .img {
     width: 100px;
     position: relative;
-    top: 28px;
+    top: 10px;
 }
 
 /* ================= BUTTONS ================= */
+
 .btn-primary {
     background-color: #3a8a6a;
     color: white;
@@ -114,9 +103,7 @@ class image img
     cursor: pointer;
     transition: 0.3s;
 }
-.marg {
-    margin-top: 45px;
-}
+
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -136,11 +123,13 @@ class image img
 }
 
 /* ================= HERO ================= */
+
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 80px 40px;
+    justify-content: center;
 }
 
 .hero-content {
@@ -154,22 +143,33 @@ h1 {
     font-size: 60px;
     font-weight: 300;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.couleur {
+    color: #3a8a6a;
+}
+
+p {
+    text-align: center;
 }
 
 /* ================= MOOD WHEEL ================= */
+
 .mood-wheel {
     position: relative;
     width: 260px;
     height: 260px;
 }
 
-/* EMOJIS */
+/* boutons emoji */
 .mood-btn {
-    background: transparent;
-
     position: absolute;
+    top: 50%;
+    left: 50%;
     width: 60px;
     height: 60px;
+    margin: -30px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -177,73 +177,87 @@ h1 {
     font-size: 24px;
     cursor: pointer;
     border: 2px solid #5aaa8a;
-    transform-origin: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
+    transform-origin: center;
 }
 
-/*  HOVER IDENTIQUE POUR TOUS */
+/* POSITION CERCLE (IMPORTANT) */
+.mood-btn:nth-child(1) {
+    --pos: rotate(0deg) translate(110px) rotate(0deg);
+    transform: var(--pos);
+}
+.mood-btn:nth-child(2) {
+    --pos: rotate(60deg) translate(110px) rotate(-60deg);
+    transform: var(--pos);
+}
+.mood-btn:nth-child(3) {
+    --pos: rotate(120deg) translate(110px) rotate(-120deg);
+    transform: var(--pos);
+}
+.mood-btn:nth-child(4) {
+    --pos: rotate(180deg) translate(110px) rotate(-180deg);
+    transform: var(--pos);
+}
+.mood-btn:nth-child(5) {
+    --pos: rotate(240deg) translate(110px) rotate(-240deg);
+    transform: var(--pos);
+}
+.mood-btn:nth-child(6) {
+    --pos: rotate(300deg) translate(110px) rotate(-300deg);
+    transform: var(--pos);
+}
+
+/* HOVER (RESTE SUR PLACE + GRANDIT) */
 .mood-btn:hover {
-    transform: scale(1.25);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: var(--pos) scale(1.6);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
 
-/* POSITION CERCLE */
-.mood-btn:nth-child(1) {
-    bottom: 15pc;
-    left: 50%;
-}
-.mood-btn:nth-child(2) {
-    top: 15%;
-    left: 16pc;
-}
-.mood-btn:nth-child(3) {
-    bottom: 15%;
-    left: 16pc;
-}
-.mood-btn:nth-child(4) {
-    top: 16pc;
-    left: 50%;
-}
-.mood-btn:nth-child(5) {
-    bottom: 15%;
-    left: 0;
-}
-.mood-btn:nth-child(6) {
-    top: 15%;
-    left: 0;
+/* CENTRE */
+.mood-btn.center {
+    transform: none !important;
+    width: 70px;
+    height: 70px;
+    margin: -35px;
+    font-size: 30px;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.35);
 }
 
 /* ================= GLASS CARD ================= */
+
 .glass-card {
     padding: 20px;
     border-radius: 16px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
     transition: 0.3s;
 }
 
 .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* ================= TODAY ================= */
-.today-section {
-    padding: 40px;
+/* ================= FOOTER ================= */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.quote-text {
-    font-size: 20px;
-    font-style: italic;
-}
-
-.quote-author {
-    margin-top: 10px;
-    opacity: 0.7;
+footer img {
+    width: 100px;
 }
 
 /* ================= RESPONSIVE ================= */
+
 @media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;

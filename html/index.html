@@ -13,14 +13,9 @@
     </head>
 
     <body class="theme-calme">
-        <!-- HEADER / NAV -->
         <header>
             <nav class="navbar glass">
-                <img
-                    class="img"
-                    src="../image/logo.png"
-                    alt=" logo de site SweetLife"
-                />
+                <img class="img" src="../image/logo.png" alt="logo SweetLife" />
 
                 <ul class="nav-links">
                     <li><a href="#">🏠 Accueil</a></li>
@@ -34,18 +29,16 @@
             </nav>
         </header>
 
-        <!-- CONTENU PRINCIPAL -->
         <main>
-            <!-- HERO -->
             <section class="hero">
                 <article class="hero-content">
-                    <!-- TEXTE -->
                     <section>
-                        <h1>Comment vas-tu aujourd’hui ?</h1>
+                        <h1>Comment vas-tu</h1>
+                        <h1 class="couleur">aujourd’hui ?</h1>
 
                         <p>
-                            Choisis ton humeur pour recevoir des recommandations
-                            personnalisées.
+                            Choisis ton humeur pour recevoir des
+                            recommandations.
                         </p>
 
                         <button class="btn-primary marg">
@@ -54,7 +47,7 @@
                         <button class="btn-ghost">Mon profil</button>
                     </section>
 
-                    <!-- MOOD WHEEL -->
+                    <!-- FLEUR -->
                     <section class="mood-wheel">
                         <button
                             class="mood-btn"
@@ -92,11 +85,13 @@
                         >
                             😰
                         </button>
+
+                        <!-- CENTRE -->
+                        <button class="mood-btn center">🌸</button>
                     </section>
                 </article>
             </section>
 
-            <!-- SECTION DU JOUR -->
             <section class="today-section">
                 <article class="glass-card">
                     <blockquote class="quote-text">
@@ -107,13 +102,17 @@
                 </article>
             </section>
         </main>
-        <footer>
-            <img
-                src="../image/logo.png"
-                alt="logo de site SweetLife dans le footer "
-            />
-            <div></div>
+
+        <footer class="glass-card">
+            <img src="../image/logo.png" alt="logo footer" />
+            <p>site Public</p>
+            <p>Panel admin V2.SweetLife2025</p>
         </footer>
-        <script src="../js/script.js"></script>
+
+        <script>
+            function setTheme(theme) {
+                document.body.className = theme;
+            }
+        </script>
     </body>
 </html>
