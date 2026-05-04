@@ -1,0 +1,31 @@
+/* THEMES */
+
+.theme-calme {
+    background: linear-gradient(135deg, #e8f5f0, #a8d8c0, #5aaa8a);
+    color: #0d2520;
+}
+
+.theme-joie {
+    background: linear-gradient(135deg, #fff9e6, #ffe066, #ffb347);
+    color: #2d2000;
+}
+
+.theme-tristesse {
+    background: linear-gradient(135deg, #e8ecf0, #b8cde0, #7096b8);
+    color: #1a2535;
+}
+
+.theme-colere {
+    background: linear-gradient(135deg, #f5e8e8, #e8a0a0, #b22222);
+    color: #2d0a0a;
+}
+
+.theme-fatigue {
+    background: linear-gradient(135deg, #eeeeee, #cccccc, #aaaaaa);
+    color: #222;
+}
+
+.theme-stress {
+    background: linear-gradient(135deg, #e0f0ff, #89c2ff, #3a86ff);
+    color: #0a1f44;
+}
