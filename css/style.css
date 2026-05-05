@@ -1,3 +1,7 @@
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     display: flex;
@@ -7,57 +11,75 @@ body {
     transition: 0.2s;
 }
 
-/* IMPORTANT pour pousser le footer */
 main {
     flex: 1;
     display: flex;
-    justify-content: center; /* centre horizontalement */
-    align-items: center; /* centre verticalement */
-    padding-top: 70px; /* évite la navbar fixe */
+    justify-content: center;
+    align-items: center;
+    padding-top: 4.375rem;
 }
 
-/* FIX FOOTER */
 footer {
     margin-top: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 24px;
+    padding: 0.9375rem 1.5rem;
 }
+
+/* ALIGNEMENT */
 
 .aligner {
-    margin-bottom: 78px;
+    margin-bottom: 4.875rem;
+    display: flex;
 }
 
-/* BUTTONS */
+.alig {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.centrer {
+    display: block;
+    margin: 0 auto;
+}
+
+/* BUTTONS (mobile par défaut) */
+
+.btn-primary,
+.btn-ghost {
+    display: block;
+    margin: 1rem auto;
+    white-space: nowrap;
+}
 
 .btn-primary {
     background-color: #3a8a6a;
     color: white;
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     border: none;
-    border-radius: 40px;
+    border-radius: 2.5rem;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.2);
 }
 
 .btn-ghost {
-    padding: 10px 20px;
-    border-radius: 40px;
-    border: 1px solid #ccc;
+    padding: 0.625rem 1.25rem;
+    border-radius: 2.5rem;
+    border: 0.0625rem solid #ccc;
     background: transparent;
     transition: 0.3s;
 }
 
 .btn-ghost:hover {
     background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
+    transform: translateY(-0.125rem);
 }
 
 /* HERO */
@@ -71,18 +93,17 @@ footer {
 }
 
 .hero-content {
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    width: 81pc;
+    width: 100%;
+    padding: 0 1rem;
 }
 
 h1 {
     font-family: "Cormorant Garamond", serif;
-    font-size: 60px;
+    font-size: 1.875rem;
     font-weight: 300;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     text-align: center;
+    white-space: pre-line;
 }
 
 .couleur {
@@ -97,112 +118,66 @@ p {
 
 .mood-wheel {
     position: relative;
-    width: 260px;
-    height: 260px;
-    margin: 0 auto;
+    width: 16.25rem;
+    height: 16.25rem;
+    margin: 4rem auto;
 }
 
-/* boutons emoji */
 .mood-btn {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 60px;
-    height: 60px;
-    margin: -30px;
+    width: 3rem;
+    height: 3rem;
+    margin: -1.875rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
-    border: 2px solid #5aaa8a;
+    border: 0.125rem solid #5aaa8a;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(0.625rem);
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
     transform-origin: center;
 }
 
-.alig {
-    margin-left: 188px;
-    margin-top: 37px;
-}
-
-/* POSITION CERCLE (IMPORTANT) */
-.mood-btn:nth-child(1) {
-    --pos: rotate(0deg) translate(110px) rotate(0deg);
-    transform: var(--pos);
-}
-.mood-btn:nth-child(2) {
-    --pos: rotate(60deg) translate(110px) rotate(-60deg);
-    transform: var(--pos);
-}
-.mood-btn:nth-child(3) {
-    --pos: rotate(120deg) translate(110px) rotate(-120deg);
-    transform: var(--pos);
-}
-.mood-btn:nth-child(4) {
-    --pos: rotate(180deg) translate(110px) rotate(-180deg);
-    transform: var(--pos);
-}
-.mood-btn:nth-child(5) {
-    --pos: rotate(240deg) translate(110px) rotate(-240deg);
-    transform: var(--pos);
-}
-.mood-btn:nth-child(6) {
-    --pos: rotate(300deg) translate(110px) rotate(-300deg);
-    transform: var(--pos);
-}
-
-/* HOVER (RESTE SUR PLACE + GRANDIT) */
-.mood-btn:hover {
-    transform: var(--pos) scale(1.6);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-}
-
-/* CENTRE */
-.mood-btn.center {
-    transform: none !important;
-    width: 70px;
-    height: 70px;
-    margin: -35px;
-    font-size: 30px;
-    z-index: 5;
-    background: rgba(255, 255, 255, 0.35);
-}
-
-/* GLASS CARD */
-
-.glass-card {
-    padding: 20px;
-    border-radius: 16px;
-    backdrop-filter: blur(15px);
-    background: rgba(255, 255, 255, 0.25);
-    transition: 0.3s;
-}
-
-.glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
 /* FOOTER */
 
 footer img {
-    width: 100px;
+    width: 6.25rem;
 }
 
-/* RESPONSIVE */
+/* TABLET / DESKTOP */
 
-@media (max-width: 768px) {
+@media screen and (min-width: 46.875rem) {
     .hero-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .nav-links {
-        display: none;
+    h1 {
+        font-size: 3.75rem;
+        text-align: left;
+    }
+
+    p {
+        text-align: left;
+    }
+
+    .alig {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+        display: inline-block;
+        margin: 0;
     }
 }

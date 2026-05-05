@@ -1,0 +1,66 @@
+/* POSITION CERCLE */
+
+.mood-btn:nth-child(1) {
+    --pos: rotate(0deg) translate(6.875rem) rotate(0deg);
+    transform: var(--pos);
+}
+
+.mood-btn:nth-child(2) {
+    --pos: rotate(60deg) translate(6.875rem) rotate(-60deg);
+    transform: var(--pos);
+}
+
+.mood-btn:nth-child(3) {
+    --pos: rotate(120deg) translate(6.875rem) rotate(-120deg);
+    transform: var(--pos);
+}
+
+.mood-btn:nth-child(4) {
+    --pos: rotate(180deg) translate(6.875rem) rotate(-180deg);
+    transform: var(--pos);
+}
+
+.mood-btn:nth-child(5) {
+    --pos: rotate(240deg) translate(6.875rem) rotate(-240deg);
+    transform: var(--pos);
+}
+
+.mood-btn:nth-child(6) {
+    --pos: rotate(300deg) translate(6.875rem) rotate(-300deg);
+    transform: var(--pos);
+}
+
+/* HOVER */
+
+.mood-btn:hover {
+    transform: var(--pos) scale(1.6);
+    box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* CENTRE */
+
+.mood-btn.center {
+    transform: none !important;
+    width: 4rem;
+    height: 4rem;
+    margin: -2.1875rem;
+    font-size: 1.875rem;
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* GLASS CARD */
+
+.glass-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(0.9375rem);
+    background: rgba(255, 255, 255, 0.25);
+    transition: 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-0.3125rem);
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
+}
