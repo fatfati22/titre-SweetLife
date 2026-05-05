@@ -1,0 +1,81 @@
+/*
+   THEMES OVERRIDE
+   */
+
+/* CALME */
+body.theme-calme .btn-primary {
+    background-color: #3a8a6a;
+}
+
+body.theme-calme .couleur {
+    color: #3a8a6a;
+}
+
+body.theme-calme .mood-btn {
+    border-color: #5aaa8a;
+}
+
+/* JOIE */
+body.theme-joie .btn-primary {
+    background-color: #ffb347 !important;
+}
+
+body.theme-joie .couleur {
+    color: #ffb347 !important;
+}
+
+body.theme-joie .mood-btn {
+    border-color: #ffe066 !important;
+}
+
+/* TRISTESSE */
+body.theme-tristesse .btn-primary {
+    background-color: #7096b8 !important;
+}
+
+body.theme-tristesse .couleur {
+    color: #7096b8 !important;
+}
+
+body.theme-tristesse .mood-btn {
+    border-color: #b8cde0 !important;
+}
+
+/* COLERE */
+body.theme-colere .btn-primary {
+    background-color: #b22222 !important;
+}
+
+body.theme-colere .couleur {
+    color: #b22222 !important;
+}
+
+body.theme-colere .mood-btn {
+    border-color: #e8a0a0 !important;
+}
+
+/* FATIGUE */
+body.theme-fatigue .btn-primary {
+    background-color: #aaaaaa !important;
+}
+
+body.theme-fatigue .couleur {
+    color: #aaaaaa !important;
+}
+
+body.theme-fatigue .mood-btn {
+    border-color: #cccccc !important;
+}
+
+/* STRESS */
+body.theme-stress .btn-primary {
+    background-color: #3a86ff !important;
+}
+
+body.theme-stress .couleur {
+    color: #3a86ff !important;
+}
+
+body.theme-stress .mood-btn {
+    border-color: #89c2ff !important;
+}
