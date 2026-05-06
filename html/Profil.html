@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SweetLife – Mon Profil</title>
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=DM+Sans:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="../css/navbar.css" />
+        <link rel="stylesheet" href="../css/themeInitial.css" />
+        <link rel="stylesheet" href="../css/theme-element.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+
+        <link rel="stylesheet" href="../css/theme.css" />
+        <link rel="stylesheet" href="../css/profil.css" />
+    </head>
+
+    <body class="theme-calme">
+        <header>
+            <nav class="navbar glass">
+                <img class="img" src="../image/logo.png" alt="logo SweetLife" />
+
+                <ul class="nav-links">
+                    <li><a href="index.html">🏠 Accueil</a></li>
+                    <li><a href="#">🧘 Exercices</a></li>
+                    <li><a href="#">🥗 Repas</a></li>
+                    <li><a href="#">📊 Historique</a></li>
+                    <li><a href="Profil.html">👤 Profil</a></li>
+                </ul>
+
+                <a href="inscription.html">
+                    <button class="btn-primary" type="button">
+                        s'inscrire
+                    </button>
+                </a>
+            </nav>
+        </header>
+        <main class="page-container">
+            <section class="profil-wrap">
+                <!-- HERO -->
+                <header class="profile-hero glass-card">
+                    <figure class="avatar-large">
+                        <span class="avatar-online-dot"></span>
+                    </figure>
+
+                    <section>
+                        <h1 class="profile-name">Nom et prénom</h1>
+                        <p class="profile-email">user@email.com</p>
+                    </section>
+                </header>
+
+                <!-- CARDS -->
+                <section class="profile-bottom">
+                    <!-- MOOD -->
+                    <article class="mood-card glass-card">
+                        <p>💫 État émotionnel actuel</p>
+
+                        <section class="current-mood-display">
+                            <span class="big-emoji" id="moodEmoji">😌</span>
+                            <h3>Calme & Sereine</h3>
+                        </section>
+                    </article>
+
+                    <!-- INFOS -->
+                    <article class="info-card glass-card">
+                        <h3>👤 Mes informations</h3>
+
+                        <div class="info-list">
+                            <div class="info-field">
+                                <p class="info-label">
+                                    Votre prénom et votre nom
+                                </p>
+                                <p class="info-value">user</p>
+                            </div>
+
+                            <div class="info-field">
+                                <p class="info-label">Email</p>
+                                <p class="info-value">user@email.com</p>
+                            </div>
+
+                            <div class="info-field">
+                                <p class="info-label">Rôle</p>
+                                <p class="info-value">Utilisatrice</p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <span class="actions-row">
+                    <h3>
+                        Connectez-vous pour retrouver l'historique de vos
+                        émotions, accéder à vos repas adaptés et vos exercices
+                        personnalisés, et découvrir la citation inspirante qui
+                        boostera votre journée.
+                    </h3>
+                    <a class="btn-ghost" href="inscription.html">inscription</a>
+                    <a class="btn-ghost" href="connexion.html">connexion</a>
+                    <!-- <a class="btn-danger" href="index.html">🔒 Déconnexion</a> -->
+                </span>
+            </section>
+        </main>
+
+        <!-- ================= JS ================= -->
+        <script>
+            const emojiEl = document.getElementById("moodEmoji");
+
+            let y = 0;
+            let direction = 1;
+
+            function animate() {
+                y += 0.2 * direction;
+
+                if (y > 10 || y < -10) {
+                    direction *= -1;
+                }
+
+                emojiEl.style.transform = `translateY(${y}px)`;
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+
+            emojiEl.addEventListener("click", () => {
+                emojiEl.style.transform = "scale(1.4) rotate(10deg)";
+
+                setTimeout(() => {
+                    emojiEl.style.transform = `translateY(${y}px) scale(1)`;
+                }, 200);
+            });
+        </script>
+    </body>
+</html>
