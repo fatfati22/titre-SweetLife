@@ -1,0 +1,244 @@
+/* 
+MAIN
+ */
+
+main {
+    padding: 120px 20px 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* 
+TITLE
+ */
+
+h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+p.subtitle {
+    margin-bottom: 30px;
+    color: #5d7d72;
+}
+
+/* 
+BANNER
+ */
+
+section.banner {
+    background: white;
+    border: 1px solid #dceee7;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+section.banner span {
+    font-size: 40px;
+}
+
+/* 
+FILTERS TYPE
+ */
+
+section.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+section.filters label {
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: white;
+    border: 1px solid #d4e7df;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+section.filters label:hover {
+    background: #3a8a6a;
+    color: white;
+}
+
+/* ACTIVE FILTER */
+
+#all:checked ~ main label[for="all"],
+#matin:checked ~ main label[for="matin"],
+#dejeuner:checked ~ main label[for="dejeuner"],
+#diner:checked ~ main label[for="diner"],
+#snack:checked ~ main label[for="snack"] {
+    background: #3a8a6a;
+    color: white;
+}
+
+/* 
+GRID
+ */
+
+section.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* 
+CARD (GLASS EFFECT AJOUTÉ ICI)
+ */
+
+article {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
+}
+
+article img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+div.content {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #5d7d72;
+    margin-bottom: 15px;
+}
+
+/* TAGS */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tags span {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #f3fbf8;
+    border: 1px solid #dceee7;
+}
+
+/* STATS */
+
+.stats {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #e7f2ee;
+    padding-top: 15px;
+    margin-bottom: 15px;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    font-size: 22px;
+    color: #3a8a6a;
+}
+
+.stats small {
+    color: #5d7d72;
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: #3a8a6a;
+    color: white;
+    cursor: pointer;
+}
+
+/* 
+FILTER TYPE SYSTEM
+ */
+
+#matin:checked ~ main article {
+    display: none;
+}
+
+#matin:checked ~ main article[data-type="matin"] {
+    display: block;
+}
+
+#dejeuner:checked ~ main article {
+    display: none;
+}
+
+#dejeuner:checked ~ main article[data-type="dejeuner"] {
+    display: block;
+}
+
+#diner:checked ~ main article {
+    display: none;
+}
+
+#diner:checked ~ main article[data-type="diner"] {
+    display: block;
+}
+
+#snack:checked ~ main article {
+    display: none;
+}
+
+#snack:checked ~ main article[data-type="snack"] {
+    display: block;
+}
+
+/* 
+RESPONSIVE MIN-WIDTH
+ */
+
+@media (min-width: 600px) {
+    section.grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    section.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    main {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
