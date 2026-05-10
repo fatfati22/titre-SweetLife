@@ -1,0 +1,59 @@
+/* TITRES */
+h1 {
+    color: #2f6f55;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #5d7d72;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* VIDEO */
+.card iframe {
+    width: 100%;
+    height: 220px;
+    border: none;
+    display: block;
+}
+
+/* CONTENT */
+.content {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.content h2 {
+    margin-bottom: 5px;
+    color: #2f6f55;
+}
+
+.content p {
+    margin: 0;
+}
