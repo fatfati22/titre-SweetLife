@@ -47,28 +47,6 @@ footer {
 
 /* BUTTONS (mobile par défaut) */
 
-.btn-primary,
-.btn-ghost {
-    display: block;
-    margin: 1rem auto;
-    white-space: nowrap;
-}
-
-.btn-primary {
-    background-color: #3a8a6a;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 2.5rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.3);
-}
-
 .btn-ghost {
     padding: 0.625rem 1.25rem;
     border-radius: 2.5rem;

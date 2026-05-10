@@ -1,59 +1,133 @@
-/* TITRES */
+/* =========================
+   CARD GLASS BASE
+========================= */
+
+article {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   TITRES & TEXTES
+========================= */
+
 h1 {
     color: #2f6f55;
     margin-bottom: 10px;
 }
 
+h2 {
+    color: #2f6f55;
+    font-size: 18px;
+}
+
 p {
     color: #5d7d72;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
-/* GRID */
-.grid {
+/* =========================
+   GRID MOBILE FIRST
+========================= */
+
+.exercise-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
+    padding: 10px;
 }
 
-@media (min-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
+/* =========================
+   CARD EXERCICE
+========================= */
 
-@media (min-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* CARD */
-.card {
-    background: white;
-    border-radius: 15px;
+.exercise-card {
+    max-width: 100%;
     overflow: hidden;
 }
 
 /* VIDEO */
-.card iframe {
+.exercise-card iframe {
     width: 100%;
-    height: 220px;
+    height: 160px;
     border: none;
     display: block;
 }
 
-/* CONTENT */
-.content {
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.25);
+/* =========================
+   CONTENT
+========================= */
+
+.exercise-content {
+    padding: 12px;
 }
 
-.content h2 {
+.exercise-title {
     margin-bottom: 5px;
-    color: #2f6f55;
 }
 
-.content p {
+.exercise-text {
     margin: 0;
+}
+
+/* =========================
+   TABLETTE (min-width 600px)
+========================= */
+
+@media (min-width: 600px) {
+    .exercise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exercise-card iframe {
+        height: 170px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* =========================
+   DESKTOP (min-width 900px)
+========================= */
+
+@media (min-width: 900px) {
+    .exercise-grid {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .exercise-card {
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .exercise-card iframe {
+        height: 180px;
+    }
+
+    .exercise-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
 }
