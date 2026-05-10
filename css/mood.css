@@ -1,0 +1,14 @@
+/* ================= MOOD ================= */
+.mood-card {
+    padding: 25px;
+    width: fit-content;
+    display: block;
+    margin: auto;
+}
+
+.big-emoji {
+    font-size: 50px;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}

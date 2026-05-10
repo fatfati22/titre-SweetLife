@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../css/themeInitial.css" />
         <link rel="stylesheet" href="../css/theme-element.css" />
         <link rel="stylesheet" href="../css/style.css" />
-
+        <link rel="stylesheet" href="../css/mood.css" />
         <link rel="stylesheet" href="../css/theme.css" />
         <link rel="stylesheet" href="../css/profil.css" />
     </head>
@@ -104,32 +104,6 @@
         </main>
 
         <!-- ================= JS ================= -->
-        <script>
-            const emojiEl = document.getElementById("moodEmoji");
-
-            let y = 0;
-            let direction = 1;
-
-            function animate() {
-                y += 0.2 * direction;
-
-                if (y > 10 || y < -10) {
-                    direction *= -1;
-                }
-
-                emojiEl.style.transform = `translateY(${y}px)`;
-                requestAnimationFrame(animate);
-            }
-
-            animate();
-
-            emojiEl.addEventListener("click", () => {
-                emojiEl.style.transform = "scale(1.4) rotate(10deg)";
-
-                setTimeout(() => {
-                    emojiEl.style.transform = `translateY(${y}px) scale(1)`;
-                }, 200);
-            });
-        </script>
+        <script src="../js/animationCard.js"></script>
     </body>
 </html>

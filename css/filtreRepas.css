@@ -1,0 +1,197 @@
+/* cacher les radios (ils servent juste au filtre) */
+input {
+    display: none;
+}
+
+/* FILTERS */
+section.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+section.filters label {
+    padding: 10px 16px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    color: inherit;
+    border: 1px solid #d4e7df;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+section.filters label:hover {
+    background: #3a8a6a;
+    color: white;
+}
+
+/* ACTIVE */
+#all:checked ~ main label[for="all"],
+#entree:checked ~ main label[for="entree"],
+#plat-principale:checked ~ main label[for="plat-principale"],
+#dessert-fruit:checked ~ main label[for="dessert-fruit"],
+#snack:checked ~ main label[for="snack"] {
+    background: #3a8a6a;
+    color: white;
+}
+
+/* ===================== */
+/* BOUTONS FILTRES       */
+/* ===================== */
+
+.filters {
+    display: flex; /* mettre les boutons en ligne */
+    flex-wrap: wrap; /* retour à la ligne si petit écran */
+    gap: 10px; /* espace entre boutons */
+    margin-bottom: 20px; /* espace avec la grille */
+}
+
+/* style des boutons */
+.filters label {
+    padding: 10px 14px;
+    border-radius: 25px; /* boutons arrondis */
+
+    /* GLASS EFFECT */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* effet quand on passe la souris */
+.filters label:hover {
+    background: rgba(58, 138, 106, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* ===================== */
+/* BOUTON ACTIF (CLIQUÉ) */
+/* ===================== */
+
+/* bouton "Tous" actif */
+#all:checked + label {
+    background: rgba(58, 138, 106, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* bouton "Entrées" actif */
+#entree:checked + label {
+    background: rgba(58, 138, 106, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* bouton "Plats" actif */
+#plat:checked + label {
+    background: rgba(58, 138, 106, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* bouton "Desserts" actif */
+#dessert:checked + label {
+    background: rgba(58, 138, 106, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* bouton "Snacks" actif */
+#snack:checked + label {
+    background: rgba(58, 138, 106, 0.6);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+}
+
+/* ===================== */
+/* LOGIQUE DU FILTRE     */
+/* ===================== */
+
+/* si "Tous" est sélectionné → tout afficher */
+#all:checked ~ main .grid article {
+    display: block;
+}
+
+/* ===================== */
+/* FILTRE ENTREE         */
+/* ===================== */
+
+/* cacher tout */
+#entree:checked ~ main .grid article {
+    display: none;
+}
+
+/* mais afficher les entrées */
+#entree:checked ~ main .grid .entree {
+    display: block;
+}
+
+/* ===================== */
+/* FILTRE PLATS          */
+/* ===================== */
+
+#plat:checked ~ main .grid article {
+    display: none;
+}
+
+#plat:checked ~ main .grid .plat {
+    display: block;
+}
+
+/* ===================== */
+/* FILTRE DESSERTS       */
+/* ===================== */
+
+#dessert:checked ~ main .grid article {
+    display: none;
+}
+
+#dessert:checked ~ main .grid .dessert {
+    display: block;
+}
+
+/* ===================== */
+/* FILTRE SNACKS         */
+/* ===================== */
+
+#snack:checked ~ main .grid article {
+    display: none;
+}
+
+#snack:checked ~ main .grid .snack {
+    display: block;
+}
+
+/* ===================== */
+/* TABLETTE (2 colonnes)  */
+/* ===================== */
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================== */
+/* DESKTOP (3 colonnes)   */
+/* ===================== */
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

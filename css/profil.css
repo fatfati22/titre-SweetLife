@@ -88,21 +88,11 @@
     flex: 1;
 }
 
-/* ================= MOOD ================= */
-.mood-card {
-    padding: 25px;
-}
-
-.big-emoji {
-    font-size: 50px;
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 0.25s ease;
-}
-
 /* ================= INFOS ================= */
 .info-card {
     padding: 20px;
+    display: block;
+    margin: auto;
 }
 
 .info-label {
