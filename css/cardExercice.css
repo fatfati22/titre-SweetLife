@@ -1,6 +1,6 @@
-/* =========================
+/* 
    CARD GLASS BASE
-========================= */
+ */
 
 article {
     background: rgba(255, 255, 255, 0.3);
@@ -23,9 +23,9 @@ article:hover {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* =========================
+/* 
    TITRES & TEXTES
-========================= */
+ */
 
 h1 {
     color: #2f6f55;
@@ -42,9 +42,9 @@ p {
     margin-bottom: 15px;
 }
 
-/* =========================
+/* 
    GRID MOBILE FIRST
-========================= */
+ */
 
 .exercise-grid {
     display: grid;
@@ -53,9 +53,9 @@ p {
     padding: 10px;
 }
 
-/* =========================
+/* 
    CARD EXERCICE
-========================= */
+ */
 
 .exercise-card {
     max-width: 100%;
@@ -70,9 +70,9 @@ p {
     display: block;
 }
 
-/* =========================
+/* 
    CONTENT
-========================= */
+ */
 
 .exercise-content {
     padding: 12px;
@@ -86,9 +86,9 @@ p {
     margin: 0;
 }
 
-/* =========================
+/* 
    TABLETTE (min-width 600px)
-========================= */
+ */
 
 @media (min-width: 600px) {
     .exercise-grid {
@@ -104,9 +104,9 @@ p {
     }
 }
 
-/* =========================
+/* 
    DESKTOP (min-width 900px)
-========================= */
+ */
 
 @media (min-width: 900px) {
     .exercise-grid {

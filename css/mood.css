@@ -3,7 +3,7 @@
     padding: 25px;
     width: fit-content;
     display: block;
-    margin: auto;
+    margin: 2em auto;
 }
 
 .big-emoji {
@@ -11,4 +11,15 @@
     display: inline-block;
     cursor: pointer;
     transition: transform 0.25s ease;
+}
+article {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
 }

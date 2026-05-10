@@ -1,0 +1,210 @@
+/* CONTAINER */
+.oubli-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+.oubli-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* HEADER ICON */
+.oubli-icon {
+    font-size: 70px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.oubli-title {
+    font-size: 45px;
+    color: #3a8a6a;
+    margin-bottom: 15px;
+}
+
+.oubli-subtitle {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* FORM */
+.form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* TIME */
+.time-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.time-input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.3);
+    min-width: 200px;
+}
+
+.time-icon {
+    background: #3a8a6a;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+/* MOODS */
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.mood-option {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.mood-option:hover {
+    background: #dff3ec;
+    border-color: #3a8a6a;
+}
+
+.mood-option.selected {
+    background: #3a8a6a;
+    color: white;
+}
+
+.mood-emoji {
+    font-size: 45px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.mood-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* INPUT */
+.form-input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* BUTTON */
+.btn-primary {
+    width: 100%;
+    background: #3a8a6a;
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2f7057;
+}
+
+/* INFO */
+.info-message {
+    margin-top: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-message span {
+    font-size: 30px;
+}
+
+/* SECTION (remplace footer) */
+.form-footer {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* BACK LINK */
+.back-link {
+    text-decoration: none;
+    color: #3a8a6a;
+    font-weight: bold;
+}
+
+/* MOOD CARD */
+.mood-card {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .oubli-title {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .oubli-card {
+        padding: 20px;
+    }
+
+    .time-input-group {
+        flex-direction: column;
+    }
+
+    .time-icon {
+        width: 100%;
+        text-align: center;
+    }
+
+    .oubli-title {
+        font-size: 28px;
+    }
+}
