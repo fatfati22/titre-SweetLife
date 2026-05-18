@@ -1,0 +1,13 @@
+/* FOOTER */
+footer img {
+    width: 6.25rem; /* Taille de l'image dans le footer */
+}
+
+footer {
+    margin-top: auto; /* Toujours en bas de la page */
+    width: 100%; /* Largeur pleine */
+    display: flex; /* Flex pour organiser le contenu */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Centrer verticalement */
+    padding: 0.9375rem 1.5rem; /* Espacement interne */
+}

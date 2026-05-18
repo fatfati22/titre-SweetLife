@@ -20,15 +20,6 @@ main {
     padding-top: 4.375rem; /* Espace en haut */
 }
 
-footer {
-    margin-top: auto; /* Toujours en bas de la page */
-    width: 100%; /* Largeur pleine */
-    display: flex; /* Flex pour organiser le contenu */
-    justify-content: space-between; /* Espace entre les éléments */
-    align-items: center; /* Centrer verticalement */
-    padding: 0.9375rem 1.5rem; /* Espacement interne */
-}
-
 /* ALIGNEMENT DES ÉLÉMENTS */
 .aligner {
     margin-bottom: 4.875rem; /* Espace en dessous */
@@ -124,11 +115,6 @@ p {
         transform 0.25s ease,
         box-shadow 0.25s ease; /* Transition pour mouvements et ombre */
     transform-origin: center; /* Centre de transformation */
-}
-
-/* FOOTER */
-footer img {
-    width: 6.25rem; /* Taille de l'image dans le footer */
 }
 
 /* TABLETTE / ORDINATEUR (grand écran) */
