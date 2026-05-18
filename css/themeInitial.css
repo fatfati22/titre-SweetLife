@@ -1,29 +1,36 @@
+/* IMPORTATION DE POLICES GOOGLE */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
 
-/* RESET */
+/* RESET : supprimer les marges et paddings par défaut et ajuster la boîte */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* supprime la marge par défaut de tous les éléments */
+    padding: 0; /* supprime le padding par défaut de tous les éléments */
+    box-sizing: border-box; /* inclut padding et bordure dans la taille de l'élément */
 }
 
-/* CORPS DE PAGE */
+/* CORPS DE LA PAGE */
 body {
-    font-family: "DM Sans", sans-serif;
-    background: linear-gradient(135deg, #e8f5f0 0%, #a8d8c0 50%, #5aaa8a 100%);
-    min-height: 100vh;
-    color: #0d2520;
+    font-family: "DM Sans", sans-serif; /* police principale du texte */
+    background: linear-gradient(
+        135deg,
+        #e8f5f0 0%,
+        #a8d8c0 50%,
+        #5aaa8a 100%
+    ); /* fond en dégradé */
+    min-height: 100vh; /* minimum 100% de la hauteur de l'écran */
+    color: #0d2520; /* couleur du texte */
 }
 
-/* EFFET VERRE (GLASS) */
+/* EFFET VERRE (GLASS) : style flou et transparent */
 .glass {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.25); /* fond blanc transparent */
+    backdrop-filter: blur(12px); /* flou derrière l'élément */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure semi-transparente */
+    border-radius: 20px; /* coins arrondis */
 }
 
+/* LIENS */
 a {
-    text-decoration: none;
-    color: inherit;
+    text-decoration: none; /* supprime le soulignement par défaut */
+    color: inherit; /* prend la couleur du texte parent */
 }

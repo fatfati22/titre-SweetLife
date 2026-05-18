@@ -1,206 +1,204 @@
-/* ===================== */
-/*   AUTH (connexion     */
-/*   + inscription)      */
-/* ===================== */
+/*   AUTHENTIFICATION    */
+/* (connexion + compte) */
 
 /* MENU BURGER */
 #menu-toggle {
-    display: none;
+    display: none; /* cache la case du menu */
 }
 
 .hamburger {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+    flex-direction: column; /* met les lignes en colonne */
+    gap: 5px; /* espace entre les lignes */
+    cursor: pointer; /* affiche la main */
 }
 
 .hamburger span {
-    width: 25px;
-    height: 3px;
-    background: #2d6a4f;
-    border-radius: 3px;
+    width: 25px; /* largeur des lignes */
+    height: 3px; /* hauteur des lignes */
+    background: #2d6a4f; /* couleur verte */
+    border-radius: 3px; /* bords arrondis */
 }
 
-/* PAGE WRAPPER */
+/* CONTENU DE LA PAGE */
 .page-connexion,
 .page-inscription {
-    min-height: 100vh;
+    min-height: 100vh; /* prend toute la hauteur */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 20px 50px;
+    align-items: center; /* centre verticalement */
+    justify-content: center; /* centre horizontalement */
+    padding: 100px 20px 50px; /* espace intérieur */
 }
 
 /* CARTE PRINCIPALE */
 .carte {
-    max-width: 480px;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(16px);
-    border-radius: 32px;
-    padding: 25px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    max-width: 480px; /* largeur maximale */
+    width: 100%; /* prend toute la place disponible */
+    background: rgba(255, 255, 255, 0.4); /* fond transparent */
+    backdrop-filter: blur(16px); /* effet flou */
+    border-radius: 32px; /* coins arrondis */
+    padding: 25px 18px; /* espace intérieur */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure légère */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1); /* ombre */
 }
 
 /* LOGO */
 .logo-carte {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center; /* centre le contenu */
+    margin-bottom: 30px; /* espace en bas */
 }
 
 .logo-carte img {
-    width: 200px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 3px solid white;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    width: 200px; /* taille du logo */
+    border-radius: 50%; /* image ronde */
+    margin-bottom: 15px; /* espace sous l’image */
+    border: 3px solid white; /* contour blanc */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ombre légère */
 }
 
 .logo-carte h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 28px;
-    color: #1b4332;
+    font-family: "Cormorant Garamond", serif; /* police du titre */
+    font-size: 28px; /* taille du texte */
+    color: #1b4332; /* couleur foncée */
 }
 
 .logo-carte h1 span {
-    color: #2d6a4f;
-    font-style: italic;
+    color: #2d6a4f; /* couleur verte */
+    font-style: italic; /* texte en italique */
 }
 
 .logo-carte p {
-    color: #2d6a4f;
-    font-size: 14px;
-    margin-top: 8px;
+    color: #2d6a4f; /* couleur verte */
+    font-size: 14px; /* taille du texte */
+    margin-top: 8px; /* espace au-dessus */
 }
 
-/* CARD INFO */
+/* CARTE INFO */
 .card {
-    padding: 20px 25px;
-    border-radius: 15px;
-    background: rgba(76, 175, 80, 0.25);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(76, 175, 80, 0.4);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    color: #1b5e20;
-    width: 300px;
-    margin: 20px auto;
+    padding: 20px 25px; /* espace intérieur */
+    border-radius: 15px; /* coins arrondis */
+    background: rgba(76, 175, 80, 0.25); /* fond vert transparent */
+    backdrop-filter: blur(12px); /* effet flou */
+    -webkit-backdrop-filter: blur(12px); /* compatibilité Safari */
+    border: 1px solid rgba(76, 175, 80, 0.4); /* bordure verte */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* ombre */
+    color: #1b5e20; /* couleur du texte */
+    width: 300px; /* largeur fixe */
+    margin: 20px auto; /* centre la carte */
 }
 
 .card p {
-    margin: 10px 0;
+    margin: 10px 0; /* espace entre paragraphes */
 }
 
-/* FORM */
+/* FORMULAIRE */
 .champ {
-    margin-bottom: 18px;
+    margin-bottom: 18px; /* espace entre champs */
 }
 
 .champ label {
-    display: block;
-    font-size: 12px;
-    font-weight: 600;
-    color: #1b4332;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    display: block; /* passe à la ligne */
+    font-size: 12px; /* petite taille */
+    font-weight: 600; /* texte plus épais */
+    color: #1b4332; /* couleur foncée */
+    margin-bottom: 6px; /* espace sous le label */
+    text-transform: uppercase; /* texte en majuscule */
+    letter-spacing: 0.5px; /* espace entre lettres */
 }
 
 .champ input {
-    width: 100%;
-    padding: 12px 16px;
-    border-radius: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.7);
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    outline: none;
-    transition: 0.2s;
+    width: 100%; /* prend toute la largeur */
+    padding: 12px 16px; /* espace intérieur */
+    border-radius: 40px; /* coins très arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* bordure claire */
+    background: rgba(255, 255, 255, 0.7); /* fond clair */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 14px; /* taille du texte */
+    outline: none; /* enlève le contour bleu */
+    transition: 0.2s; /* animation douce */
 }
 
 .champ input:focus {
-    border-color: #2d6a4f;
-    background: white;
+    border-color: #2d6a4f; /* bordure verte au clic */
+    background: white; /* fond blanc */
 }
 
-/* OPTIONS (connexion uniquement) */
+/* OPTIONS (connexion seulement) */
 .options {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: flex-start;
-    margin-bottom: 25px;
-    font-size: 13px;
+    flex-direction: column; /* éléments en colonne */
+    gap: 12px; /* espace entre éléments */
+    align-items: flex-start; /* alignement à gauche */
+    margin-bottom: 25px; /* espace en bas */
+    font-size: 13px; /* taille du texte */
 }
 
 .remember-me {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #1b4332;
-    cursor: pointer;
+    align-items: center; /* centre verticalement */
+    gap: 8px; /* espace */
+    color: #1b4332; /* couleur du texte */
+    cursor: pointer; /* curseur main */
 }
 
 .remember-me input {
-    width: 18px;
+    width: 18px; /* taille de la case */
     height: 18px;
     cursor: pointer;
-    accent-color: #2d6a4f;
+    accent-color: #2d6a4f; /* couleur verte */
 }
 
 .forgot-password {
-    color: #2d6a4f;
-    text-decoration: none;
+    color: #2d6a4f; /* couleur verte */
+    text-decoration: none; /* enlève le soulignement */
     font-weight: 500;
 }
 
 .forgot-password:hover {
-    color: #1b4332;
-    text-decoration: underline;
+    color: #1b4332; /* couleur plus foncée */
+    text-decoration: underline; /* souligne au survol */
 }
 
-/* BUTTON */
+/* BOUTON */
 .btn-submit {
-    width: 100%;
-    padding: 14px;
-    background: #2d6a4f;
-    color: white;
-    border: none;
-    border-radius: 40px;
-    font-weight: 600;
+    width: 100%; /* pleine largeur */
+    padding: 14px; /* espace intérieur */
+    background: #2d6a4f; /* fond vert */
+    color: white; /* texte blanc */
+    border: none; /* pas de bordure */
+    border-radius: 40px; /* coins arrondis */
+    font-weight: 600; /* texte épais */
     font-size: 16px;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+    transition: 0.3s; /* animation */
+    margin-top: 10px; /* espace au-dessus */
 }
 
 .btn-submit:hover {
-    background: #1b4332;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: #1b4332; /* vert foncé */
+    transform: translateY(-2px); /* monte légèrement */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ombre */
 }
 
-/* LINKS */
+/* LIENS */
 .lien-inscription,
 .lien-connexion {
-    text-align: center;
-    margin-top: 20px;
+    text-align: center; /* texte centré */
+    margin-top: 20px; /* espace au-dessus */
     font-size: 14px;
     color: #1b4332;
 }
 
 .lien-inscription a,
 .lien-connexion a {
-    color: #2d6a4f;
+    color: #2d6a4f; /* vert */
     font-weight: 600;
     text-decoration: none;
 }
 
 .lien-inscription a:hover,
 .lien-connexion a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* souligne au survol */
 }
 
 .retour {
@@ -218,13 +216,13 @@
     color: #2d6a4f;
 }
 
-/* FLOTTANTS */
+/* EFFETS FLOTTANTS */
 .flottant {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(60px);
-    pointer-events: none;
-    z-index: 0;
+    position: fixed; /* reste fixe */
+    border-radius: 50%; /* forme ronde */
+    filter: blur(60px); /* effet flou */
+    pointer-events: none; /* ignore les clics */
+    z-index: 0; /* derrière le contenu */
 }
 
 .flottant-1 {
@@ -243,29 +241,25 @@
     left: -60px;
 }
 
-/* ===================== */
-/*   TABLETTE (481px)    */
-/* ===================== */
+/*   TABLETTE 481px      */
 
 @media (min-width: 481px) {
     .carte {
-        padding: 30px 25px;
+        padding: 30px 25px; /* plus d’espace */
     }
 
     .logo-carte h1 {
-        font-size: 30px;
+        font-size: 30px; /* texte plus grand */
     }
 
     .options {
-        flex-direction: row;
+        flex-direction: row; /* met en ligne */
         align-items: center;
         justify-content: space-between;
     }
 }
 
-/* ===================== */
-/*   TABLETTE (768px)    */
-/* ===================== */
+/*   TABLETTE 768px      */
 
 @media (min-width: 768px) {
     .navbar {
@@ -273,12 +267,12 @@
     }
 
     .hamburger {
-        display: none;
+        display: none; /* cache le menu burger */
     }
 
     .nav-links,
     .nav-buttons {
-        display: flex;
+        display: flex; /* affiche les liens */
     }
 
     .carte {
@@ -286,13 +280,11 @@
     }
 }
 
-/* ===================== */
-/*   DESKTOP (1024px)    */
-/* ===================== */
+/*   ORDINATEUR 1024px   */
 
 @media (min-width: 1024px) {
     .carte {
-        max-width: 520px;
-        padding: 40px 35px;
+        max-width: 520px; /* carte plus large */
+        padding: 40px 35px; /* plus d’espace intérieur */
     }
 }

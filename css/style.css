@@ -1,166 +1,162 @@
+/* STYLE GLOBAL */
 html {
-    font-size: 16px;
+    font-size: 16px; /* Taille de base des textes */
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden;
-    transition: 0.2s;
+    font-family: "DM Sans", sans-serif; /* Police principale du site */
+    display: flex; /* Utilisation de flex pour aligner les enfants */
+    flex-direction: column; /* Disposition verticale */
+    min-height: 100vh; /* Hauteur minimale = hauteur de l'écran */
+    overflow-x: hidden; /* Pas de défilement horizontal */
+    transition: 0.2s; /* Transition douce pour certaines propriétés */
 }
 
 main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4.375rem;
+    flex: 1; /* Prend tout l'espace disponible */
+    display: flex; /* Flex pour centrer le contenu */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    padding-top: 4.375rem; /* Espace en haut */
 }
 
 footer {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.9375rem 1.5rem;
+    margin-top: auto; /* Toujours en bas de la page */
+    width: 100%; /* Largeur pleine */
+    display: flex; /* Flex pour organiser le contenu */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Centrer verticalement */
+    padding: 0.9375rem 1.5rem; /* Espacement interne */
 }
 
-/* ALIGNEMENT */
-
+/* ALIGNEMENT DES ÉLÉMENTS */
 .aligner {
-    margin-bottom: 4.875rem;
-    display: flex;
+    margin-bottom: 4.875rem; /* Espace en dessous */
+    display: flex; /* Flex pour organiser horizontalement */
 }
 
 .alig {
-    margin-top: 1rem;
-    text-align: center;
+    margin-top: 1rem; /* Espace au-dessus */
+    text-align: center; /* Texte centré */
 }
 
 .centrer {
-    display: block;
-    margin: 0 auto;
+    display: block; /* Bloc pour centrer */
+    margin: 0 auto; /* Centrer horizontalement */
 }
 
-/* BUTTONS (mobile par défaut) */
-
+/* BOUTONS (mobile par défaut) */
 .btn-ghost {
-    padding: 0.625rem 1.25rem;
-    border-radius: 2.5rem;
-    border: 0.0625rem solid #ccc;
-    background: transparent;
-    transition: 0.3s;
+    padding: 0.625rem 1.25rem; /* Espacement intérieur */
+    border-radius: 2.5rem; /* Coins arrondis */
+    border: 0.0625rem solid #ccc; /* Bordure fine grise */
+    background: transparent; /* Fond transparent */
+    transition: 0.3s; /* Transition douce pour hover */
 }
 
 .btn-ghost:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: translateY(-0.125rem);
+    background: rgba(255, 255, 255, 0.3); /* Fond semi-transparent au survol */
+    transform: translateY(-0.125rem); /* Légère remontée au survol */
 }
 
-/* HERO */
-
+/* SECTION HERO (bannière principale) */
 .hero {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    flex: 1; /* Prend tout l'espace possible */
+    display: flex; /* Flex pour centrer le contenu */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
+    width: 100%; /* Largeur pleine */
 }
 
 .hero-content {
-    width: 100%;
-    padding: 0 1rem;
+    width: 100%; /* Largeur pleine */
+    padding: 0 1rem; /* Espacement horizontal */
 }
 
 h1 {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.875rem;
-    font-weight: 300;
-    margin-bottom: 1.25rem;
-    text-align: center;
-    white-space: pre-line;
+    font-family: "Cormorant Garamond", serif; /* Police du titre */
+    font-size: 1.875rem; /* Taille du titre */
+    font-weight: 300; /* Texte léger */
+    margin-bottom: 1.25rem; /* Espace en dessous */
+    text-align: center; /* Centré */
+    white-space: pre-line; /* Respect des sauts de ligne */
 }
+
 h3 {
-    text-align: center;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 1.7rem;
+    text-align: center; /* Centré */
+    font-family: "Cormorant Garamond", serif; /* Même police que h1 */
+    font-size: 1.7rem; /* Taille du sous-titre */
 }
 
 .couleur {
-    color: #3a8a6a;
+    color: #3a8a6a; /* Couleur verte */
 }
 
 p {
-    text-align: center;
+    text-align: center; /* Texte centré */
 }
 
-/* MOOD WHEEL */
-
+/* MOOD WHEEL (roue d'humeur) */
 .mood-wheel {
-    position: relative;
-    width: 16.25rem;
-    height: 16.25rem;
-    margin: 4rem auto;
+    position: relative; /* Pour positionner les boutons absolument */
+    width: 16.25rem; /* Largeur */
+    height: 16.25rem; /* Hauteur */
+    margin: 4rem auto; /* Centré avec marge verticale */
 }
 
 .mood-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 3rem;
-    height: 3rem;
-    margin: -1.875rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: 0.125rem solid #5aaa8a;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0.625rem);
+    position: absolute; /* Positionnement par rapport à la roue */
+    top: 50%; /* Centre vertical */
+    left: 50%; /* Centre horizontal */
+    width: 3rem; /* Taille du bouton */
+    height: 3rem; /* Taille du bouton */
+    margin: -1.875rem; /* Décalage pour centrer le bouton */
+    border-radius: 50%; /* Bouton rond */
+    display: flex; /* Flex pour centrer l'icône */
+    align-items: center; /* Centrer verticalement */
+    justify-content: center; /* Centrer horizontalement */
+    font-size: 1.5rem; /* Taille du texte ou icône */
+    cursor: pointer; /* Curseur main */
+    border: 0.125rem solid #5aaa8a; /* Bordure verte */
+    background: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+    backdrop-filter: blur(0.625rem); /* Flou derrière le bouton */
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
-    transform-origin: center;
+        box-shadow 0.25s ease; /* Transition pour mouvements et ombre */
+    transform-origin: center; /* Centre de transformation */
 }
 
 /* FOOTER */
-
 footer img {
-    width: 6.25rem;
+    width: 6.25rem; /* Taille de l'image dans le footer */
 }
 
-/* TABLET / DESKTOP */
-
+/* TABLETTE / ORDINATEUR (grand écran) */
 @media screen and (min-width: 46.875rem) {
     .hero-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: flex; /* Flex pour aligner horizontalement */
+        justify-content: space-between; /* Espacement entre éléments */
+        align-items: center; /* Centré verticalement */
     }
 
     h1 {
-        font-size: 3.75rem;
-        text-align: left;
+        font-size: 3.75rem; /* Texte plus grand sur grand écran */
+        text-align: left; /* Aligné à gauche */
     }
 
     p {
-        text-align: left;
+        text-align: left; /* Texte aligné à gauche */
     }
 
     .alig {
-        display: flex;
-        justify-content: flex-start;
-        gap: 1rem;
+        display: flex; /* Alignement horizontal */
+        justify-content: flex-start; /* Aligné à gauche */
+        gap: 1rem; /* Espace entre les éléments */
     }
 
     .btn-primary,
     .btn-ghost {
-        display: inline-block;
-        margin: 0;
+        display: inline-block; /* Boutons en ligne */
+        margin: 0; /* Pas de marge */
     }
 }

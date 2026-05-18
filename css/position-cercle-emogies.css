@@ -1,66 +1,66 @@
-/* POSITION CERCLE */
+/*   POSITION DES BOUTONS EN CERCLE   */
 
 .mood-btn:nth-child(1) {
-    --pos: rotate(0deg) translate(6.875rem) rotate(0deg);
-    transform: var(--pos);
+    --pos: rotate(0deg) translate(6.875rem) rotate(0deg); /* place le premier bouton en haut */
+    transform: var(--pos); /* applique la position */
 }
 
 .mood-btn:nth-child(2) {
-    --pos: rotate(60deg) translate(6.875rem) rotate(-60deg);
+    --pos: rotate(60deg) translate(6.875rem) rotate(-60deg); /* deuxième bouton à 60° */
     transform: var(--pos);
 }
 
 .mood-btn:nth-child(3) {
-    --pos: rotate(120deg) translate(6.875rem) rotate(-120deg);
+    --pos: rotate(120deg) translate(6.875rem) rotate(-120deg); /* troisième bouton à 120° */
     transform: var(--pos);
 }
 
 .mood-btn:nth-child(4) {
-    --pos: rotate(180deg) translate(6.875rem) rotate(-180deg);
+    --pos: rotate(180deg) translate(6.875rem) rotate(-180deg); /* quatrième bouton en bas */
     transform: var(--pos);
 }
 
 .mood-btn:nth-child(5) {
-    --pos: rotate(240deg) translate(6.875rem) rotate(-240deg);
+    --pos: rotate(240deg) translate(6.875rem) rotate(-240deg); /* cinquième bouton à 240° */
     transform: var(--pos);
 }
 
 .mood-btn:nth-child(6) {
-    --pos: rotate(300deg) translate(6.875rem) rotate(-300deg);
+    --pos: rotate(300deg) translate(6.875rem) rotate(-300deg); /* sixième bouton à 300° */
     transform: var(--pos);
 }
 
-/* HOVER */
+/*   EFFET AU SURVOL (HOVER)   */
 
 .mood-btn:hover {
-    transform: var(--pos) scale(1.6);
-    box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    transform: var(--pos) scale(1.6); /* agrandit le bouton quand la souris passe dessus */
+    box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.3); /* ajoute une ombre */
+    z-index: 10; /* place le bouton au-dessus des autres */
 }
 
-/* CENTRE */
+/*   BOUTON DU CENTRE   */
 
 .mood-btn.center {
-    transform: none !important;
-    width: 4rem;
-    height: 4rem;
-    margin: -2.1875rem;
-    font-size: 1.875rem;
-    z-index: 5;
-    background: rgba(255, 255, 255, 0.35);
+    transform: none !important; /* pas de rotation pour le bouton central */
+    width: 4rem; /* largeur */
+    height: 4rem; /* hauteur */
+    margin: -2.1875rem; /* ajuste la position au centre */
+    font-size: 1.875rem; /* taille du texte/emoji */
+    z-index: 5; /* position au-dessus de certains éléments */
+    background: rgba(255, 255, 255, 0.35); /* fond semi-transparent */
 }
 
-/* GLASS CARD */
+/*   CARTE STYLE GLASS   */
 
 .glass-card {
-    padding: 1.25rem;
-    border-radius: 1rem;
-    backdrop-filter: blur(0.9375rem);
-    background: rgba(255, 255, 255, 0.25);
-    transition: 0.3s;
+    padding: 1.25rem; /* espace intérieur */
+    border-radius: 1rem; /* coins arrondis */
+    backdrop-filter: blur(0.9375rem); /* effet flou derrière */
+    background: rgba(255, 255, 255, 0.25); /* fond transparent */
+    transition: 0.3s; /* animation douce au changement */
 }
 
 .glass-card:hover {
-    transform: translateY(-0.3125rem);
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2);
+    transform: translateY(-0.3125rem); /* monte un peu au survol */
+    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2); /* ajoute une ombre */
 }

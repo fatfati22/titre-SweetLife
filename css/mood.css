@@ -1,25 +1,33 @@
-/* ================= MOOD ================= */
+/*   CARTE D’HUMEUR      */
+
 .mood-card {
-    padding: 25px;
-    width: fit-content;
-    display: block;
-    margin: 2em auto;
+    padding: 25px; /* espace intérieur */
+    width: fit-content; /* largeur adaptée au contenu */
+    display: block; /* élément en bloc */
+    margin: 2em auto; /* centre la carte */
 }
 
+/* GRAND EMOJI */
 .big-emoji {
-    font-size: 50px;
-    display: inline-block;
-    cursor: pointer;
-    transition: transform 0.25s ease;
+    font-size: 50px; /* grande taille */
+    display: inline-block; /* reste sur la ligne */
+    cursor: pointer; /* curseur main */
+    transition: transform 0.25s ease; /* animation douce */
 }
+
+/* CARTE ARTICLE */
 article {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    position: relative;
+    background: rgba(255, 255, 255, 0.3); /* fond transparent */
+    backdrop-filter: blur(15px); /* effet flou */
+    -webkit-backdrop-filter: blur(15px); /* compatibilité Safari */
+
+    border-radius: 20px; /* coins arrondis */
+    overflow: hidden; /* cache ce qui dépasse */
+
+    border: 1px solid rgba(255, 255, 255, 0.4); /* bordure légère */
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* ombre */
+
+    transition: all 0.3s ease; /* animation douce */
+    position: relative; /* position de base */
 }

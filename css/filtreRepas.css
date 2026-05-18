@@ -1,80 +1,106 @@
-/* ===================== */
-/*   FILTRES REPAS       */
-/* ===================== */
+/*   FILTRES DES REPAS   */
 
-/* Cacher les radios (ils servent juste au filtre CSS) */
+/* Cache les boutons radio */
 input[type="radio"] {
     display: none;
 }
 
-/* BOUTONS FILTRES */
+/* BOUTONS DES FILTRES */
 .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    display: flex; /* met les boutons en ligne */
+    flex-wrap: wrap; /* retour à la ligne si besoin */
+    gap: 10px; /* espace entre boutons */
+    margin-bottom: 20px; /* espace dessous */
 }
 
 .filters label {
-    padding: 10px 14px;
-    border-radius: 25px;
+    padding: 10px 14px; /* espace intérieur */
+    border-radius: 25px; /* coins arrondis */
 
-    /* GLASS EFFECT */
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    /* EFFET VERRE */
+    background: rgba(255, 255, 255, 0.15); /* fond transparent */
+    backdrop-filter: blur(10px); /* effet flou */
+    -webkit-backdrop-filter: blur(10px); /* compatibilité Safari */
 
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure légère */
+    color: inherit; /* garde la couleur du texte */
 
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 14px;
+    cursor: pointer; /* curseur main */
+    transition: 0.3s; /* animation douce */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre légère */
+    font-size: 14px; /* taille du texte */
 }
 
 .filters label:hover {
-    background: rgba(58, 138, 106, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
+    background: rgba(58, 138, 106, 0.35); /* fond vert au survol */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure plus visible */
+    transform: translateY(-2px); /* monte légèrement */
 }
 
-/* ===================== */
-/*   BOUTONS ACTIFS      */
-/* ===================== */
+/*   BOUTON ACTIF        */
 
 #all:checked ~ main label[for="all"],
 #entree:checked ~ main label[for="entree"],
 #plat-principale:checked ~ main label[for="plat-principale"],
 #dessert-fruit:checked ~ main label[for="dessert-fruit"],
 #snack:checked ~ main label[for="snack"] {
-    background: rgba(58, 138, 106, 0.6);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(12px);
+    background: rgba(58, 138, 106, 0.6); /* fond vert */
+    color: white; /* texte blanc */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    backdrop-filter: blur(12px); /* effet flou */
 }
 
-/* ===================== */
-/*   LOGIQUE DU FILTRE   */
-/* ===================== */
+/*   FILTRAGE DES CARTES */
 
-#all:checked ~ main .grid article { display: block; }
+/* Affiche toutes les cartes */
+#all:checked ~ main .grid article {
+    display: block;
+}
 
-#entree:checked ~ main .grid article { display: none; }
-#entree:checked ~ main .grid [data-type="entree"] { display: block; }
+/* Cache tout puis affiche seulement les entrées */
+#entree:checked ~ main .grid article {
+    display: none;
+}
+#entree:checked ~ main .grid [data-type="entree"] {
+    display: block;
+}
 
-#plat-principale:checked ~ main .grid article { display: none; }
-#plat-principale:checked ~ main .grid [data-type="plat-principale"] { display: block; }
+/* Cache tout puis affiche seulement les plats principaux */
+#plat-principale:checked ~ main .grid article {
+    display: none;
+}
+#plat-principale:checked ~ main .grid [data-type="plat-principale"] {
+    display: block;
+}
 
-#dessert-fruit:checked ~ main .grid article { display: none; }
-#dessert-fruit:checked ~ main .grid [data-type="dessert-fruit"] { display: block; }
+/* Cache tout puis affiche seulement les desserts/fruits */
+#dessert-fruit:checked ~ main .grid article {
+    display: none;
+}
+#dessert-fruit:checked ~ main .grid [data-type="dessert-fruit"] {
+    display: block;
+}
 
-#snack:checked ~ main .grid article { display: none; }
-#snack:checked ~ main .grid [data-type="snack"] { display: block; }
+/* Cache tout puis affiche seulement les snacks */
+#snack:checked ~ main .grid article {
+    display: none;
+}
+#snack:checked ~ main .grid [data-type="snack"] {
+    display: block;
+}
 
-/* ===================== */
 /*   RESPONSIVE          */
-/* ===================== */
 
-@media (min-width: 768px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+/* Tablette : 2 colonnes */
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ordinateur : 3 colonnes */
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

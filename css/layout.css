@@ -1,37 +1,35 @@
-/* ===================== */
-/*   LAYOUT PAGES        */
-/*   (repas + exercice)  */
-/* ===================== */
+/*   STRUCTURE DES PAGES */
+/* (repas + exercices)   */
 
 main {
-    padding: 120px 20px 60px;
-    max-width: 1200px;
-    margin: auto;
+    padding: 120px 20px 60px; /* espace intérieur */
+    max-width: 1200px; /* largeur maximale */
+    margin: auto; /* centre la page */
 }
 
 h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
+    font-size: 42px; /* grande taille du titre */
+    margin-bottom: 10px; /* espace dessous */
 }
 
 p.subtitle {
-    margin-bottom: 30px;
-    color: #5d7d72;
+    margin-bottom: 30px; /* espace dessous */
+    color: #5d7d72; /* couleur du texte */
 }
 
-/* BANNER */
+/* BANNIÈRE */
 section.banner {
-    background: rgba(255, 255, 255, 0.25);
-    border: 1px solid #dceee7;
-    border-radius: 20px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    width: fit-content;
-    margin: 30px auto;
+    background: rgba(255, 255, 255, 0.25); /* fond transparent */
+    border: 1px solid #dceee7; /* bordure claire */
+    border-radius: 20px; /* coins arrondis */
+    padding: 20px; /* espace intérieur */
+    display: flex; /* éléments en ligne */
+    align-items: center; /* centre verticalement */
+    gap: 15px; /* espace entre éléments */
+    width: fit-content; /* largeur adaptée au contenu */
+    margin: 30px auto; /* centre la bannière */
 }
 
 section.banner span {
-    font-size: 40px;
+    font-size: 40px; /* taille de l’icône ou emoji */
 }

@@ -1,143 +1,139 @@
+/* IMPORTATION DES POLICES */
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
 
 body {
-    padding-bottom: 5rem;
+    padding-bottom: 5rem; /* espace en bas pour la navbar mobile */
 }
 
-/* 
-   NAVBAR MOBILE FIRST
- */
+/*   NAVBAR MOBILE       */
 
 .navbar {
-    position: fixed;
-    bottom: 0;
+    position: fixed; /* reste fixe à l’écran */
+    bottom: 0; /* placée en bas */
     top: auto;
 
-    width: 100%;
-    height: 4.5rem;
+    width: 100%; /* pleine largeur */
+    height: 4.5rem; /* hauteur */
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex; /* éléments en ligne */
+    justify-content: space-around; /* espace entre éléments */
+    align-items: center; /* centre verticalement */
 
-    padding: 0 0.5rem;
-    z-index: 100;
+    padding: 0 0.5rem; /* espace intérieur */
+    z-index: 100; /* passe devant les autres éléments */
 
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(1.375rem);
+    background: rgba(255, 255, 255, 0.06); /* fond transparent */
+    backdrop-filter: blur(1.375rem); /* effet flou */
 }
 
-/* LINKS MOBILE */
+/* LIENS MOBILE */
 .nav-links {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    list-style: none;
+    display: flex; /* liens en ligne */
+    width: 100%; /* prend toute la largeur */
+    justify-content: space-around; /* espace entre liens */
+    list-style: none; /* enlève les puces */
     margin: 0;
     padding: 0;
 }
 
 .nav-links a {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* icône et texte en colonne */
+    align-items: center; /* centre les éléments */
 
-    text-decoration: none;
-    font-size: 0.625rem;
-    color: inherit;
+    text-decoration: none; /* enlève le soulignement */
+    font-size: 0.625rem; /* petite taille */
+    color: inherit; /* garde la couleur */
 
-    padding: 0.25rem;
-    transition: 0.3s;
+    padding: 0.25rem; /* espace intérieur */
+    transition: 0.3s; /* animation douce */
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 1rem;
-    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.4); /* fond clair */
+    border-radius: 1rem; /* coins arrondis */
+    transform: translateY(-2px); /* monte légèrement */
 }
 
 /* LOGO MOBILE */
 .img {
-    display: none;
+    display: none; /* cache le logo */
 }
 
-/* HERO MOBILE */
+/* IMAGE HERO MOBILE */
 .mobile {
-    display: block;
-    width: 10rem;
-    margin: 0 auto;
+    display: block; /* affiche l’image */
+    width: 10rem; /* largeur */
+    margin: 0 auto; /* centre l’image */
 }
 
-/* BUTTON BASE */
+/* BOUTON PRINCIPAL */
 .btn-primary {
-    background-color: #3a8a6a;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border: none;
-    border-radius: 2.5rem;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.btn-primary:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.3);
+    background-color: #3a8a6a; /* fond vert */
+    color: white; /* texte blanc */
+    padding: 0.75rem 1.5rem; /* espace intérieur */
+    border: none; /* enlève la bordure */
+    border-radius: 2.5rem; /* coins arrondis */
+    cursor: pointer; /* curseur main */
+    transition: 0.3s; /* animation */
 }
 
-/* 
-   MOBILE ONLY (absolute button)
- */
+.btn-primary:hover {
+    transform: translateY(-0.1875rem); /* monte légèrement */
+    box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.3); /* ombre */
+}
+
+/*   MOBILE SEULEMENT    */
 
 .navbar .btn-primary {
-    position: absolute;
-    right: 1rem;
-    bottom: 35rem;
-    width: 7em;
+    position: absolute; /* position libre */
+    right: 1rem; /* espace à droite */
+    bottom: 35rem; /* position en hauteur */
+    width: 7em; /* largeur du bouton */
 }
 
-/* 
-   TABLET / DESKTOP
- */
+/*   TABLETTE / PC       */
 
 @media (min-width: 768px) {
     body {
-        padding-bottom: 0;
+        padding-bottom: 0; /* enlève l’espace du bas */
     }
 
     .navbar {
-        top: 0;
+        top: 0; /* navbar en haut */
         bottom: auto;
 
-        height: 4.375rem;
+        height: 4.375rem; /* hauteur */
 
-        justify-content: space-between;
-        padding: 0 1.5rem;
+        justify-content: space-between; /* espace entre éléments */
+        padding: 0 1.5rem; /* espace intérieur */
     }
 
     .nav-links {
-        width: auto;
-        gap: 0.75rem;
-        justify-content: flex-end;
+        width: auto; /* largeur automatique */
+        gap: 0.75rem; /* espace entre liens */
+        justify-content: flex-end; /* liens à droite */
     }
 
     .nav-links a {
-        flex-direction: row;
-        font-size: 0.875rem;
+        flex-direction: row; /* texte et icône en ligne */
+        font-size: 0.875rem; /* texte plus grand */
         padding: 0.5rem 0.75rem;
     }
 
     .img {
-        display: block;
-        width: 9rem;
+        display: block; /* affiche le logo */
+        width: 9rem; /* largeur */
         position: relative;
-        top: 40px;
+        top: 40px; /* descend un peu */
     }
 
     .mobile {
-        display: none;
+        display: none; /* cache l’image mobile */
     }
 
-    /* bouton revient normal dans navbar */
+    /* le bouton revient normal */
     .navbar .btn-primary {
         position: static;
     }

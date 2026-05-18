@@ -1,149 +1,150 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
 
-/* ================= BACKGROUND ORBS ================= */
+/*   ORBES EN FOND       */
 .float-orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(80px);
-    background: rgba(58, 138, 106, 0.3);
-    z-index: 0;
+    position: fixed; /* position fixe à l'écran */
+    border-radius: 50%; /* forme ronde */
+    filter: blur(80px); /* flou pour effet doux */
+    background: rgba(58, 138, 106, 0.3); /* couleur verte translucide */
+    z-index: 0; /* derrière les autres éléments */
 }
 
 .orb1 {
-    width: 380px;
-    height: 380px;
-    top: -100px;
-    right: -80px;
+    width: 380px; /* largeur */
+    height: 380px; /* hauteur */
+    top: -100px; /* position haut */
+    right: -80px; /* position droite */
 }
 
 .orb2 {
     width: 280px;
     height: 280px;
-    bottom: -50px;
-    left: -40px;
+    bottom: -50px; /* position bas */
+    left: -40px; /* position gauche */
 }
 
+/*   CARTE STYLE GLASS   */
 .glass-card {
-    background: rgba(160, 220, 195, 0.3);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(100, 200, 160, 0.35);
-    border-radius: 16px;
-    transition: 0.3s;
+    background: rgba(160, 220, 195, 0.3); /* fond translucide vert clair */
+    backdrop-filter: blur(16px); /* effet flou derrière */
+    border: 1px solid rgba(100, 200, 160, 0.35); /* bord léger */
+    border-radius: 16px; /* coins arrondis */
+    transition: 0.3s; /* animation douce */
 }
 
 .glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(58, 138, 106, 0.3);
+    transform: translateY(-4px); /* monte légèrement au survol */
+    box-shadow: 0 12px 40px rgba(58, 138, 106, 0.3); /* ombre douce */
 }
 
-/* ================= LAYOUT ================= */
+/*   LAYOUT DE LA PAGE    */
 .page-container {
-    padding-top: 100px;
+    padding-top: 100px; /* espace en haut de la page */
 }
 
 .profil-wrap {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px;
+    max-width: 900px; /* largeur max du profil */
+    margin: auto; /* centré */
+    padding: 20px; /* espace intérieur */
 }
 
-/* HERO */
+/*   HERO PROFIL         */
 .profile-hero {
-    display: flex;
-    gap: 20px;
-    padding: 30px;
-    margin-bottom: 20px;
+    display: flex; /* alignement en ligne */
+    gap: 20px; /* espace entre les éléments */
+    padding: 30px; /* espace intérieur */
+    margin-bottom: 20px; /* espace sous la section */
 }
 
 .avatar-large {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3a8a6a, #5aaa8a);
+    width: 90px; /* largeur de l'avatar */
+    height: 90px; /* hauteur */
+    border-radius: 50%; /* rond */
+    background: linear-gradient(135deg, #3a8a6a, #5aaa8a); /* dégradé vert */
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
-    color: white;
+    font-size: 40px; /* taille emoji ou initiales */
+    color: white; /* couleur du texte */
     position: relative;
 }
 
 .avatar-online-dot {
     width: 14px;
     height: 14px;
-    background: #22c55e;
-    border-radius: 50%;
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
+    background: #22c55e; /* couleur verte online */
+    border-radius: 50%; /* rond */
+    position: absolute; /* position absolue par rapport à l'avatar */
+    bottom: 5px; /* bas */
+    right: 5px; /* droite */
 }
 
-/* ================= CARDS ROW ================= */
+/*   LIGNE DE CARTES      */
 .profile-bottom {
-    display: flex;
-    gap: 20px;
+    display: flex; /* alignement en ligne */
+    gap: 20px; /* espace entre cartes */
 }
 
 .profile-bottom > div {
-    flex: 1;
+    flex: 1; /* prend toute la place disponible */
 }
 
-/* ================= INFOS ================= */
+/*   INFORMATIONS        */
 .info-card {
     padding: 20px;
     display: block;
-    margin: auto;
+    margin: auto; /* centré */
 }
 
 .info-label {
-    font-size: 12px;
-    color: #2a6050;
+    font-size: 12px; /* texte petit pour label */
+    color: #2a6050; /* couleur verte foncée */
 }
 
 .info-value {
-    font-size: 14px;
+    font-size: 14px; /* texte un peu plus grand pour valeur */
 }
 
-/* ================= BUTTONS ================= */
+/*   BOUTONS             */
 .btn-primary {
-    background: #3a8a6a;
-    color: white;
+    background: #3a8a6a; /* vert */
+    color: white; /* texte blanc */
     padding: 12px 24px;
     border-radius: 30px;
-    text-decoration: none;
+    text-decoration: none; /* pas de souligné */
 }
 
 .btn-ghost {
-    border: 1px solid #3a8a6a;
+    border: 1px solid #3a8a6a; /* contour vert */
     padding: 10px 20px;
     border-radius: 30px;
     text-decoration: none;
-    color: #3a8a6a;
+    color: #3a8a6a; /* texte vert */
 }
 
 .btn-danger {
-    background: rgba(178, 34, 34, 0.1);
-    color: #b22222;
+    background: rgba(178, 34, 34, 0.1); /* rouge clair */
+    color: #b22222; /* texte rouge foncé */
     padding: 10px 20px;
     border-radius: 30px;
 }
 
 .actions-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 30px;
-    flex-wrap: wrap;
+    display: flex; /* ligne */
+    justify-content: center; /* centré horizontalement */
+    gap: 15px; /* espace entre boutons */
+    margin-top: 30px; /* espace au-dessus */
+    flex-wrap: wrap; /* retour à la ligne si besoin */
 }
 
-/* ================= RESPONSIVE ================= */
+/*   RESPONSIVE           */
 @media (max-width: 768px) {
     .profile-hero {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* empile les éléments */
+        text-align: center; /* texte centré */
     }
 
     .profile-bottom {
-        flex-direction: column;
+        flex-direction: column; /* empile les cartes */
     }
 }

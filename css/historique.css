@@ -1,307 +1,293 @@
 /*   HISTORIQUE          */
-/*   MOBILE FIRST        */
+/*   VERSION MOBILE      */
 
 /* BASE MOBILE */
 
 .hist-main {
-    padding: 100px 20px 80px;
-    max-width: 900px;
-    margin: auto;
+    padding: 100px 20px 80px; /* espace intérieur */
+    max-width: 900px; /* largeur maximale */
+    margin: auto; /* centre le contenu */
 }
 
-/* HEADER */
+/* EN-TÊTE */
 .hist-header {
-    text-align: center;
-    margin-bottom: 30px;
+    text-align: center; /* centre le texte */
+    margin-bottom: 30px; /* espace dessous */
 }
 
 .hist-title {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 32px;
-    font-weight: 300;
-    color: #1b4332;
-    margin-bottom: 8px;
+    font-family: "Cormorant Garamond", serif; /* police du titre */
+    font-size: 32px; /* taille du texte */
+    font-weight: 300; /* texte fin */
+    color: #1b4332; /* couleur verte foncée */
+    margin-bottom: 8px; /* espace dessous */
 }
 
 .hist-subtitle {
-    color: #2f6f55;
-    font-size: 14px;
+    color: #2f6f55; /* couleur verte */
+    font-size: 14px; /* taille du texte */
 }
 
-/* ===================== */
 /*   FILTRES             */
-/* ===================== */
 
 .hist-filters {
-    padding: 16px;
-    margin-bottom: 30px;
+    padding: 16px; /* espace intérieur */
+    margin-bottom: 30px; /* espace dessous */
 }
 
 .filter-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    align-items: flex-start;
+    display: flex; /* éléments en ligne */
+    gap: 10px; /* espace entre éléments */
+    flex-wrap: wrap; /* retour à la ligne */
+    align-items: flex-start; /* aligne en haut */
 }
 
-/* ===================== */
-/*   DROPDOWN            */
-/* ===================== */
+/*   MENU DÉROULANT      */
 
 .dropdown-wrap {
-    position: relative;
-    flex: 1;
-    min-width: 140px;
+    position: relative; /* base pour le menu */
+    flex: 1; /* prend l’espace disponible */
+    min-width: 140px; /* largeur minimale */
 }
 
 .dropdown-btn {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 12px;
-    border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-family: "DM Sans", sans-serif;
-    font-size: 13px;
-    color: #1b4332;
-    text-align: left;
+    width: 100%; /* pleine largeur */
+    display: flex; /* éléments en ligne */
+    align-items: center; /* centre verticalement */
+    gap: 8px; /* espace entre éléments */
+    padding: 10px 12px; /* espace intérieur */
+    border-radius: 14px; /* coins arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    background: rgba(255, 255, 255, 0.3); /* fond transparent */
+    backdrop-filter: blur(10px); /* effet flou */
+    cursor: pointer; /* curseur main */
+    transition: all 0.25s ease; /* animation */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 13px; /* taille texte */
+    color: #1b4332; /* couleur verte */
+    text-align: left; /* texte à gauche */
 }
 
 .dropdown-btn:hover {
-    background: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    background: rgba(255, 255, 255, 0.5); /* fond plus clair */
+    transform: translateY(-2px); /* monte légèrement */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* ombre */
 }
 
 .dropdown-btn.active {
-    background: rgba(58, 138, 106, 0.25);
-    border-color: rgba(58, 138, 106, 0.5);
-    color: #0d4a30;
+    background: rgba(58, 138, 106, 0.25); /* fond vert */
+    border-color: rgba(58, 138, 106, 0.5); /* bordure verte */
+    color: #0d4a30; /* texte foncé */
 }
 
 .dd-icon {
-    font-size: 16px;
-    flex-shrink: 0;
+    font-size: 16px; /* taille icône */
+    flex-shrink: 0; /* garde la taille */
 }
 
 .dd-label {
-    flex: 1;
-    font-weight: 500;
+    flex: 1; /* prend l’espace restant */
+    font-weight: 500; /* texte plus épais */
 }
 
 .dd-arrow {
-    font-size: 11px;
-    transition: transform 0.25s ease;
-    color: #3a8a6a;
+    font-size: 11px; /* petite flèche */
+    transition: transform 0.25s ease; /* animation */
+    color: #3a8a6a; /* couleur verte */
     flex-shrink: 0;
 }
 
-/* ===================== */
-/*   PANEL MOIS          */
-/* ===================== */
+/*   MENU DES MOIS       */
 
 .months-panel {
-    display: none;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 5px;
-    margin-top: 7px;
-    padding: 10px;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    animation: fadeIn 0.2s ease;
+    display: none; /* caché par défaut */
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 5px; /* espace entre boutons */
+    margin-top: 7px; /* espace au-dessus */
+    padding: 10px; /* espace intérieur */
+    border-radius: 14px; /* coins arrondis */
+    background: rgba(255, 255, 255, 0.4); /* fond transparent */
+    backdrop-filter: blur(12px); /* effet flou */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
+    animation: fadeIn 0.2s ease; /* animation */
 }
 
 .months-panel.open {
-    display: grid;
-    width: fit-content;
+    display: grid; /* affiche le menu */
+    width: fit-content; /* largeur adaptée */
 }
 
+/* ANIMATION D’APPARITION */
 @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translateY(-6px);
+        opacity: 0; /* invisible */
+        transform: translateY(-6px); /* un peu plus haut */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* visible */
+        transform: translateY(0); /* position normale */
     }
 }
 
 .month-btn {
-    padding: 7px 4px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    font-family: "DM Sans", sans-serif;
-    font-size: 11px;
-    color: #1b4332;
-    transition: all 0.2s ease;
-    text-align: center;
+    padding: 7px 4px; /* espace intérieur */
+    border-radius: 8px; /* coins arrondis */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* bordure claire */
+    background: rgba(255, 255, 255, 0.2); /* fond transparent */
+    cursor: pointer; /* curseur main */
+    font-family: "DM Sans", sans-serif; /* police */
+    font-size: 11px; /* petite taille */
+    color: #1b4332; /* couleur texte */
+    transition: all 0.2s ease; /* animation */
+    text-align: center; /* texte centré */
 }
 
 .month-btn:hover {
-    background: rgba(58, 138, 106, 0.2);
-    border-color: rgba(58, 138, 106, 0.4);
-    transform: scale(1.04);
+    background: rgba(58, 138, 106, 0.2); /* fond vert */
+    border-color: rgba(58, 138, 106, 0.4); /* bordure verte */
+    transform: scale(1.04); /* agrandit légèrement */
 }
 
 .month-btn.active {
-    background: #3a8a6a;
-    color: white;
-    border-color: #2f7057;
-    font-weight: 500;
+    background: #3a8a6a; /* fond vert */
+    color: white; /* texte blanc */
+    border-color: #2f7057; /* bordure foncée */
+    font-weight: 500; /* texte plus épais */
 }
 
-/* ===================== */
-/*   PÉRIODE LABEL       */
-/* ===================== */
+/*   TEXTE PÉRIODE       */
 
 .period-label {
-    margin-top: 14px;
-    padding: 9px 14px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.25);
-    border-left: 3px solid #3a8a6a;
-    font-size: 13px;
-    font-weight: 500;
-    color: #1b4332;
+    margin-top: 14px; /* espace au-dessus */
+    padding: 9px 14px; /* espace intérieur */
+    border-radius: 10px; /* coins arrondis */
+    background: rgba(255, 255, 255, 0.25); /* fond transparent */
+    border-left: 3px solid #3a8a6a; /* barre verte à gauche */
+    font-size: 13px; /* taille texte */
+    font-weight: 500; /* texte plus épais */
+    color: #1b4332; /* couleur texte */
 }
 
-/* ===================== */
 /*   RÉSULTATS           */
-/* ===================== */
 
 .hist-results {
-    min-height: 200px;
+    min-height: 200px; /* hauteur minimale */
 }
 
 .empty-state {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 60px 20px;
-    text-align: center;
-    color: #2f6f55;
+    flex-direction: column; /* éléments en colonne */
+    align-items: center; /* centre horizontalement */
+    justify-content: center; /* centre verticalement */
+    gap: 12px; /* espace entre éléments */
+    padding: 60px 20px; /* espace intérieur */
+    text-align: center; /* texte centré */
+    color: #2f6f55; /* couleur verte */
     font-size: 14px;
 }
 
 .empty-icon {
-    font-size: 44px;
+    font-size: 44px; /* grande icône */
     display: block;
-    opacity: 0.7;
+    opacity: 0.7; /* légèrement transparente */
 }
 
-/* ===================== */
-/*   GRILLE CARDS        */
-/* ===================== */
+/*   GRILLE DES CARTES   */
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    animation: slideUp 0.3s ease;
+    display: grid; /* active la grille */
+    grid-template-columns: 1fr; /* une colonne */
+    gap: 12px; /* espace entre cartes */
+    animation: slideUp 0.3s ease; /* animation */
 }
 
+/* ANIMATION DES CARTES */
 @keyframes slideUp {
     from {
-        opacity: 0;
-        transform: translateY(16px);
+        opacity: 0; /* invisible */
+        transform: translateY(16px); /* plus bas */
     }
     to {
-        opacity: 1;
-        transform: translateY(0);
+        opacity: 1; /* visible */
+        transform: translateY(0); /* position normale */
     }
 }
 
-/* ===================== */
-/*   CARD HUMEUR         */
-/* ===================== */
+/*   CARTE ÉMOTION       */
 
 .hist-card {
-    border-radius: 18px;
-    padding: 16px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-radius: 18px; /* coins arrondis */
+    padding: 16px; /* espace intérieur */
+    backdrop-filter: blur(12px); /* effet flou */
+    -webkit-backdrop-filter: blur(12px); /* Safari */
     transition:
         transform 0.25s ease,
-        box-shadow 0.25s ease;
+        box-shadow 0.25s ease; /* animation */
     position: relative;
 }
 
 .hist-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px); /* monte légèrement */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ombre */
 }
 
 .card-top {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
+    display: flex; /* éléments en ligne */
+    align-items: center; /* centre verticalement */
+    gap: 12px; /* espace */
+    margin-bottom: 8px; /* espace dessous */
 }
 
 .card-emoji {
-    font-size: 30px;
+    font-size: 30px; /* taille emoji */
     flex-shrink: 0;
     line-height: 1;
 }
 
 .card-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* texte en colonne */
     gap: 2px;
     flex: 1;
 }
 
 .card-emotion {
-    font-weight: 600;
+    font-weight: 600; /* texte épais */
     font-size: 15px;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.3px; /* espace lettres */
 }
 
 .card-heure {
-    font-size: 11px;
-    color: #5d7d72;
+    font-size: 11px; /* petite taille */
+    color: #5d7d72; /* couleur grise verte */
     font-weight: 400;
 }
 
 .card-dot {
-    width: 9px;
+    width: 9px; /* taille point */
     height: 9px;
-    border-radius: 50%;
+    border-radius: 50%; /* rond */
     flex-shrink: 0;
     opacity: 0.8;
 }
 
 .card-note {
-    font-size: 13px;
-    color: #2d5045;
-    line-height: 1.6;
+    font-size: 13px; /* taille texte */
+    color: #2d5045; /* couleur texte */
+    line-height: 1.6; /* espace lignes */
     padding-left: 0;
     margin: 0;
 }
 
-/* ===================== */
-/*   TABLETTE (480px)    */
-/* ===================== */
+/*   TABLETTE 480px      */
 
 @media (min-width: 480px) {
     .hist-title {
-        font-size: 38px;
+        font-size: 38px; /* titre plus grand */
     }
 
     .months-panel {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 
     .dropdown-btn {
@@ -310,13 +296,11 @@
     }
 
     .card-note {
-        padding-left: 42px;
+        padding-left: 42px; /* décale le texte */
     }
 }
 
-/* ===================== */
-/*   TABLETTE (768px)    */
-/* ===================== */
+/*   TABLETTE 768px      */
 
 @media (min-width: 768px) {
     .hist-main {
@@ -336,11 +320,11 @@
     }
 
     .months-panel {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
     }
 
     .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
         gap: 14px;
     }
 
@@ -353,9 +337,7 @@
     }
 }
 
-/* ===================== */
-/*   DESKTOP (900px)     */
-/* ===================== */
+/*   ORDINATEUR 900px    */
 
 @media (min-width: 900px) {
     .hist-main {
@@ -363,11 +345,11 @@
     }
 
     .filter-row {
-        flex-wrap: nowrap;
+        flex-wrap: nowrap; /* reste sur une ligne */
     }
 
     .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 
     .card-emoji {
@@ -384,11 +366,9 @@
     }
 }
 
-/* ===================== */
-/*   COULEURS PAR        */
-/*   ÉMOTION             */
-/* ===================== */
+/*   COULEURS ÉMOTIONS   */
 
+/* JOIE */
 .hist-card--joie {
     background: rgba(255, 200, 80, 0.25);
     border: 1px solid rgba(255, 180, 60, 0.5);
@@ -401,6 +381,7 @@
     background: #ffb347;
 }
 
+/* CALME */
 .hist-card--calme {
     background: rgba(90, 170, 138, 0.2);
     border: 1px solid rgba(58, 138, 106, 0.4);
@@ -413,6 +394,7 @@
     background: #3a8a6a;
 }
 
+/* STRESS */
 .hist-card--stress {
     background: rgba(80, 130, 255, 0.2);
     border: 1px solid rgba(58, 134, 255, 0.4);
@@ -425,6 +407,7 @@
     background: #3a86ff;
 }
 
+/* FATIGUE */
 .hist-card--fatigue {
     background: rgba(170, 170, 170, 0.2);
     border: 1px solid rgba(150, 150, 150, 0.4);
@@ -437,6 +420,7 @@
     background: #aaaaaa;
 }
 
+/* TRISTESSE */
 .hist-card--tristesse {
     background: rgba(112, 150, 184, 0.2);
     border: 1px solid rgba(112, 150, 184, 0.4);
@@ -449,6 +433,7 @@
     background: #7096b8;
 }
 
+/* COLÈRE */
 .hist-card--colere {
     background: rgba(178, 34, 34, 0.15);
     border: 1px solid rgba(178, 34, 34, 0.35);
