@@ -1,0 +1,228 @@
+/* ===================== */
+/*   CARD GLASS BASE     */
+/* ===================== */
+
+article {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+article:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================== */
+/*   TITRES & TEXTES     */
+/* ===================== */
+
+h2 {
+    color: #2f6f55;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #5d7d72;
+    margin-bottom: 15px;
+}
+
+/* ===================== */
+/*   TAGS                */
+/* ===================== */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tags span {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ===================== */
+/*   CARD EXERCICE       */
+/* ===================== */
+
+.exercise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+}
+
+.exercise-card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.exercise-card iframe {
+    width: 100%;
+    height: 160px;
+    border: none;
+    display: block;
+}
+
+.exercise-content {
+    padding: 12px;
+}
+
+.exercise-title {
+    margin-bottom: 5px;
+}
+
+.exercise-text {
+    margin: 0;
+}
+
+/* ===================== */
+/*   CARD REPAS          */
+/* ===================== */
+
+article img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+div.content {
+    padding: 20px;
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.stats strong {
+    display: block;
+    font-size: 20px;
+    color: #3a8a6a;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: #3a8a6a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2f6f55;
+}
+
+section.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* ===================== */
+/*   TABLETTE (600px)    */
+/* ===================== */
+
+@media (min-width: 600px) {
+    .exercise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .exercise-card iframe {
+        height: 170px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    article img {
+        height: 240px;
+    }
+
+    section.grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* ===================== */
+/*   DESKTOP (900px)     */
+/* ===================== */
+
+@media (min-width: 900px) {
+    .exercise-grid {
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+    }
+
+    .exercise-card {
+        max-width: 280px;
+        margin: auto;
+    }
+
+    .exercise-card iframe {
+        height: 180px;
+    }
+
+    .exercise-content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    article img {
+        height: 260px;
+    }
+
+    div.content {
+        padding: 25px;
+    }
+
+    section.grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ===================== */
+/*   TRÈS PETIT ÉCRAN    */
+/* ===================== */
+
+@media (max-width: 400px) {
+    div.content {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

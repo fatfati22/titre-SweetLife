@@ -1,0 +1,462 @@
+/*   HISTORIQUE          */
+/*   MOBILE FIRST        */
+
+/* BASE MOBILE */
+
+.hist-main {
+    padding: 100px 20px 80px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* HEADER */
+.hist-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hist-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: #1b4332;
+    margin-bottom: 8px;
+}
+
+.hist-subtitle {
+    color: #2f6f55;
+    font-size: 14px;
+}
+
+/* ===================== */
+/*   FILTRES             */
+/* ===================== */
+
+.hist-filters {
+    padding: 16px;
+    margin-bottom: 30px;
+}
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+/* ===================== */
+/*   DROPDOWN            */
+/* ===================== */
+
+.dropdown-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 140px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    color: #1b4332;
+    text-align: left;
+}
+
+.dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown-btn.active {
+    background: rgba(58, 138, 106, 0.25);
+    border-color: rgba(58, 138, 106, 0.5);
+    color: #0d4a30;
+}
+
+.dd-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.dd-label {
+    flex: 1;
+    font-weight: 500;
+}
+
+.dd-arrow {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+    color: #3a8a6a;
+    flex-shrink: 0;
+}
+
+/* ===================== */
+/*   PANEL MOIS          */
+/* ===================== */
+
+.months-panel {
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    margin-top: 7px;
+    padding: 10px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    animation: fadeIn 0.2s ease;
+}
+
+.months-panel.open {
+    display: grid;
+    width: fit-content;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.month-btn {
+    padding: 7px 4px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    color: #1b4332;
+    transition: all 0.2s ease;
+    text-align: center;
+}
+
+.month-btn:hover {
+    background: rgba(58, 138, 106, 0.2);
+    border-color: rgba(58, 138, 106, 0.4);
+    transform: scale(1.04);
+}
+
+.month-btn.active {
+    background: #3a8a6a;
+    color: white;
+    border-color: #2f7057;
+    font-weight: 500;
+}
+
+/* ===================== */
+/*   PÉRIODE LABEL       */
+/* ===================== */
+
+.period-label {
+    margin-top: 14px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.25);
+    border-left: 3px solid #3a8a6a;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1b4332;
+}
+
+/* ===================== */
+/*   RÉSULTATS           */
+/* ===================== */
+
+.hist-results {
+    min-height: 200px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 60px 20px;
+    text-align: center;
+    color: #2f6f55;
+    font-size: 14px;
+}
+
+.empty-icon {
+    font-size: 44px;
+    display: block;
+    opacity: 0.7;
+}
+
+/* ===================== */
+/*   GRILLE CARDS        */
+/* ===================== */
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================== */
+/*   CARD HUMEUR         */
+/* ===================== */
+
+.hist-card {
+    border-radius: 18px;
+    padding: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    position: relative;
+}
+
+.hist-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.card-emoji {
+    font-size: 30px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.card-emotion {
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+.card-heure {
+    font-size: 11px;
+    color: #5d7d72;
+    font-weight: 400;
+}
+
+.card-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.card-note {
+    font-size: 13px;
+    color: #2d5045;
+    line-height: 1.6;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* ===================== */
+/*   TABLETTE (480px)    */
+/* ===================== */
+
+@media (min-width: 480px) {
+    .hist-title {
+        font-size: 38px;
+    }
+
+    .months-panel {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dropdown-btn {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+
+    .card-note {
+        padding-left: 42px;
+    }
+}
+
+/* ===================== */
+/*   TABLETTE (768px)    */
+/* ===================== */
+
+@media (min-width: 768px) {
+    .hist-main {
+        padding: 110px 30px 80px;
+    }
+
+    .hist-title {
+        font-size: 42px;
+    }
+
+    .hist-subtitle {
+        font-size: 15px;
+    }
+
+    .hist-filters {
+        padding: 20px;
+    }
+
+    .months-panel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .card-emoji {
+        font-size: 34px;
+    }
+
+    .card-note {
+        padding-left: 46px;
+    }
+}
+
+/* ===================== */
+/*   DESKTOP (900px)     */
+/* ===================== */
+
+@media (min-width: 900px) {
+    .hist-main {
+        padding: 120px 40px 80px;
+    }
+
+    .filter-row {
+        flex-wrap: nowrap;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-emoji {
+        font-size: 36px;
+    }
+
+    .card-emotion {
+        font-size: 16px;
+    }
+
+    .card-note {
+        font-size: 14px;
+        padding-left: 50px;
+    }
+}
+
+/* ===================== */
+/*   COULEURS PAR        */
+/*   ÉMOTION             */
+/* ===================== */
+
+.hist-card--joie {
+    background: rgba(255, 200, 80, 0.25);
+    border: 1px solid rgba(255, 180, 60, 0.5);
+}
+.hist-card--joie .card-emotion,
+.hist-card--joie .card-dot {
+    color: #ffb347;
+}
+.hist-card--joie .card-dot {
+    background: #ffb347;
+}
+
+.hist-card--calme {
+    background: rgba(90, 170, 138, 0.2);
+    border: 1px solid rgba(58, 138, 106, 0.4);
+}
+.hist-card--calme .card-emotion,
+.hist-card--calme .card-dot {
+    color: #3a8a6a;
+}
+.hist-card--calme .card-dot {
+    background: #3a8a6a;
+}
+
+.hist-card--stress {
+    background: rgba(80, 130, 255, 0.2);
+    border: 1px solid rgba(58, 134, 255, 0.4);
+}
+.hist-card--stress .card-emotion,
+.hist-card--stress .card-dot {
+    color: #3a86ff;
+}
+.hist-card--stress .card-dot {
+    background: #3a86ff;
+}
+
+.hist-card--fatigue {
+    background: rgba(170, 170, 170, 0.2);
+    border: 1px solid rgba(150, 150, 150, 0.4);
+}
+.hist-card--fatigue .card-emotion,
+.hist-card--fatigue .card-dot {
+    color: #888;
+}
+.hist-card--fatigue .card-dot {
+    background: #aaaaaa;
+}
+
+.hist-card--tristesse {
+    background: rgba(112, 150, 184, 0.2);
+    border: 1px solid rgba(112, 150, 184, 0.4);
+}
+.hist-card--tristesse .card-emotion,
+.hist-card--tristesse .card-dot {
+    color: #7096b8;
+}
+.hist-card--tristesse .card-dot {
+    background: #7096b8;
+}
+
+.hist-card--colere {
+    background: rgba(178, 34, 34, 0.15);
+    border: 1px solid rgba(178, 34, 34, 0.35);
+}
+.hist-card--colere .card-emotion,
+.hist-card--colere .card-dot {
+    color: #b22222;
+}
+.hist-card--colere .card-dot {
+    background: #b22222;
+}
