@@ -1,50 +1,51 @@
-/* reset */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* fond principal */
-
-body {
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* popup */
-
 .carte {
-    width: 580px;
+    display: block;
+    margin: 4em auto;
+    width: 100%;
+
+    /* 
+       max-width empêche la carte
+       de devenir trop grande
+    */
+
+    max-width: 580px;
+
+    /* 
+       min-width = largeur minimum
+       la carte ne sera jamais
+       plus petite que 280px
+    */
+
+    min-width: 280px;
 
     background: #dfe7e4;
 
     border-radius: 32px;
 
-    padding: 40px;
+    padding: 25px;
 
     text-align: center;
 
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* emoji */
+/* 
+   EMOJI
+ */
 
 .emotion {
-    font-size: 62px;
+    font-size: 52px;
 
     margin-bottom: 14px;
 }
 
-/* titre */
+/* 
+   TITRE
+ */
 
 .titre {
-    font-size: 42px;
+    /* taille mobile */
+    font-size: 30px;
 
     font-family: Georgia, serif;
 
@@ -55,20 +56,31 @@ body {
     margin-bottom: 10px;
 }
 
-/* texte sous titre */
+/* 
+   TEXTE INFO
+ */
 
 .texte-info {
-    font-size: 16px;
+    font-size: 15px;
 
     color: #537064;
 
-    margin-bottom: 26px;
+    margin-bottom: 22px;
 }
 
-/* textarea */
+/* 
+   TEXTAREA
+ */
 
 .zone-message {
+    /* prend toute la largeur */
     width: 100%;
+
+    /* largeur minimum */
+    min-width: 100%;
+
+    /* hauteur minimum */
+    min-height: 130px;
 
     height: 130px;
 
@@ -84,7 +96,7 @@ body {
 
     outline: none;
 
-    font-size: 22px;
+    font-size: 18px;
 
     color: #4f5f59;
 }
@@ -95,7 +107,9 @@ body {
     color: #7d8c87;
 }
 
-/* compteur */
+/* 
+   COMPTEUR
+ */
 
 .compteur {
     text-align: right;
@@ -104,36 +118,51 @@ body {
 
     color: #5d746c;
 
-    font-size: 15px;
+    font-size: 14px;
 }
 
-/* boutons */
+/* 
+   ZONE BOUTONS
+ */
 
 .zone-boutons {
     display: flex;
 
-    justify-content: center;
+    /* 
+       colonne sur téléphone
+    */
 
-    gap: 16px;
+    flex-direction: column;
 
-    margin-top: 28px;
+    gap: 14px;
+
+    margin-top: 24px;
 }
+
+/* 
+   STYLE GENERAL BOUTONS
+ */
 
 button {
     border: none;
 
     border-radius: 40px;
 
-    padding: 16px 34px;
+    padding: 16px 20px;
 
-    font-size: 18px;
+    font-size: 17px;
 
     cursor: pointer;
 
     transition: 0.3s;
+
+    /* largeur totale */
+    width: 100%;
 }
 
-/* bouton annuler */
+/* 
+   BOUTON ANNULER
+ */
 
 .bouton-annuler {
     background: #d8ebe4;
@@ -142,6 +171,7 @@ button {
 
     color: #42534d;
 
+    /* largeur minimum */
     min-width: 130px;
 }
 
@@ -149,7 +179,9 @@ button {
     background: #cce2da;
 }
 
-/* bouton enregistrer */
+/* 
+   BOUTON ENREGISTRER
+ */
 
 .bouton-enregistrer {
     background: #3f9168;
@@ -158,9 +190,53 @@ button {
 
     font-weight: bold;
 
+    /* largeur minimum */
     min-width: 210px;
 }
 
 .bouton-enregistrer:hover {
     background: #347a57;
+}
+
+/* 
+   TABLETTE / ORDINATEUR
+ */
+
+/*
+   A partir de 768px
+   on change le style
+*/
+
+@media (min-width: 768px) {
+    .carte {
+        padding: 40px;
+    }
+
+    .emotion {
+        font-size: 62px;
+    }
+
+    .titre {
+        font-size: 42px;
+    }
+
+    .texte-info {
+        font-size: 16px;
+    }
+
+    .zone-message {
+        font-size: 22px;
+    }
+
+    .zone-boutons {
+        /* boutons côte à côte */
+        flex-direction: row;
+
+        justify-content: center;
+    }
+
+    button {
+        /* largeur automatique */
+        width: auto;
+    }
 }
