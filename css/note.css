@@ -1,0 +1,166 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* fond principal */
+
+body {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* popup */
+
+.carte {
+    width: 580px;
+
+    background: #dfe7e4;
+
+    border-radius: 32px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* emoji */
+
+.emotion {
+    font-size: 62px;
+
+    margin-bottom: 14px;
+}
+
+/* titre */
+
+.titre {
+    font-size: 42px;
+
+    font-family: Georgia, serif;
+
+    font-weight: 400;
+
+    color: #44514d;
+
+    margin-bottom: 10px;
+}
+
+/* texte sous titre */
+
+.texte-info {
+    font-size: 16px;
+
+    color: #537064;
+
+    margin-bottom: 26px;
+}
+
+/* textarea */
+
+.zone-message {
+    width: 100%;
+
+    height: 130px;
+
+    border-radius: 20px;
+
+    border: 1.5px solid #a9d1c0;
+
+    background: #d8ebe4;
+
+    padding: 18px;
+
+    resize: none;
+
+    outline: none;
+
+    font-size: 22px;
+
+    color: #4f5f59;
+}
+
+/* placeholder */
+
+.zone-message::placeholder {
+    color: #7d8c87;
+}
+
+/* compteur */
+
+.compteur {
+    text-align: right;
+
+    margin-top: 10px;
+
+    color: #5d746c;
+
+    font-size: 15px;
+}
+
+/* boutons */
+
+.zone-boutons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 28px;
+}
+
+button {
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 16px 34px;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* bouton annuler */
+
+.bouton-annuler {
+    background: #d8ebe4;
+
+    border: 1.5px solid #9bc8b7;
+
+    color: #42534d;
+
+    min-width: 130px;
+}
+
+.bouton-annuler:hover {
+    background: #cce2da;
+}
+
+/* bouton enregistrer */
+
+.bouton-enregistrer {
+    background: #3f9168;
+
+    color: white;
+
+    font-weight: bold;
+
+    min-width: 210px;
+}
+
+.bouton-enregistrer:hover {
+    background: #347a57;
+}
