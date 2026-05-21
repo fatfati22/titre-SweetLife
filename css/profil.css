@@ -38,25 +38,25 @@
 }
 
 /*   LAYOUT DE LA PAGE    */
-.page-container {
+.conteneur-page {
     padding-top: 100px; /* espace en haut de la page */
 }
 
-.profil-wrap {
+.enveloppe-profil {
     max-width: 900px; /* largeur max du profil */
     margin: auto; /* centré */
     padding: 20px; /* espace intérieur */
 }
 
 /*   HERO PROFIL         */
-.profile-hero {
+.en-tete-profil {
     display: flex; /* alignement en ligne */
     gap: 20px; /* espace entre les éléments */
     padding: 30px; /* espace intérieur */
     margin-bottom: 20px; /* espace sous la section */
 }
 
-.avatar-large {
+.grand-avatar {
     width: 90px; /* largeur de l'avatar */
     height: 90px; /* hauteur */
     border-radius: 50%; /* rond */
@@ -69,7 +69,7 @@
     position: relative;
 }
 
-.avatar-online-dot {
+.point-en-ligne {
     width: 14px;
     height: 14px;
     background: #22c55e; /* couleur verte online */
@@ -80,28 +80,28 @@
 }
 
 /*   LIGNE DE CARTES      */
-.profile-bottom {
+.bas-profil {
     display: flex; /* alignement en ligne */
     gap: 20px; /* espace entre cartes */
 }
 
-.profile-bottom > div {
+.bas-profil > div {
     flex: 1; /* prend toute la place disponible */
 }
 
 /*   INFORMATIONS        */
-.info-card {
+.carte-info-profil {
     padding: 20px;
     display: block;
     margin: auto; /* centré */
 }
 
-.info-label {
+.libelle-info {
     font-size: 12px; /* texte petit pour label */
     color: #2a6050; /* couleur verte foncée */
 }
 
-.info-value {
+.valeur-info {
     font-size: 14px; /* texte un peu plus grand pour valeur */
 }
 
@@ -129,7 +129,7 @@
     border-radius: 30px;
 }
 
-.actions-row {
+.ligne-actions {
     display: flex; /* ligne */
     justify-content: center; /* centré horizontalement */
     gap: 15px; /* espace entre boutons */
@@ -139,12 +139,12 @@
 
 /*   RESPONSIVE           */
 @media (max-width: 768px) {
-    .profile-hero {
+    .en-tete-profil {
         flex-direction: column; /* empile les éléments */
         text-align: center; /* texte centré */
     }
 
-    .profile-bottom {
+    .bas-profil {
         flex-direction: column; /* empile les cartes */
     }
 }

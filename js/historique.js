@@ -1,46 +1,46 @@
 // ============================================================
 //   HISTORIQUE — logique dropdown uniquement
-//   Les cards sont injectées par le backend dans #cards-grid
+//   Les cards sont injectées par le backend dans #grille-cartes
 // ============================================================
 
 function toggleYear(year) {
-    const panel  = document.getElementById('months-' + year);
+    const panel  = document.getElementById('panneau-mois-' + year);
     const arrow  = document.getElementById('arrow-' + year);
     const btn    = document.getElementById('btn-' + year);
-    const isOpen = panel.classList.contains('open');
+    const isOpen = panel.classList.contains('ouvert');
 
-    // fermer l'autre année
+    // fermer le panneau de l'autre année
     ['2025', '2026'].forEach(function(y) {
         if (y !== year) {
-            document.getElementById('months-' + y).classList.remove('open');
+            document.getElementById('panneau-mois-' + y).classList.remove('ouvert');
             document.getElementById('arrow-'  + y).style.transform = '';
-            document.getElementById('btn-'    + y).classList.remove('active');
+            document.getElementById('btn-'    + y).classList.remove('actif');
         }
     });
 
     if (isOpen) {
-        panel.classList.remove('open');
+        panel.classList.remove('ouvert');
         arrow.style.transform = '';
-        btn.classList.remove('active');
+        btn.classList.remove('actif');
     } else {
-        panel.classList.add('open');
+        panel.classList.add('ouvert');
         arrow.style.transform = 'rotate(180deg)';
-        btn.classList.add('active');
-        document.getElementById('btn-24h').classList.remove('active');
+        btn.classList.add('actif');
+        document.getElementById('btn-24h').classList.remove('actif');
     }
 }
 
 function selectPeriod(period) {
-    // fermer toutes les années
+    // fermer les panneaux de toutes les années
     ['2025', '2026'].forEach(function(y) {
-        document.getElementById('months-' + y).classList.remove('open');
+        document.getElementById('panneau-mois-' + y).classList.remove('ouvert');
         document.getElementById('arrow-'  + y).style.transform = '';
-        document.getElementById('btn-'    + y).classList.remove('active');
+        document.getElementById('btn-'    + y).classList.remove('actif');
     });
 
-    document.getElementById('btn-24h').classList.add('active');
-    document.querySelectorAll('.month-btn').forEach(function(b) {
-        b.classList.remove('active');
+    document.getElementById('btn-24h').classList.add('actif');
+    document.querySelectorAll('.btn-mois').forEach(function(b) {
+        b.classList.remove('actif');
     });
 
     setPeriodLabel('Dernières 24h');
@@ -49,10 +49,10 @@ function selectPeriod(period) {
 }
 
 function selectMonth(year, month, btn) {
-    document.querySelectorAll('.month-btn').forEach(function(b) {
-        b.classList.remove('active');
+    document.querySelectorAll('.btn-mois').forEach(function(b) {
+        b.classList.remove('actif');
     });
-    btn.classList.add('active');
+    btn.classList.add('actif');
 
     var label = month.charAt(0).toUpperCase() + month.slice(1) + ' ' + year;
     setPeriodLabel(label);
@@ -62,5 +62,5 @@ function selectMonth(year, month, btn) {
 }
 
 function setPeriodLabel(label) {
-    document.getElementById('period-text').textContent = '📌 ' + label;
+    document.getElementById('texte-periode').textContent = '📌 ' + label;
 }

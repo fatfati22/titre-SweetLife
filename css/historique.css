@@ -3,19 +3,19 @@
 
 /* BASE MOBILE */
 
-.hist-main {
+.contenu-principal-hist {
     padding: 100px 20px 80px; /* espace intérieur */
     max-width: 900px; /* largeur maximale */
     margin: auto; /* centre le contenu */
 }
 
 /* EN-TÊTE */
-.hist-header {
+.en-tete-hist {
     text-align: center; /* centre le texte */
     margin-bottom: 30px; /* espace dessous */
 }
 
-.hist-title {
+.titre-hist {
     font-family: "Cormorant Garamond", serif; /* police du titre */
     font-size: 32px; /* taille du texte */
     font-weight: 300; /* texte fin */
@@ -23,19 +23,19 @@
     margin-bottom: 8px; /* espace dessous */
 }
 
-.hist-subtitle {
+.sous-titre-hist {
     color: #2f6f55; /* couleur verte */
     font-size: 14px; /* taille du texte */
 }
 
 /*   FILTRES             */
 
-.hist-filters {
+.filtres-hist {
     padding: 16px; /* espace intérieur */
     margin-bottom: 30px; /* espace dessous */
 }
 
-.filter-row {
+.ligne-filtres {
     display: flex; /* éléments en ligne */
     gap: 10px; /* espace entre éléments */
     flex-wrap: wrap; /* retour à la ligne */
@@ -44,13 +44,13 @@
 
 /*   MENU DÉROULANT      */
 
-.dropdown-wrap {
+.enveloppe-menu-deroulant {
     position: relative; /* base pour le menu */
     flex: 1; /* prend l’espace disponible */
     min-width: 140px; /* largeur minimale */
 }
 
-.dropdown-btn {
+.btn-menu-deroulant {
     width: 100%; /* pleine largeur */
     display: flex; /* éléments en ligne */
     align-items: center; /* centre verticalement */
@@ -68,29 +68,29 @@
     text-align: left; /* texte à gauche */
 }
 
-.dropdown-btn:hover {
+.btn-menu-deroulant:hover {
     background: rgba(255, 255, 255, 0.5); /* fond plus clair */
     transform: translateY(-2px); /* monte légèrement */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* ombre */
 }
 
-.dropdown-btn.active {
+.btn-menu-deroulant.actif {
     background: rgba(58, 138, 106, 0.25); /* fond vert */
     border-color: rgba(58, 138, 106, 0.5); /* bordure verte */
     color: #0d4a30; /* texte foncé */
 }
 
-.dd-icon {
+.icone-menu {
     font-size: 16px; /* taille icône */
     flex-shrink: 0; /* garde la taille */
 }
 
-.dd-label {
+.libelle-menu {
     flex: 1; /* prend l’espace restant */
     font-weight: 500; /* texte plus épais */
 }
 
-.dd-arrow {
+.fleche-menu {
     font-size: 11px; /* petite flèche */
     transition: transform 0.25s ease; /* animation */
     color: #3a8a6a; /* couleur verte */
@@ -99,7 +99,7 @@
 
 /*   MENU DES MOIS       */
 
-.months-panel {
+.panneau-mois {
     display: none; /* caché par défaut */
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
     gap: 5px; /* espace entre boutons */
@@ -112,7 +112,7 @@
     animation: fadeIn 0.2s ease; /* animation */
 }
 
-.months-panel.open {
+.panneau-mois.ouvert {
     display: grid; /* affiche le menu */
     width: fit-content; /* largeur adaptée */
 }
@@ -129,7 +129,7 @@
     }
 }
 
-.month-btn {
+.btn-mois {
     padding: 7px 4px; /* espace intérieur */
     border-radius: 8px; /* coins arrondis */
     border: 1px solid rgba(255, 255, 255, 0.4); /* bordure claire */
@@ -142,13 +142,13 @@
     text-align: center; /* texte centré */
 }
 
-.month-btn:hover {
+.btn-mois:hover {
     background: rgba(58, 138, 106, 0.2); /* fond vert */
     border-color: rgba(58, 138, 106, 0.4); /* bordure verte */
     transform: scale(1.04); /* agrandit légèrement */
 }
 
-.month-btn.active {
+.btn-mois.actif {
     background: #3a8a6a; /* fond vert */
     color: white; /* texte blanc */
     border-color: #2f7057; /* bordure foncée */
@@ -157,7 +157,7 @@
 
 /*   TEXTE PÉRIODE       */
 
-.period-label {
+.libelle-periode {
     margin-top: 14px; /* espace au-dessus */
     padding: 9px 14px; /* espace intérieur */
     border-radius: 10px; /* coins arrondis */
@@ -170,11 +170,11 @@
 
 /*   RÉSULTATS           */
 
-.hist-results {
+.resultats-hist {
     min-height: 200px; /* hauteur minimale */
 }
 
-.empty-state {
+.etat-vide {
     display: flex;
     flex-direction: column; /* éléments en colonne */
     align-items: center; /* centre horizontalement */
@@ -186,7 +186,7 @@
     font-size: 14px;
 }
 
-.empty-icon {
+.icone-vide {
     font-size: 44px; /* grande icône */
     display: block;
     opacity: 0.7; /* légèrement transparente */
@@ -194,7 +194,7 @@
 
 /*   GRILLE DES CARTES   */
 
-.cards-grid {
+.grille-cartes {
     display: grid; /* active la grille */
     grid-template-columns: 1fr; /* une colonne */
     gap: 12px; /* espace entre cartes */
@@ -215,7 +215,7 @@
 
 /*   CARTE ÉMOTION       */
 
-.hist-card {
+.carte-hist {
     border-radius: 18px; /* coins arrondis */
     padding: 16px; /* espace intérieur */
     backdrop-filter: blur(12px); /* effet flou */
@@ -226,44 +226,44 @@
     position: relative;
 }
 
-.hist-card:hover {
+.carte-hist:hover {
     transform: translateY(-4px); /* monte légèrement */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ombre */
 }
 
-.card-top {
+.dessus-carte {
     display: flex; /* éléments en ligne */
     align-items: center; /* centre verticalement */
     gap: 12px; /* espace */
     margin-bottom: 8px; /* espace dessous */
 }
 
-.card-emoji {
+.emoji-carte {
     font-size: 30px; /* taille emoji */
     flex-shrink: 0;
     line-height: 1;
 }
 
-.card-info {
+.info-carte {
     display: flex;
     flex-direction: column; /* texte en colonne */
     gap: 2px;
     flex: 1;
 }
 
-.card-emotion {
+.emotion-carte {
     font-weight: 600; /* texte épais */
     font-size: 15px;
     letter-spacing: 0.3px; /* espace lettres */
 }
 
-.card-heure {
+.heure-carte {
     font-size: 11px; /* petite taille */
     color: #5d7d72; /* couleur grise verte */
     font-weight: 400;
 }
 
-.card-dot {
+.point-carte {
     width: 9px; /* taille point */
     height: 9px;
     border-radius: 50%; /* rond */
@@ -271,7 +271,7 @@
     opacity: 0.8;
 }
 
-.card-note {
+.note-carte {
     font-size: 13px; /* taille texte */
     color: #2d5045; /* couleur texte */
     line-height: 1.6; /* espace lignes */
@@ -282,20 +282,20 @@
 /*   TABLETTE 480px      */
 
 @media (min-width: 480px) {
-    .hist-title {
+    .titre-hist {
         font-size: 38px; /* titre plus grand */
     }
 
-    .months-panel {
+    .panneau-mois {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 
-    .dropdown-btn {
+    .btn-menu-deroulant {
         font-size: 14px;
         padding: 12px 16px;
     }
 
-    .card-note {
+    .note-carte {
         padding-left: 42px; /* décale le texte */
     }
 }
@@ -303,36 +303,36 @@
 /*   TABLETTE 768px      */
 
 @media (min-width: 768px) {
-    .hist-main {
+    .contenu-principal-hist {
         padding: 110px 30px 80px;
     }
 
-    .hist-title {
+    .titre-hist {
         font-size: 42px;
     }
 
-    .hist-subtitle {
+    .sous-titre-hist {
         font-size: 15px;
     }
 
-    .hist-filters {
+    .filtres-hist {
         padding: 20px;
     }
 
-    .months-panel {
+    .panneau-mois {
         grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
     }
 
-    .cards-grid {
+    .grille-cartes {
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
         gap: 14px;
     }
 
-    .card-emoji {
+    .emoji-carte {
         font-size: 34px;
     }
 
-    .card-note {
+    .note-carte {
         padding-left: 46px;
     }
 }
@@ -340,27 +340,27 @@
 /*   ORDINATEUR 900px    */
 
 @media (min-width: 900px) {
-    .hist-main {
+    .contenu-principal-hist {
         padding: 120px 40px 80px;
     }
 
-    .filter-row {
+    .ligne-filtres {
         flex-wrap: nowrap; /* reste sur une ligne */
     }
 
-    .cards-grid {
+    .grille-cartes {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 
-    .card-emoji {
+    .emoji-carte {
         font-size: 36px;
     }
 
-    .card-emotion {
+    .emotion-carte {
         font-size: 16px;
     }
 
-    .card-note {
+    .note-carte {
         font-size: 14px;
         padding-left: 50px;
     }
@@ -373,11 +373,11 @@
     background: rgba(255, 200, 80, 0.25);
     border: 1px solid rgba(255, 180, 60, 0.5);
 }
-.hist-card--joie .card-emotion,
-.hist-card--joie .card-dot {
+.hist-card--joie .emotion-carte,
+.hist-card--joie .point-carte {
     color: #ffb347;
 }
-.hist-card--joie .card-dot {
+.hist-card--joie .point-carte {
     background: #ffb347;
 }
 
@@ -386,11 +386,11 @@
     background: rgba(90, 170, 138, 0.2);
     border: 1px solid rgba(58, 138, 106, 0.4);
 }
-.hist-card--calme .card-emotion,
-.hist-card--calme .card-dot {
+.hist-card--calme .emotion-carte,
+.hist-card--calme .point-carte {
     color: #3a8a6a;
 }
-.hist-card--calme .card-dot {
+.hist-card--calme .point-carte {
     background: #3a8a6a;
 }
 
@@ -399,11 +399,11 @@
     background: rgba(80, 130, 255, 0.2);
     border: 1px solid rgba(58, 134, 255, 0.4);
 }
-.hist-card--stress .card-emotion,
-.hist-card--stress .card-dot {
+.hist-card--stress .emotion-carte,
+.hist-card--stress .point-carte {
     color: #3a86ff;
 }
-.hist-card--stress .card-dot {
+.hist-card--stress .point-carte {
     background: #3a86ff;
 }
 
@@ -412,11 +412,11 @@
     background: rgba(170, 170, 170, 0.2);
     border: 1px solid rgba(150, 150, 150, 0.4);
 }
-.hist-card--fatigue .card-emotion,
-.hist-card--fatigue .card-dot {
+.hist-card--fatigue .emotion-carte,
+.hist-card--fatigue .point-carte {
     color: #888;
 }
-.hist-card--fatigue .card-dot {
+.hist-card--fatigue .point-carte {
     background: #aaaaaa;
 }
 
@@ -425,11 +425,11 @@
     background: rgba(112, 150, 184, 0.2);
     border: 1px solid rgba(112, 150, 184, 0.4);
 }
-.hist-card--tristesse .card-emotion,
-.hist-card--tristesse .card-dot {
+.hist-card--tristesse .emotion-carte,
+.hist-card--tristesse .point-carte {
     color: #7096b8;
 }
-.hist-card--tristesse .card-dot {
+.hist-card--tristesse .point-carte {
     background: #7096b8;
 }
 
@@ -438,10 +438,10 @@
     background: rgba(178, 34, 34, 0.15);
     border: 1px solid rgba(178, 34, 34, 0.35);
 }
-.hist-card--colere .card-emotion,
-.hist-card--colere .card-dot {
+.hist-card--colere .emotion-carte,
+.hist-card--colere .point-carte {
     color: #b22222;
 }
-.hist-card--colere .card-dot {
+.hist-card--colere .point-carte {
     background: #b22222;
 }

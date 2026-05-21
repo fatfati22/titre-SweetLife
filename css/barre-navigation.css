@@ -50,7 +50,7 @@ body {
 }
 
 .nav-links a:hover,
-.nav-links a.active {
+.nav-links a.actif {
     background: rgba(255, 255, 255, 0.4); /* fond clair */
     border-radius: 1rem; /* coins arrondis */
     transform: translateY(-2px); /* monte légèrement */

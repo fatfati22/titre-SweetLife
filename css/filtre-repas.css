@@ -6,14 +6,14 @@ input[type="radio"] {
 }
 
 /* BOUTONS DES FILTRES */
-.filters {
+.filtres {
     display: flex; /* met les boutons en ligne */
     flex-wrap: wrap; /* retour à la ligne si besoin */
     gap: 10px; /* espace entre boutons */
     margin-bottom: 20px; /* espace dessous */
 }
 
-.filters label {
+.filtres label {
     padding: 10px 14px; /* espace intérieur */
     border-radius: 25px; /* coins arrondis */
 
@@ -31,7 +31,7 @@ input[type="radio"] {
     font-size: 14px; /* taille du texte */
 }
 
-.filters label:hover {
+.filtres label:hover {
     background: rgba(58, 138, 106, 0.35); /* fond vert au survol */
     border: 1px solid rgba(255, 255, 255, 0.5); /* bordure plus visible */
     transform: translateY(-2px); /* monte légèrement */
@@ -53,39 +53,39 @@ input[type="radio"] {
 /*   FILTRAGE DES CARTES */
 
 /* Affiche toutes les cartes */
-#all:checked ~ main .grid article {
+#all:checked ~ main .grille article {
     display: block;
 }
 
 /* Cache tout puis affiche seulement les entrées */
-#entree:checked ~ main .grid article {
+#entree:checked ~ main .grille article {
     display: none;
 }
-#entree:checked ~ main .grid [data-type="entree"] {
+#entree:checked ~ main .grille [data-type="entree"] {
     display: block;
 }
 
 /* Cache tout puis affiche seulement les plats principaux */
-#plat-principale:checked ~ main .grid article {
+#plat-principale:checked ~ main .grille article {
     display: none;
 }
-#plat-principale:checked ~ main .grid [data-type="plat-principale"] {
+#plat-principale:checked ~ main .grille [data-type="plat-principale"] {
     display: block;
 }
 
 /* Cache tout puis affiche seulement les desserts/fruits */
-#dessert-fruit:checked ~ main .grid article {
+#dessert-fruit:checked ~ main .grille article {
     display: none;
 }
-#dessert-fruit:checked ~ main .grid [data-type="dessert-fruit"] {
+#dessert-fruit:checked ~ main .grille [data-type="dessert-fruit"] {
     display: block;
 }
 
 /* Cache tout puis affiche seulement les snacks */
-#snack:checked ~ main .grid article {
+#snack:checked ~ main .grille article {
     display: none;
 }
-#snack:checked ~ main .grid [data-type="snack"] {
+#snack:checked ~ main .grille [data-type="snack"] {
     display: block;
 }
 
@@ -93,14 +93,14 @@ input[type="radio"] {
 
 /* Tablette : 2 colonnes */
 @media (min-width: 768px) {
-    .grid {
+    .grille {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 /* Ordinateur : 3 colonnes */
 @media (min-width: 1024px) {
-    .grid {
+    .grille {
         grid-template-columns: repeat(3, 1fr);
     }
 }

@@ -2,33 +2,33 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>SweetLife – Mon Profil</title>
+        <meta name="viewport" contenu="width=device-width, initial-scale=1.0" />
+        <titre>SweetLife – Mon Profil</titre>
 
         <link
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=DM+Sans:wght@300;400;500;600&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../css/navbar.css" />
-        <link rel="stylesheet" href="../css/themeInitial.css" />
-        <link rel="stylesheet" href="../css/theme-element.css" />
+        <link rel="stylesheet" href="../css/barre-navigation.css" />
+        <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/element-theme.css" />
         <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/mood.css" />
+        <link rel="stylesheet" href="../css/humeur.css" />
         <link rel="stylesheet" href="../css/theme.css" />
         <link rel="stylesheet" href="../css/profil.css" />
     </head>
 
     <body class="theme-calme">
-        <header>
+                <header>
             <nav class="navbar glass">
                 <img class="img" src="../image/logo.png" alt="logo SweetLife" />
 
                 <ul class="nav-links">
                     <li><a href="index.html">🏠 Accueil</a></li>
-                    <li><a href="#">🧘 Exercices</a></li>
-                    <li><a href="#">🥗 Repas</a></li>
+                    <li><a href="exercice.html">🧘 Exercices</a></li>
+                    <li><a href="repas.html">🥗 Repas</a></li>
                     <li><a href="historique.html">📊 Historique</a></li>
-                    <li><a href="Profil.html">👤 Profil</a></li>
+                    <li><a href="Profil.html" class="actif">👤 Profil</a></li>
                 </ul>
 
                 <a href="inscription.html">
@@ -38,58 +38,58 @@
                 </a>
             </nav>
         </header>
-        <main class="page-container">
-            <section class="profil-wrap">
+        <main class="conteneur-page">
+            <section class="enveloppe-profil">
                 <!-- HERO -->
-                <header class="profile-hero glass-card">
-                    <figure class="avatar-large">
-                        <span class="avatar-online-dot"></span>
+                <header class="en-tete-profil glass-card">
+                    <figure class="grand-avatar">
+                        <span class="point-en-ligne"></span>
                     </figure>
 
                     <section>
-                        <h1 class="profile-name">Nom et prénom</h1>
-                        <p class="profile-email">user@email.com</p>
+                        <h1 class="nom-profil">Nom et prénom</h1>
+                        <p class="email-profil">user@email.com</p>
                     </section>
                 </header>
 
                 <!-- CARDS -->
-                <section class="profile-bottom">
+                <section class="bas-profil">
                     <!-- MOOD -->
                     <article class="mood-card glass-card">
                         <p>💫 État émotionnel actuel</p>
 
-                        <section class="current-mood-display">
+                        <section class="affichage-humeur">
                             <span class="big-emoji" id="moodEmoji">😌</span>
                             <h3>Calme & Sereine</h3>
                         </section>
                     </article>
 
                     <!-- INFOS -->
-                    <article class="info-card glass-card">
+                    <article class="carte-info-profil glass-card">
                         <h3>👤 Mes informations</h3>
 
-                        <div class="info-list">
-                            <div class="info-field">
-                                <p class="info-label">
+                        <div class="liste-info">
+                            <div class="champ-info">
+                                <p class="libelle-info">
                                     Votre prénom et votre nom
                                 </p>
-                                <p class="info-value">user</p>
+                                <p class="valeur-info">user</p>
                             </div>
 
-                            <div class="info-field">
-                                <p class="info-label">Email</p>
-                                <p class="info-value">user@email.com</p>
+                            <div class="champ-info">
+                                <p class="libelle-info">Email</p>
+                                <p class="valeur-info">user@email.com</p>
                             </div>
 
-                            <div class="info-field">
-                                <p class="info-label">Rôle</p>
-                                <p class="info-value">Utilisatrice</p>
+                            <div class="champ-info">
+                                <p class="libelle-info">Rôle</p>
+                                <p class="valeur-info">Utilisatrice</p>
                             </div>
                         </div>
                     </article>
                 </section>
 
-                <span class="actions-row">
+                <span class="ligne-actions">
                     <h3>
                         Connectez-vous pour retrouver l'historique de vos
                         émotions, accéder à vos repas adaptés et vos exercices

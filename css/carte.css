@@ -36,14 +36,14 @@ p {
 
 /*   TAGS                */
 
-.tags {
+.etiquettes {
     display: flex; /* éléments en ligne */
     flex-wrap: wrap; /* retour à la ligne si besoin */
-    gap: 8px; /* espace entre tags */
+    gap: 8px; /* espace entre etiquettes */
     margin-bottom: 15px; /* espace dessous */
 }
 
-.tags span {
+.etiquettes span {
     font-size: 12px; /* petite taille */
     padding: 5px 10px; /* espace intérieur */
     border-radius: 20px; /* forme arrondie */
@@ -53,34 +53,34 @@ p {
 
 /*   CARTE EXERCICE      */
 
-.exercise-grid {
+.grille-exercices {
     display: grid; /* active la grille */
     grid-template-columns: 1fr; /* une colonne */
     gap: 15px; /* espace entre cartes */
     padding: 10px; /* espace intérieur */
 }
 
-.exercise-card {
+.carte-exercice {
     max-width: 100%; /* largeur maximale */
     overflow: hidden; /* cache ce qui dépasse */
 }
 
-.exercise-card iframe {
+.carte-exercice iframe {
     width: 100%; /* prend toute la largeur */
     height: 160px; /* hauteur de la vidéo */
     border: none; /* enlève la bordure */
     display: block; /* évite les espaces */
 }
 
-.exercise-content {
+.contenu-exercice {
     padding: 12px; /* espace intérieur */
 }
 
-.exercise-title {
+.titre-exercice {
     margin-bottom: 5px; /* espace dessous */
 }
 
-.exercise-text {
+.texte-exercice {
     margin: 0; /* enlève les marges */
 }
 
@@ -93,19 +93,19 @@ article img {
     display: block; /* évite les espaces */
 }
 
-div.content {
+div.contenu {
     padding: 20px; /* espace intérieur */
 }
 
-.stats {
+.statistiques {
     display: flex; /* éléments en ligne */
-    gap: 20px; /* espace entre stats */
+    gap: 20px; /* espace entre statistiques */
     padding-top: 15px; /* espace en haut */
     margin-bottom: 15px; /* espace dessous */
     border-top: 1px solid rgba(255, 255, 255, 0.5); /* ligne en haut */
 }
 
-.stats strong {
+.statistiques strong {
     display: block; /* passe à la ligne */
     font-size: 20px; /* taille du nombre */
     color: #3a8a6a; /* couleur verte */
@@ -126,7 +126,7 @@ button:hover {
     background: #2f6f55; /* vert plus foncé */
 }
 
-section.grid {
+section.grille {
     display: grid; /* active la grille */
     grid-template-columns: 1fr; /* une colonne */
     gap: 20px; /* espace entre cartes */
@@ -135,11 +135,11 @@ section.grid {
 /*   TABLETTE 600px      */
 
 @media (min-width: 600px) {
-    .exercise-grid {
+    .grille-exercices {
         grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
     }
 
-    .exercise-card iframe {
+    .carte-exercice iframe {
         height: 170px; /* vidéo plus grande */
     }
 
@@ -151,7 +151,7 @@ section.grid {
         height: 240px; /* image plus haute */
     }
 
-    section.grid {
+    section.grille {
         grid-template-columns: 1fr 1fr; /* 2 colonnes */
     }
 }
@@ -159,21 +159,21 @@ section.grid {
 /*   ORDINATEUR 900px    */
 
 @media (min-width: 900px) {
-    .exercise-grid {
+    .grille-exercices {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
         justify-content: center; /* centre les cartes */
     }
 
-    .exercise-card {
+    .carte-exercice {
         max-width: 280px; /* largeur maximale */
         margin: auto; /* centre la carte */
     }
 
-    .exercise-card iframe {
+    .carte-exercice iframe {
         height: 180px; /* vidéo plus haute */
     }
 
-    .exercise-content {
+    .contenu-exercice {
         padding: 15px; /* plus d’espace */
     }
 
@@ -185,11 +185,11 @@ section.grid {
         height: 260px; /* image plus haute */
     }
 
-    div.content {
+    div.contenu {
         padding: 25px; /* plus d’espace */
     }
 
-    section.grid {
+    section.grille {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 }
@@ -197,7 +197,7 @@ section.grid {
 /*   PETIT ÉCRAN         */
 
 @media (max-width: 400px) {
-    div.content {
+    div.contenu {
         padding: 15px; /* moins d’espace */
     }
 
@@ -205,8 +205,8 @@ section.grid {
         font-size: 20px; /* taille du titre */
     }
 
-    .stats {
-        flex-direction: column; /* met les stats en colonne */
-        gap: 10px; /* espace entre stats */
+    .statistiques {
+        flex-direction: column; /* met les statistiques en colonne */
+        gap: 10px; /* espace entre statistiques */
     }
 }

@@ -74,7 +74,7 @@
 }
 
 /* CARTE INFO */
-.card {
+.carte-info {
     padding: 20px 25px; /* espace intérieur */
     border-radius: 15px; /* coins arrondis */
     background: rgba(76, 175, 80, 0.25); /* fond vert transparent */
@@ -87,7 +87,7 @@
     margin: 20px auto; /* centre la carte */
 }
 
-.card p {
+.carte-info p {
     margin: 10px 0; /* espace entre paragraphes */
 }
 
@@ -133,7 +133,7 @@
     font-size: 13px; /* taille du texte */
 }
 
-.remember-me {
+.souvenir-moi {
     display: flex;
     align-items: center; /* centre verticalement */
     gap: 8px; /* espace */
@@ -141,26 +141,26 @@
     cursor: pointer; /* curseur main */
 }
 
-.remember-me input {
+.souvenir-moi input {
     width: 18px; /* taille de la case */
     height: 18px;
     cursor: pointer;
     accent-color: #2d6a4f; /* couleur verte */
 }
 
-.forgot-password {
+.mot-passe-oublie {
     color: #2d6a4f; /* couleur verte */
     text-decoration: none; /* enlève le soulignement */
     font-weight: 500;
 }
 
-.forgot-password:hover {
+.mot-passe-oublie:hover {
     color: #1b4332; /* couleur plus foncée */
     text-decoration: underline; /* souligne au survol */
 }
 
 /* BOUTON */
-.btn-submit {
+.btn-envoyer {
     width: 100%; /* pleine largeur */
     padding: 14px; /* espace intérieur */
     background: #2d6a4f; /* fond vert */
@@ -174,30 +174,30 @@
     margin-top: 10px; /* espace au-dessus */
 }
 
-.btn-submit:hover {
+.btn-envoyer:hover {
     background: #1b4332; /* vert foncé */
     transform: translateY(-2px); /* monte légèrement */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ombre */
 }
 
 /* LIENS */
-.lien-inscription,
-.lien-connexion {
+.lien-sinscrire,
+.lien-seconnecter {
     text-align: center; /* texte centré */
     margin-top: 20px; /* espace au-dessus */
     font-size: 14px;
     color: #1b4332;
 }
 
-.lien-inscription a,
-.lien-connexion a {
+.lien-sinscrire a,
+.lien-seconnecter a {
     color: #2d6a4f; /* vert */
     font-weight: 600;
     text-decoration: none;
 }
 
-.lien-inscription a:hover,
-.lien-connexion a:hover {
+.lien-sinscrire a:hover,
+.lien-seconnecter a:hover {
     text-decoration: underline; /* souligne au survol */
 }
 

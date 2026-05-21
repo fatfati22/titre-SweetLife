@@ -2,25 +2,25 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" contenu="width=device-width, initial-scale=1.0" />
 
-        <title>SweetLife - Exercices</title>
+        <titre>SweetLife - Exercices</titre>
 
-        <link rel="stylesheet" href="../css/navbar.css" />
-        <link rel="stylesheet" href="../css/mood.css" />
-        <link rel="stylesheet" href="../css/themeInitial.css" />
-        <link rel="stylesheet" href="../css/card.css" />
-        <link rel="stylesheet" href="../css/layout.css" />
+        <link rel="stylesheet" href="../css/barre-navigation.css" />
+        <link rel="stylesheet" href="../css/humeur.css" />
+        <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/carte.css" />
+        <link rel="stylesheet" href="../css/mise-en-page.css" />
     </head>
 
     <body>
-        <header>
+                <header>
             <nav class="navbar glass">
                 <img class="img" src="../image/logo.png" alt="logo SweetLife" />
 
                 <ul class="nav-links">
-                    <li><a href="#">🏠 Accueil</a></li>
-                    <li><a href="#">🧘 Exercices</a></li>
+                    <li><a href="index.html">🏠 Accueil</a></li>
+                    <li><a href="exercice.html" class="actif">🧘 Exercices</a></li>
                     <li><a href="repas.html">🥗 Repas</a></li>
                     <li><a href="historique.html">📊 Historique</a></li>
                     <li><a href="Profil.html">👤 Profil</a></li>
@@ -38,18 +38,18 @@
             <article class="mood-card glass-card">
                 <p>💫 État émotionnel actuel</p>
 
-                <section class="current-mood-display">
+                <section class="affichage-humeur">
                     <span class="big-emoji" id="moodEmoji">😌</span>
                     <h3>Calme & Sereine</h3>
                 </section>
             </article>
             <section>
-                <h1 class="title">🧘 Exercices</h1>
-                <p class="subtitle">Choisis un exercice selon ton humeur</p>
+                <h1 class="titre">🧘 Exercices</h1>
+                <p class="sous-titre">Choisis un exercice selon ton humeur</p>
             </section>
 
-            <section class="exercise-grid">
-                <article class="exercise-card stress calme colere">
+            <section class="grille-exercices">
+                <article class="carte-exercice stress calme colere">
                     <iframe
                         width="100%"
                         height="200"
@@ -58,21 +58,21 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Respiration 4-7-8</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Respiration 4-7-8</h2>
+                        <p class="texte-exercice">
                             Technique rapide pour calmer le stress et retrouver
                             le calme.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">3 min</span>
-                            <span class="tag">Respiration</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">3 min</span>
+                            <span class="etiquette">Respiration</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="exercise-card joie fatigue">
+                <article class="carte-exercice joie fatigue">
                     <iframe
                         width="100%"
                         height="200"
@@ -81,20 +81,20 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Danse Libre</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Danse Libre</h2>
+                        <p class="texte-exercice">
                             Bouge librement et exprime ton énergie.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">5 min</span>
-                            <span class="tag">Danse</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">5 min</span>
+                            <span class="etiquette">Danse</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="exercise-card stress fatigue calme">
+                <article class="carte-exercice stress fatigue calme">
                     <iframe
                         width="100%"
                         height="200"
@@ -103,20 +103,20 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Méditation Flash</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Méditation Flash</h2>
+                        <p class="texte-exercice">
                             Reviens au calme grâce à une méditation guidée.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">3 min</span>
-                            <span class="tag">Méditation</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">3 min</span>
+                            <span class="etiquette">Méditation</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="exercise-card colere stress">
+                <article class="carte-exercice colere stress">
                     <iframe
                         width="100%"
                         height="200"
@@ -125,20 +125,20 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Sprint sur Place</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Sprint sur Place</h2>
+                        <p class="texte-exercice">
                             Libère ton énergie avec un cardio rapide.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">2 min</span>
-                            <span class="tag">Cardio</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">2 min</span>
+                            <span class="etiquette">Cardio</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="exercise-card fatigue calme">
+                <article class="carte-exercice fatigue calme">
                     <iframe
                         width="100%"
                         height="200"
@@ -147,20 +147,20 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Étirements Doux</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Étirements Doux</h2>
+                        <p class="texte-exercice">
                             Étire ton corps et relâche les tensions.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">5 min</span>
-                            <span class="tag">Stretching</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">5 min</span>
+                            <span class="etiquette">Stretching</span>
                         </div>
                     </div>
                 </article>
 
-                <article class="exercise-card tristesse calme fatigue">
+                <article class="carte-exercice tristesse calme fatigue">
                     <iframe
                         width="100%"
                         height="200"
@@ -169,15 +169,15 @@
                     >
                     </iframe>
 
-                    <div class="exercise-content">
-                        <h2 class="exercise-title">Yoga du Soir</h2>
-                        <p class="exercise-text">
+                    <div class="contenu-exercice">
+                        <h2 class="titre-exercice">Yoga du Soir</h2>
+                        <p class="texte-exercice">
                             Relaxation douce pour terminer la journée.
                         </p>
 
-                        <div class="tags">
-                            <span class="tag">10 min</span>
-                            <span class="tag">Yoga</span>
+                        <div class="etiquettes">
+                            <span class="etiquette">10 min</span>
+                            <span class="etiquette">Yoga</span>
                         </div>
                     </div>
                 </article>

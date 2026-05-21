@@ -12,13 +12,13 @@ h1 {
     margin-bottom: 10px; /* espace dessous */
 }
 
-p.subtitle {
+p.sous-titre {
     margin-bottom: 30px; /* espace dessous */
     color: #5d7d72; /* couleur du texte */
 }
 
 /* BANNIÈRE */
-section.banner {
+section.banniere {
     background: rgba(255, 255, 255, 0.25); /* fond transparent */
     border: 1px solid #dceee7; /* bordure claire */
     border-radius: 20px; /* coins arrondis */
@@ -30,6 +30,6 @@ section.banner {
     margin: 30px auto; /* centre la bannière */
 }
 
-section.banner span {
+section.banniere span {
     font-size: 40px; /* taille de l’icône ou emoji */
 }
