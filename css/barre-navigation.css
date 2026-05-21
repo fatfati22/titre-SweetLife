@@ -84,13 +84,22 @@ body {
     box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.3); /* ombre */
 }
 
-/*   MOBILE SEULEMENT    */
+/*   BOUTON INSCRIPTION FIXE EN HAUT À DROITE         */
+/*   visible sur TOUS les écrans, toutes les pages     */
 
-.navbar .btn-primary {
-    position: absolute; /* position libre */
-    right: 1rem; /* espace à droite */
-    bottom: 35rem; /* position en hauteur */
-    width: 7em; /* largeur du bouton */
+.btn-inscription-fixe {
+    position: fixed;        /* reste toujours visible */
+    top: 0.75rem;           /* espace depuis le haut */
+    right: 1rem;            /* espace depuis la droite */
+    z-index: 200;           /* passe devant tout, y compris la navbar */
+    text-decoration: none;  /* enlève le soulignement du lien */
+}
+
+.btn-inscription-fixe .btn-primary {
+    padding: 0.55rem 1.1rem;  /* taille compacte pour mobile */
+    font-size: 0.8rem;        /* texte légèrement réduit */
+    white-space: nowrap;      /* texte sur une seule ligne */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ombre pour le faire ressortir */
 }
 
 /*   TABLETTE / PC       */
@@ -133,8 +142,9 @@ body {
         display: none; /* cache l’image mobile */
     }
 
-    /* le bouton revient normal */
-    .navbar .btn-primary {
-        position: static;
+    /* bouton inscription plus grand sur tablette/PC */
+    .btn-inscription-fixe .btn-primary {
+        padding: 0.65rem 1.4rem; /* un peu plus grand */
+        font-size: 0.9rem;
     }
 }
