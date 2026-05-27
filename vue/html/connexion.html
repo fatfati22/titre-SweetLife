@@ -2,71 +2,95 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" contenu="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SweetLife – Connexion</title>
+
         <link rel="stylesheet" href="../css/theme-initial.css" />
         <link rel="stylesheet" href="../css/authentification.css" />
     </head>
+
     <body>
         <!-- Éléments décoratifs flottants -->
         <div class="flottant flottant-1"></div>
         <div class="flottant flottant-2"></div>
 
         <!-- Checkbox cachée pour menu burger -->
-        <input type="checkbox" id="menu-toggle" style="display: none" />
+        <input type="checkbox" id="menu-toggle" hidden />
 
-        <!-- Page de connexion -->
-        <div class="page-connexion">
-            <div class="carte">
-                <div class="logo-carte">
-                    <img src="../image/logo.png" alt="logo de site SweetLife" />
+        <!-- MAIN -->
+        <main class="page-connexion">
+            <!-- FORMULAIRE (CARTE) -->
+            <section class="carte">
+                <!-- LOGO -->
+                <header class="logo-carte">
+                    <img src="../image/logo.png" alt="logo du site SweetLife" />
+
                     <h1>Sweet<span>life</span></h1>
+
                     <span>Bon Retour 🌸</span>
+
                     <p>Ton espace bien-être & émotions</p>
-
                     <p>Connecte-toi à ton espace bien-être</p>
-                </div>
+                </header>
 
-                <div class="carte-info">
+                <!-- INFORMATIONS -->
+                <section class="carte-info">
                     <p>Retrouve ton suivi émotionnel</p>
                     <p>Accède à tes exercices personnalisés</p>
                     <p>Continue ton voyage bien-être</p>
-                </div>
+                </section>
 
-                <!-- Champ Email -->
-                <div class="champ">
-                    <label>Adresse e-mail</label>
-                    <input type="email" placeholder="sophie@email.com" />
-                </div>
+                <!-- FORMULAIRE (CORRIGÉ) -->
+                <form
+                    class="champ"
+                    action="../../controller/connexionController.php"
+                    method="POST"
+                >
+                    <label for="email">Adresse e-mail</label>
 
-                <!-- Champ Mot de passe -->
-                <div class="champ">
-                    <label>Mot de passe</label>
-                    <input type="password" placeholder="••••••••" />
-                </div>
+                    <input
+                        type="email"
+                        name="mail"
+                        placeholder="Email"
+                        required
+                    />
 
-                <!-- Options : Se souvenir + Mot de passe oublié -->
-                <div class="options">
-                    <label class="souvenir-moi">
-                        <input type="checkbox" /> Se souvenir de moi
+                    <label for="password">Mot de passe</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="••••••••"
+                        required
+                    />
+
+                    <button type="submit" class="btn-envoyer">Connexion</button>
+                </form>
+
+                <!-- OPTIONS -->
+                <section class="options">
+                    <label class="souvenir-moi" for="remember">
+                        <input type="checkbox" id="remember" name="remember" />
+                        Se souvenir de moi
                     </label>
-                    <a href="#" class="mot-passe-oublie"
-                        >Mot de passe oublié ?</a
-                    >
-                </div>
 
-                <!-- Bouton se connecter -->
-                <button class="btn-envoyer">🌸 Se connecter</button>
+                    <a href="#" class="mot-passe-oublie">
+                        Mot de passe oublié ?
+                    </a>
+                </section>
 
-                <div class="lien-sinscrire">
+                <!-- INSCRIPTION -->
+                <p class="lien-sinscrire">
                     Pas encore membre ?
-                    <a href="inscription.html">Créer un compte</a>
-                </div>
+                    <a href="inscription.html"> Créer un compte </a>
+                </p>
 
-                <div class="retour">
-                    <a href="index.html">← Retour à l'accueil</a>
-                </div>
-            </div>
-        </div>
+                <!-- RETOUR -->
+                <nav class="retour">
+                    <a href="index.html"> ← Retour à l'accueil </a>
+                </nav>
+            </section>
+        </main>
     </body>
 </html>

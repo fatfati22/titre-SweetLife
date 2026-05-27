@@ -2,79 +2,150 @@
 <html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" contenu="width=device-width, initial-scale=1.0" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
         <title>SweetLife – Inscription</title>
+
         <link rel="stylesheet" href="../css/theme-initial.css" />
         <link rel="stylesheet" href="../css/authentification.css" />
     </head>
+
     <body>
         <!-- Éléments décoratifs flottants -->
         <div class="flottant flottant-1"></div>
         <div class="flottant flottant-2"></div>
 
         <!-- Checkbox cachée pour menu burger -->
-        <input type="checkbox" id="menu-toggle" style="display: none" />
+        <input type="checkbox" id="menu-toggle" hidden />
 
-        <!-- Page d'inscription -->
-        <div class="page-inscription">
-            <div class="carte">
-                <div class="logo-carte">
-                    <img src="../image/logo.png" alt="logo de site SweetLife" />
+        <!-- MAIN -->
+        <main class="page-inscription">
+            <section
+                class="carte"
+                action="../controller/inscritController.php"
+                method="POST"
+            >
+                <!-- LOGO -->
+                <header class="logo-carte">
+                    <img src="../image/logo.png" alt="logo du site SweetLife" />
+
                     <h1>Sweet<span>life</span></h1>
 
                     <p>Ton espace bien-être & émotions</p>
+
                     <p>
-                        Créer ton espace bien-être personnel - gratuit et sans
+                        Créer ton espace bien-être personnel — gratuit et sans
                         engagement
                     </p>
-                </div>
+                </header>
 
-                <div class="carte-info">
+                <!-- INFORMATIONS -->
+                <section class="carte-info">
                     <p>Suivi de tes humeurs au quotidien</p>
+
                     <p>Exercices & repas adaptés à toi</p>
+
                     <p>Citations inspirantes personnalisées</p>
-                </div>
+                </section>
 
-                <!-- Champ Prénom & Nom -->
-                <div class="champ">
-                    <label>Prénom & Nom</label>
-                    <input type="text" placeholder="Sophie Martin" />
-                </div>
+                <form
+                    class="carte form-inscription"
+                    action="../../controller/inscritController.php"
+                    method="POST"
+                >
+                    <!-- NOM -->
 
-                <!-- Champ Email -->
-                <div class="champ">
-                    <label>Adresse e-mail</label>
-                    <input type="email" placeholder="sophie@email.com" />
-                </div>
+                    <section class="champ champ-nom">
+                        <label for="nom">Nom</label>
+                        <input
+                            type="text"
+                            id="nom"
+                            name="nom"
+                            class="input input-nom"
+                            placeholder="Martin"
+                            required
+                        />
+                    </section>
 
-                <!-- Champ Mot de passe -->
-                <div class="champ">
-                    <label
-                        >Mot de passe
-                        <span style="font-weight: normal"
-                            >(minimum 6 caractères)</span
-                        ></label
-                    >
-                    <input type="password" placeholder="••••••••" />
-                </div>
+                    <!-- PRÉNOM -->
 
-                <!-- Champ Confirmation -->
-                <div class="champ">
-                    <label>Confirmer le mot de passe</label>
-                    <input type="password" placeholder="••••••••" />
-                </div>
+                    <section class="champ champ-prenom">
+                        <label for="prenom">Prénom</label>
+                        <input
+                            type="text"
+                            id="prenom"
+                            name="prenom"
+                            class="input input-prenom"
+                            placeholder="Sophie"
+                            required
+                        />
+                    </section>
 
-                <!-- Bouton créer un compte -->
-                <button class="btn-envoyer">🌸 Créer mon compte</button>
+                    <!-- EMAIL -->
 
-                <div class="lien-seconnecter">
-                    Déjà membre ? <a href="connexion.html">Se connecter</a>
-                </div>
+                    <section class="champ champ-email">
+                        <label for="email">Adresse e-mail</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="mail"
+                            class="input input-email"
+                            placeholder="sophie@email.com"
+                            required
+                        />
+                    </section>
 
-                <div class="retour">
-                    <a href="index.html">← Retour à l'accueil</a>
-                </div>
-            </div>
-        </div>
+                    <!-- MOT DE PASSE -->
+
+                    <section class="champ champ-password">
+                        <label for="password">Mot de passe</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            class="input input-password"
+                            placeholder="••••••••"
+                            minlength="6"
+                            required
+                        />
+                    </section>
+
+                    <!-- CONFIRMATION MOT DE PASSE -->
+
+                    <section class="champ champ-confirm-password">
+                        <label for="confirm-password"
+                            >Confirmer le mot de passe</label
+                        >
+                        <input
+                            type="password"
+                            id="confirm-password"
+                            name="confirm-password"
+                            class="input input-confirm-password"
+                            placeholder="••••••••"
+                            required
+                        />
+                    </section>
+
+                    <!-- BOUTON SUBMIT -->
+
+                    <button type="submit" class="btn-envoyer">
+                        🌸 Créer mon compte
+                    </button>
+                </form>
+
+                <!-- CONNEXION -->
+                <p class="lien-seconnecter">
+                    Déjà membre ?
+
+                    <a href="connexion.html"> Se connecter </a>
+                </p>
+
+                <!-- RETOUR -->
+                <nav class="retour">
+                    <a href="index.html"> ← Retour à l'accueil </a>
+                </nav>
+            </section>
+        </main>
     </body>
 </html>

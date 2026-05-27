@@ -97,6 +97,8 @@
 }
 
 .champ label {
+    padding: 20px;
+
     display: block; /* passe à la ligne */
     font-size: 12px; /* petite taille */
     font-weight: 600; /* texte plus épais */
