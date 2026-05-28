@@ -23,7 +23,7 @@ session_start();
         <?php else : ?>
             <a class="btn-descop" href="inscription.html">
                 <button class="btn-primary" type="button">
-                    S'inscrire
+                    ✚ S'inscrire
                 </button>
             </a>
         <?php endif; ?>
@@ -38,7 +38,7 @@ session_start();
     <?php else : ?>
         <a class="btn-mobile btn-inscription-fixe" href="inscription.html">
             <button class="btn-primary" type="button">
-                S'inscrire
+                ✚S'inscrire
             </button>
         </a>
     <?php endif; ?>

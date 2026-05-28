@@ -26,7 +26,6 @@ body {
     background: rgba(255, 255, 255, 0.25); /* fond blanc transparent */
     backdrop-filter: blur(12px); /* flou derrière l'élément */
     border: 1px solid rgba(255, 255, 255, 0.3); /* bordure semi-transparente */
-    border-radius: 20px; /* coins arrondis */
 }
 
 /* LIENS */
