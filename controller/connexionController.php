@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ];
 
         // redirection
-        header("Location: ../../vue/html/index.html");
+        header("Location: ../../vue/html/index.php");
         exit();
     } else {
         echo "Email ou mot de passe incorrect";

@@ -17,26 +17,31 @@ body {
     top: auto;
 
     width: 100%;
-    height: 4.5rem;
+    height: 4.5em;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 
-    padding: 0 0.5rem;
+    padding: 0 1em;
+    box-sizing: border-box;
+
     z-index: 100;
 
     background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(1.375rem);
+    backdrop-filter: blur(1.375em);
 }
 
 /* LIENS MOBILE */
 
 .nav-links {
     display: flex;
-    width: 100%;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+
+    gap: 0.5em;
+
+    width: 100%;
 
     list-style: none;
     margin: 0;
@@ -49,18 +54,20 @@ body {
     align-items: center;
 
     text-decoration: none;
-    font-size: 0.625rem;
+    font-size: 0.7em;
     color: inherit;
 
-    padding: 0.25rem;
+    padding: 0.4em 0.6em;
+
     transition: 0.3s;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
 .nav-links a.actif {
     background: rgba(255, 255, 255, 0.4);
-    border-radius: 1rem;
-    transform: translateY(-2px);
+    border-radius: 1em;
+    transform: translateY(-0.12em);
 }
 
 /* LOGO MOBILE */
@@ -73,7 +80,7 @@ body {
 
 .mobile {
     display: block;
-    width: 10rem;
+    width: 10em;
     margin: 0 auto;
 }
 
@@ -83,18 +90,18 @@ body {
     background-color: #3a8a6a;
     color: white;
 
-    padding: 0.75rem 1.5rem;
+    padding: 0.75em 1.5em;
 
     border: none;
-    border-radius: 2.5rem;
+    border-radius: 2.5em;
 
     cursor: pointer;
     transition: 0.3s;
 }
 
 .btn-primary:hover {
-    transform: translateY(-0.1875rem);
-    box-shadow: 0 0.5rem 1.25rem rgba(255, 255, 255, 0.3);
+    transform: translateY(-0.18em);
+    box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
 }
 
 /* =========================
@@ -103,28 +110,32 @@ body {
 
 .btn-inscription-fixe {
     position: fixed;
-    top: 0.75rem;
-    right: 1rem;
+    top: 1em;
+    right: 1em;
 
-    z-index: 200;
+    z-index: 999;
 
     text-decoration: none;
 }
 
 .btn-inscription-fixe .btn-primary {
-    padding: 0.55rem 1.1rem;
-    font-size: 0.8rem;
+    padding: 0.6em 1.2em;
+    font-size: 0.8em;
+
     white-space: nowrap;
 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15);
 
+    position: static;
+}
+.btn-descop {
+    display: none;
+}
 /* =========================
    TABLETTE / ORDINATEUR
 ========================= */
 
-@media (min-width: 768px) {
-
+@media (min-width: 48em) {
     body {
         padding-bottom: 0;
     }
@@ -134,48 +145,34 @@ body {
         top: 0;
         bottom: auto;
 
-        width: 100%;
-        height: 4.375rem;
+        height: 4.5em;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
 
-        padding: 0 1.5rem;
-
-        background: rgba(255, 255, 255, 0.06);
-        backdrop-filter: blur(1.375rem);
+        padding: 0 2em;
     }
 
-    /* LOGO À GAUCHE */
+    /* LOGO */
 
     .img {
-    display: block; /* affiche le logo */
-        width: 9rem; /* largeur */
+        display: block;
+        width: 9em;
         position: relative;
-        top: 40px; /* descend un peu */
+        top: 3em;
     }
 
-    /* MENU CENTRÉ */
+    /* MENU */
 
     .nav-links {
         flex: 1;
-
-        display: flex;
         justify-content: center;
-        align-items: center;
-
-        gap: 1rem;
-
-        width: 100%;
+        gap: 1.2em;
     }
 
     .nav-links a {
         flex-direction: row;
-
-        font-size: 0.875rem;
-
-        padding: 0.5rem 0.75rem;
+        font-size: 0.9em;
+        padding: 0.5em 0.9em;
     }
 
     /* CACHE IMAGE MOBILE */
@@ -183,11 +180,15 @@ body {
     .mobile {
         display: none;
     }
-
-    /* BOUTON INSCRIPTION PLUS GRAND */
-
+    .btn-mobile {
+        display: none;
+    }
+    /* BOUTON */
+    .btn-descop {
+        display: block;
+    }
     .btn-inscription-fixe .btn-primary {
-        padding: 0.65rem 1.4rem;
-        font-size: 0.9rem;
+        padding: 0.7em 1.5em;
+        font-size: 0.9em;
     }
 }
