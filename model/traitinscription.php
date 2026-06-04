@@ -2,9 +2,19 @@
 
 require_once __DIR__ . '/bdd-config.php';
 
-function inscrireUtilisateur($nom, $prenom, $mail, $password)
+function inscrireUtilisateur(string $nom, string $prenom, string $mail, string $password)
 {
     global $conn;
+
+    // Vérification des champs obligatoires
+    if (
+        empty(trim($nom)) ||
+        empty(trim($prenom)) ||
+        empty(trim($mail)) ||
+        empty(trim($password))
+    ) {
+        return false;
+    }
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
 

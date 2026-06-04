@@ -1,3 +1,15 @@
+<?php
+
+
+
+session_start();
+
+
+
+?>
+
+
+
 <!doctype html>
 <html lang="fr" class="theme-calme">
 
@@ -9,7 +21,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Cormorant+Garamond&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="../css/pied-de-page.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/element-theme.css" />
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/position-cercle-emojis.css" />
@@ -33,8 +45,15 @@
                 <section class="centrer">
                     <h1>
                         Comment vas-tu
-                        <span class="couleur">aujourd’hui ?</span>
+                        <span class="couleur">aujourd’hui <?php if (isset($_SESSION['user'])): ?>
+
+                                <?php echo $_SESSION['user']['prenom']; ?>
+                                <?php echo $_SESSION['user']['nom']; ?> !
+                            <?php else: ?>
+                                Invité!
+                            <?php endif; ?> </span>
                     </h1>
+
 
                     <p>
                         Choisis ton humeur pour recevoir des

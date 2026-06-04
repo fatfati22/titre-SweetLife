@@ -127,6 +127,12 @@
     flex-shrink: 0;
 }
 
+.disabled a {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /* =========================
    DESKTOP
 ========================= */

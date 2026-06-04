@@ -1,22 +1,29 @@
 <?php
 
-// Adresse du serveur de base de données (localhost = ton ordinateur)
+// Adresse du serveur de base de données
 $host = "localhost";
 
-// Nom d'utilisateur pour se connecter à la base de données
+// Nom d'utilisateur
 $user = "root";
 
-// Mot de passe de l'utilisateur
+// Mot de passe
 $password = "admin";
 
-// Nom de la base de données que tu veux utiliser
+// Nom de la base de données
 $database = "Sweetlife";
 
-// Connexion à la base de données MySQL avec les informations ci-dessus
+// Connexion
 $conn = mysqli_connect($host, $user, $password, $database);
 
-// Vérifie si la connexion a échoué
+// Vérification de la connexion
 if (!$conn) {
-    // Si erreur, on arrête le programme et on affiche le message d'erreur
     die("Erreur de connexion : " . mysqli_connect_error());
+}
+
+// Fonction pour fermer la connexion
+function closeDB($conn)
+{
+    if ($conn) {
+        mysqli_close($conn);
+    }
 }

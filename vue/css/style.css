@@ -1,17 +1,3 @@
-/* STYLE GLOBAL */
-html {
-    font-size: 16px; /* Taille de base des textes */
-}
-
-body {
-    font-family: "DM Sans", sans-serif; /* Police principale du site */
-    display: flex; /* Utilisation de flex pour aligner les enfants */
-    flex-direction: column; /* Disposition verticale */
-    min-height: 100vh; /* Hauteur minimale = hauteur de l'écran */
-    overflow-x: hidden; /* Pas de défilement horizontal */
-    transition: 0.2s; /* Transition douce pour certaines propriétés */
-}
-
 main {
     flex: 1; /* Prend tout l'espace disponible */
     display: flex; /* Flex pour centrer le contenu */
@@ -62,6 +48,7 @@ main {
 .hero-content {
     width: 100%; /* Largeur pleine */
     padding: 0 1rem; /* Espacement horizontal */
+    margin-top: 2em;
 }
 
 h1 {
@@ -120,6 +107,8 @@ p {
 /* TABLETTE / ORDINATEUR (grand écran) */
 @media screen and (min-width: 46.875rem) {
     .hero-content {
+        margin-top: 6em;
+
         display: flex; /* Flex pour aligner horizontalement */
         justify-content: space-between; /* Espacement entre éléments */
         align-items: center; /* Centré verticalement */

@@ -4,7 +4,7 @@ footer img {
 }
 
 footer {
-    margin-top: auto; /* Toujours en bas de la page */
+    margin-top: 15em;
     width: 100%; /* Largeur pleine */
     display: flex; /* Flex pour organiser le contenu */
     justify-content: space-between; /* Espace entre les éléments */
