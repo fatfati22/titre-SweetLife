@@ -1,15 +1,15 @@
 <header>
     <nav class="navbar glass">
-        <img class="img" src="../image/logo.png" alt="logo SweetLife" />
+        <img class="img" src="/vue/image/logo.png" alt="logo SweetLife" />
 
         <ul class="nav-links">
-            <li><a href="index.html" class="actif">🏠 Accueil</a></li>
+            <li><a href="index.php" class="actif">🏠 Accueil</a></li>
 
             <?php if (isset($_SESSION['user'])) : ?>
                 <li><a href="exercice.html">🧘 Exercices</a></li>
                 <li><a href="repas.html">🥗 Repas</a></li>
                 <li><a href="historique.html">📊 Historique</a></li>
-                <li><a href="Profil.html">👤 Profil</a></li>
+                <li><a href="../../controller/profilController.php">👤 Profil</a></li>
             <?php else : ?>
                 <li class="disabled"><a href="#">🧘 Exercices 🔒</a></li>
                 <li class="disabled"><a href="#">🥗 Repas 🔒</a></li>

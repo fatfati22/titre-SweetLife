@@ -14,6 +14,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($ok) {
         header("Location: ../vue/html/connexion.html");
         exit();
+
+
+
+
+        require_once __DIR__ . '/../bdd-config.php';
+
+        $stmt = $conn->prepare("SELECT id, nom, prenom, mail, date_inscription FROM user WHERE mail = ?");
+        $stmt->bind_param("s", $mail);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        $user = $result->fetch_assoc();
+
+        session_start();
+        $_SESSION['user'] = $user;
+
+        header("Location: ../vue/html/profil.php");
+        exit();
     } else {
         echo "Erreur inscription";
     }

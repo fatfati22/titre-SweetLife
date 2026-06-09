@@ -69,6 +69,10 @@
     position: relative;
 }
 
+p {
+    padding: 5px;
+}
+
 .point-en-ligne {
     width: 14px;
     height: 14px;

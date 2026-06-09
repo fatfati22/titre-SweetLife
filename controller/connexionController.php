@@ -19,13 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             'nom' => $user['nom'],
             'prenom' => $user['prenom'],
             'mail' => $user['mail'],
-            'role' => $user['role']
+            'role' => $user['role'],
+            'date_inscription' => $user['date_inscription']
+
         ];
 
         // redirection
         header("Location: ../../vue/html/index.php");
+
+
         exit();
     } else {
         echo "Email ou mot de passe incorrect";
     }
 }
+require_once __DIR__ . '/../vue/html/connexion.html';
