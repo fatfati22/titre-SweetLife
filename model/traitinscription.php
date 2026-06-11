@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/bdd-config.php';
 
-function inscrireUtilisateur(string $nom, string $prenom, string $mail, string $password)
+function inscrireUtilisateur(string $nom, string $prenom, string $mail, string $password, ?string $naissance = null)
 {
     global $conn;
 
@@ -18,8 +18,8 @@ function inscrireUtilisateur(string $nom, string $prenom, string $mail, string $
 
     $hash = password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO user (nom, prenom, mail, password)
-            VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO user (nom, prenom, mail, password, naissance)
+            VALUES (?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($conn, $sql);
 
@@ -27,7 +27,7 @@ function inscrireUtilisateur(string $nom, string $prenom, string $mail, string $
         return false;
     }
 
-    mysqli_stmt_bind_param($stmt, "ssss", $nom, $prenom, $mail, $hash);
+    mysqli_stmt_bind_param($stmt, "sssss", $nom, $prenom, $mail, $hash, $naissance);
 
     $result = mysqli_stmt_execute($stmt);
 

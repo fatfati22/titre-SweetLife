@@ -1,35 +1,103 @@
-<header>
-    <nav class="navbar glass">
-        <img class="img" src="/vue/image/logo.png" alt="logo SweetLife" />
+<?php $route = $_GET['route'] ?? 'accueil'; ?>
 
-        <ul class="nav-links">
-            <li><a href="index.php" class="actif">🏠 Accueil</a></li>
+<header>
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a href="/index.php?route=accueil" class="logo">
+                <img src="/vue/image/logo.png" alt="Logo SweetLife">
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="/index.php?route=accueil"
+                        <?= $route === 'accueil' ? 'class="actif"' : '' ?>>
+                        🏠 <span>Accueil</span>
+                    </a>
+                </li>
+
+                <?php if (isset($_SESSION['user'])) : ?>
+
+                    <li>
+                        <a href="/index.php?route=exercice"
+                            <?= $route === 'exercice' ? 'class="actif"' : '' ?>>
+                            🧘 <span>Exercices</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/index.php?route=repas"
+                            <?= $route === 'repas' ? 'class="actif"' : '' ?>>
+                            🥗 <span>Repas</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/index.php?route=historique"
+                            <?= $route === 'historique' ? 'class="actif"' : '' ?>>
+                            📊 <span>Historique</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/index.php?route=profil"
+                            <?= $route === 'profil' ? 'class="actif"' : '' ?>>
+                            👤 <span>Profil</span>
+                        </a>
+                    </li>
+
+                    <?php if (($_SESSION['user']['role'] ?? '') === 'admin') : ?>
+                        <li>
+                            <a href="/index.php?route=admin"
+                                <?= $route === 'admin' ? 'class="actif"' : '' ?>>
+                                ⚙️ <span>Admin</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+
+                <?php else : ?>
+
+                    <li class="disabled"><a href="#">🧘 <span>Exercices</span></a></li>
+                    <li class="disabled"><a href="#">🥗 <span>Repas</span></a></li>
+                    <li class="disabled"><a href="#">📊 <span>Historique</span></a></li>
+                    <li class="disabled"><a href="#">👤 <span>Profil</span></a></li>
+
+                <?php endif; ?>
+
+            </ul>
 
             <?php if (isset($_SESSION['user'])) : ?>
-                <li><a href="exercice.html">🧘 Exercices</a></li>
-                <li><a href="repas.html">🥗 Repas</a></li>
-                <li><a href="historique.html">📊 Historique</a></li>
-                <li><a href="../../controller/profilController.php">👤 Profil</a></li>
+                <a class="btn-primary-mobile btn-desktop"
+                    href="/index.php?route=deconnexion">
+                    Déconnexion
+                </a>
             <?php else : ?>
-                <li class="disabled"><a href="#">🧘 Exercices 🔒</a></li>
-                <li class="disabled"><a href="#">🥗 Repas 🔒</a></li>
-                <li class="disabled"><a href="#">📊 Historique 🔒</a></li>
-                <li class="disabled"><a href="#">👤 Profil 🔒</a></li>
+                <a class="btn-primary-mobile btn-desktop"
+                    href="/index.php?route=inscription">
+                    S'inscrire
+                </a>
             <?php endif; ?>
-        </ul>
 
-        <?php if (isset($_SESSION['user'])) : ?>
-            <a class="btn-descop" href="../../controller/deconnexion.php">
-                <button class="btn-primary" type="button">
-                    🔓 Déconnexion
-                </button>
-            </a>
-        <?php else : ?>
-            <a class="btn-descop" href="inscription.html">
-                <button class="btn-primary" type="button">
-                    ✚ S'inscrire
-                </button>
-            </a>
-        <?php endif; ?>
+        </div>
+
     </nav>
+
+
+    <?php if (isset($_SESSION['user'])) : ?>
+        <a class="btn-primary btn-mobile"
+            href="/index.php?route=deconnexion">
+            Déconnexion
+        </a>
+    <?php else : ?>
+        <a class="btn-primary btn-mobile"
+            href="/index.php?route=inscription">
+            S'inscrire
+        </a>
+    <?php endif; ?>
+
+
+
+
 </header>

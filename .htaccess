@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Redirige tout vers index.php sauf les fichiers statiques (css, js, images)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/vue/
+RewriteRule ^(.*)$ /index.php [QSA,L]

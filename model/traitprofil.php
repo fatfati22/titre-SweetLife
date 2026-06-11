@@ -7,7 +7,7 @@ function getUserByMail(string $mail)
     global $conn;
 
     $sql = "
-        SELECT id, nom, prenom, mail, date_inscription,role
+        SELECT id, nom, prenom, naissance, mail, date_inscription, role
         FROM user
         WHERE mail = ?
         LIMIT 1

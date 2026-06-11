@@ -74,6 +74,11 @@ p {
     text-align: center; /* Texte centré */
 }
 
+.mobile-logo {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
 /* MOOD WHEEL (roue d'humeur) */
 .mood-wheel {
     position: relative; /* Pour positionner les boutons absolument */
@@ -103,9 +108,17 @@ p {
         box-shadow 0.25s ease; /* Transition pour mouvements et ombre */
     transform-origin: center; /* Centre de transformation */
 }
+.mood-btn:disabled {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* espace entre emoji et cadenas */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
 
 /* TABLETTE / ORDINATEUR (grand écran) */
-@media screen and (min-width: 46.875rem) {
+@media screen and (min-width: 871px) {
     .hero-content {
         margin-top: 6em;
 
@@ -133,5 +146,9 @@ p {
     .btn-ghost {
         display: inline-block; /* Boutons en ligne */
         margin: 0; /* Pas de marge */
+    }
+
+    .mobile-logo {
+        display: none;
     }
 }

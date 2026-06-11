@@ -240,3 +240,322 @@ button {
         width: auto;
     }
 }
+
+/* ==============================
+   MODAL OVERLAY
+   ============================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-overlay.actif {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==============================
+   CARTE MODALE — style blanc épuré
+   ============================== */
+
+.modal-carte {
+    animation: slideUp 0.28s cubic-bezier(0.34, 1.4, 0.64, 1);
+    width: 100%;
+    max-width: 620px;
+    min-width: 280px;
+    border-radius: 28px;
+    padding: 40px 44px 36px;
+    text-align: center;
+    background: #f4f8f6;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+    /* reset couleurs fixes */
+    color: #2e3d38;
+}
+
+/* override des styles de note.css hérités */
+.modal-carte .carte {
+    all: unset;
+}
+
+.modal-carte .emotion {
+    font-size: 58px;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.modal-carte .titre {
+    font-size: 32px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 400;
+    color: #2e3d38;
+    margin-bottom: 8px;
+}
+
+.modal-carte .texte-info {
+    font-size: 15px;
+    color: #6b7f78;
+    margin-bottom: 22px;
+}
+
+.modal-carte .zone-message {
+    width: 100%;
+    min-width: 100%;
+    min-height: 160px;
+    height: 160px;
+    border-radius: 18px;
+    border: 1.5px solid #c8ddd7;
+    background: #dff0e8;
+    padding: 18px 20px;
+    resize: none;
+    outline: none;
+    font-size: 17px;
+    font-family: "DM Sans", sans-serif;
+    color: #3d5049;
+}
+
+.modal-carte .zone-message::placeholder {
+    color: #8faa9f;
+}
+
+.modal-carte .compteur {
+    text-align: right;
+    margin-top: 8px;
+    color: #8faa9f;
+    font-size: 14px;
+}
+
+.modal-carte .zone-boutons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.modal-carte .bouton-annuler {
+    background: #e8f0ed;
+    border: 1.5px solid #c8ddd7;
+    color: #3d5049;
+    border-radius: 50px;
+    padding: 14px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: auto;
+}
+
+.modal-carte .bouton-annuler:hover {
+    background: #d8e8e2;
+}
+
+.modal-carte .bouton-enregistrer {
+    background: #2d6b50;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: auto;
+}
+
+.modal-carte .bouton-enregistrer:hover {
+    background: #235840;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-carte {
+        padding: 28px 20px 24px;
+    }
+    .modal-carte .zone-boutons {
+        flex-direction: column;
+    }
+    .modal-carte .bouton-annuler,
+    .modal-carte .bouton-enregistrer {
+        width: 100%;
+    }
+}
+
+/* ==============================
+   TEXTAREA ERREUR
+   ============================== */
+
+.zone-message.erreur {
+    border-color: #e05050 !important;
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-6px);
+    }
+    75% {
+        transform: translateX(6px);
+    }
+}
+
+/* ==============================
+   THEMES COULEUR DE LA CARTE MODALE
+   ============================== */
+
+/* CALME — vert */
+.modal-carte.note-calme {
+    background: #f0f7f4;
+}
+.modal-carte.note-calme .zone-message {
+    background: #dff0e8;
+    border-color: #a9d1c0;
+    color: #3d5049;
+}
+.modal-carte.note-calme .bouton-annuler {
+    background: #e2f0eb;
+    border-color: #b8d8cc;
+    color: #3d5049;
+}
+.modal-carte.note-calme .bouton-enregistrer {
+    background: #2d6b50;
+}
+.modal-carte.note-calme .bouton-enregistrer:hover {
+    background: #235840;
+}
+
+/* JOIE — jaune/orange */
+.modal-carte.note-joie {
+    background: #fffbee;
+}
+.modal-carte.note-joie .zone-message {
+    background: #fff3cc;
+    border-color: #ffe066;
+    color: #5a4000;
+}
+.modal-carte.note-joie .bouton-annuler {
+    background: #fff3cc;
+    border-color: #ffe066;
+    color: #5a4000;
+}
+.modal-carte.note-joie .bouton-enregistrer {
+    background: #d4900a;
+    color: #fff;
+}
+.modal-carte.note-joie .bouton-enregistrer:hover {
+    background: #b87a08;
+}
+
+/* TRISTESSE — bleu */
+.modal-carte.note-tristesse {
+    background: #f0f4f8;
+}
+.modal-carte.note-tristesse .zone-message {
+    background: #dce8f4;
+    border-color: #b8cde0;
+    color: #1a2535;
+}
+.modal-carte.note-tristesse .bouton-annuler {
+    background: #dce8f4;
+    border-color: #b8cde0;
+    color: #1a2535;
+}
+.modal-carte.note-tristesse .bouton-enregistrer {
+    background: #4a78a8;
+}
+.modal-carte.note-tristesse .bouton-enregistrer:hover {
+    background: #3a6090;
+}
+
+/* COLERE — rouge */
+.modal-carte.note-colere {
+    background: #fdf2f2;
+}
+.modal-carte.note-colere .zone-message {
+    background: #fbe0e0;
+    border-color: #e8a0a0;
+    color: #3d1010;
+}
+.modal-carte.note-colere .bouton-annuler {
+    background: #fbe0e0;
+    border-color: #e8a0a0;
+    color: #3d1010;
+}
+.modal-carte.note-colere .bouton-enregistrer {
+    background: #a02020;
+}
+.modal-carte.note-colere .bouton-enregistrer:hover {
+    background: #881a1a;
+}
+
+/* FATIGUE — gris */
+.modal-carte.note-fatigue {
+    background: #f4f4f4;
+}
+.modal-carte.note-fatigue .zone-message {
+    background: #e8e8e8;
+    border-color: #cccccc;
+    color: #333;
+}
+.modal-carte.note-fatigue .bouton-annuler {
+    background: #e8e8e8;
+    border-color: #cccccc;
+    color: #333;
+}
+.modal-carte.note-fatigue .bouton-enregistrer {
+    background: #777;
+}
+.modal-carte.note-fatigue .bouton-enregistrer:hover {
+    background: #555;
+}
+
+/* STRESS — bleu vif */
+.modal-carte.note-stress {
+    background: #f0f5ff;
+}
+.modal-carte.note-stress .zone-message {
+    background: #dceeff;
+    border-color: #89c2ff;
+    color: #0a1f44;
+}
+.modal-carte.note-stress .bouton-annuler {
+    background: #dceeff;
+    border-color: #89c2ff;
+    color: #0a1f44;
+}
+.modal-carte.note-stress .bouton-enregistrer {
+    background: #2a6be0;
+}
+.modal-carte.note-stress .bouton-enregistrer:hover {
+    background: #1f56c0;
+}

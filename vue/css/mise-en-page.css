@@ -4,7 +4,10 @@
 main {
     padding: 120px 20px 60px; /* espace intérieur */
     max-width: 1200px; /* largeur maximale */
-    margin: auto; /* centre la page */
+    margin: auto; /* centre la page */*
+  display: flex: ;
+  flex-direction: column;
+
 }
 
 h1 {

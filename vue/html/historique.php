@@ -1,0 +1,238 @@
+<?php
+// Vue historique — contenu uniquement
+?>
+<section class="en-tete-hist">
+                <h1 class="titre-hist">📊 Historique</h1>
+                <p class="sous-titre-hist">
+                    Retrouve toutes tes émotions enregistrées
+                </p>
+            </section>
+
+            <!-- FILTRES -->
+            <section class="filtres-hist glass-card">
+                <div class="ligne-filtres">
+                    <!-- Dernières 24h -->
+                    <div class="enveloppe-menu-deroulant">
+                        <button
+                            class="btn-menu-deroulant"
+                            id="btn-24h"
+                            onclick="selectPeriod('24h')"
+                        >
+                            <span class="icone-menu">⏰</span>
+                            <span class="libelle-menu">Dernières 24h</span>
+                            <span class="fleche-menu" id="arrow-24h">▾</span>
+                        </button>
+                    </div>
+
+                    <!-- 2025 -->
+                    <div class="enveloppe-menu-deroulant">
+                        <button
+                            class="btn-menu-deroulant"
+                            id="btn-2025"
+                            onclick="toggleYear('2025')"
+                        >
+                            <span class="icone-menu">📅</span>
+                            <span class="libelle-menu">2025</span>
+                            <span class="fleche-menu" id="arrow-2025">▾</span>
+                        </button>
+                        <div class="panneau-mois" id="panneau-mois-2025">
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'janvier', this)"
+                            >
+                                Janvier
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'février', this)"
+                            >
+                                Février
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'mars', this)"
+                            >
+                                Mars
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'avril', this)"
+                            >
+                                Avril
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'mai', this)"
+                            >
+                                Mai
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'juin', this)"
+                            >
+                                Juin
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'juillet', this)"
+                            >
+                                Juillet
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'août', this)"
+                            >
+                                Août
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'septembre', this)"
+                            >
+                                Septembre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'octobre', this)"
+                            >
+                                Octobre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'novembre', this)"
+                            >
+                                Novembre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2025', 'décembre', this)"
+                            >
+                                Décembre
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 2026 -->
+                    <div class="enveloppe-menu-deroulant">
+                        <button
+                            class="btn-menu-deroulant"
+                            id="btn-2026"
+                            onclick="toggleYear('2026')"
+                        >
+                            <span class="icone-menu">📅</span>
+                            <span class="libelle-menu">2026</span>
+                            <span class="fleche-menu" id="arrow-2026">▾</span>
+                        </button>
+                        <div class="panneau-mois" id="panneau-mois-2026">
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'janvier', this)"
+                            >
+                                Janvier
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'février', this)"
+                            >
+                                Février
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'mars', this)"
+                            >
+                                Mars
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'avril', this)"
+                            >
+                                Avril
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'mai', this)"
+                            >
+                                Mai
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'juin', this)"
+                            >
+                                Juin
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'juillet', this)"
+                            >
+                                Juillet
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'août', this)"
+                            >
+                                Août
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'septembre', this)"
+                            >
+                                Septembre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'octobre', this)"
+                            >
+                                Octobre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'novembre', this)"
+                            >
+                                Novembre
+                            </button>
+                            <button
+                                class="btn-mois"
+                                onclick="selectMonth('2026', 'décembre', this)"
+                            >
+                                Décembre
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Période sélectionnée -->
+                <div class="libelle-periode" id="libelle-periode">
+                    <span id="texte-periode">Sélectionne une période</span>
+                </div>
+            </section>
+
+            <!-- RÉSULTATS -->
+            <section class="resultats-hist" id="resultats-hist">
+                <div class="etat-vide" id="etat-vide">
+                    <span class="icone-vide">🌸</span>
+                    <p>Choisis une période pour voir ton historique</p>
+                </div>
+
+                <!--
+                    ZONE CARDS — à remplir depuis le backend.
+                    Exemple de structure d'une carte-info :
+
+                    <div class="grille-cartes">
+                        <article class="carte-hist hist-card--joie">
+                            <div class="dessus-carte">
+                                <span class="emoji-carte">😊</span>
+                                <div class="info-carte">
+                                    <span class="emotion-carte">Joie</span>
+                                    <span class="heure-carte">08h30</span>
+                                </div>
+                                <span class="point-carte"></span>
+                            </div>
+                            <p class="note-carte">Note de l'utilisateur ici.</p>
+                        </article>
+                    </div>
+
+                    Classes disponibles par émotion :
+                    hist-card--joie / hist-card--calme / hist-card--stress
+                    hist-card--fatigue / hist-card--tristesse / hist-card--colere
+                -->
+                <div class="grille-cartes" id="grille-cartes"></div>
+            </section>

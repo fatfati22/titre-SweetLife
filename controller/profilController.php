@@ -1,19 +1,19 @@
 <?php
-
-
-session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: /index.php?route=connexion");
+    exit();
+}
 
 require_once __DIR__ . '/../model/traitprofil.php';
-
-// 🔒 sécurité
-// if (!isset($_SESSION['user'])) {
-//     header("Location: ../../vue/html/connexion.html");
-//     exit();
-// }
-
-// 👤 récupération depuis BDD (optionnel mais propre)
 $user = getUserByMail($_SESSION['user']['mail']);
-// var_dump($user);
 
+$pageTitle   = 'Mon Profil';
+$mainClass   = 'conteneur-page';
+$pageStyles  = ['humeur.css', 'profil.css'];
+$pageScripts = ['animationCard.js'];
 
-require_once __DIR__ . '/../vue/html/profil.php';
+ob_start();
+require_once __DIR__ . '/../vue/html/Profil.php';
+$contenu = ob_get_clean();
+
+require_once __DIR__ . '/../vue/layout/main.php';

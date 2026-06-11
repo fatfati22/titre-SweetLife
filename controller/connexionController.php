@@ -1,36 +1,38 @@
 <?php
-
-session_start();
+// session déjà démarrée dans le router
 
 require_once __DIR__ . '/../model/traitconnexion.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+$erreur = '';
 
-    $mail = $_POST['mail'];
-    $password = $_POST['password'];
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $mail     = $_POST['mail']     ?? '';
+    $password = $_POST['password'] ?? '';
 
     $user = connecterUtilisateur($mail, $password);
 
     if ($user) {
-
-        // créer session
         $_SESSION['user'] = [
-            'id' => $user['id'],
-            'nom' => $user['nom'],
-            'prenom' => $user['prenom'],
-            'mail' => $user['mail'],
-            'role' => $user['role'],
-            'date_inscription' => $user['date_inscription']
-
+            'id'               => $user['id'],
+            'nom'              => $user['nom'],
+            'prenom'           => $user['prenom'],
+            'mail'             => $user['mail'],
+            'role'             => $user['role'],
+            'date_inscription' => $user['date_inscription'],
         ];
-
-        // redirection
-        header("Location: ../../vue/html/index.php");
-
-
+        header("Location: /index.php?route=accueil");
         exit();
     } else {
-        echo "Email ou mot de passe incorrect";
+        $erreur = "Email ou mot de passe incorrect.";
     }
 }
-require_once __DIR__ . '/../vue/html/connexion.html';
+
+$pageTitle  = 'Connexion';
+$pageStyles = [];
+
+ob_start();
+require_once __DIR__ . '/../vue/html/connexion.php';
+$contenu = ob_get_clean();
+
+require_once __DIR__ . '/../vue/layout/auth.php';

@@ -1,5 +1,4 @@
-/* IMPORTATION DES POLICES */
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
 .navbar {
     position: fixed;
@@ -13,84 +12,91 @@
     padding: 0 1em;
     box-sizing: border-box;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(1.375em);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
 }
 
-/* UL NAV */
+.nav-container {
+    width: 100%;
+    height: 100%;
+}
+
+.logo {
+    display: none;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    display: block;
+    position: relative;
+    top: 2em;
+}
+
+/* =========================
+   MENU MOBILE
+========================= */
 
 .nav-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-
-    width: 100%;
-    gap: 0;
-
     list-style: none;
-    margin: 0;
-    padding: 0;
+    height: 100%;
 }
 
-/* LI ÉLASTIQUES */
 .nav-links li {
-    flex: 1 1 0;
-    min-width: 0;
+    flex: 1;
+    text-align: center;
 }
 
-/* LIENS ÉLASTIQUES */
 .nav-links a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    justify-content: center;
+    gap: 4px;
+    color: #222;
     text-decoration: none;
-    font-size: 0.7em;
-    color: inherit;
-
-    padding: 0.4em 0.2em;
-
-    transition: 0.3s;
-    white-space: nowrap;
-
-    flex: 1 1 0;
-    min-width: 0;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: 0.3s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.actif {
+.nav-links a:hover {
     background: rgba(255, 255, 255, 0.4);
     border-radius: 1em;
     transform: translateY(-0.12em);
-}
-.glass {
-    border-radius: 20px 20px 0 0; /* les deux couin en pas */
+    padding: 10px;
 }
 
-/* LOGO */
-.img {
-    display: none;
+.nav-links a.actif {
+    transform: translateY(-0.18em);
+    box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
 }
 
-/* HERO MOBILE */
-.mobile {
-    display: block;
-    width: 10em;
-    margin: 0 auto;
+.disabled {
+    opacity: 0.45;
+    pointer-events: none;
 }
 
-/* BOUTON PRINCIPAL */
+/* =========================
+   BOUTONS
+========================= */
+
 .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
     background-color: #3a8a6a;
     color: white;
-
-    padding: 0.75em 1.5em;
-
-    border: none;
-    border-radius: 2.5em;
-
+    text-decoration: none;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .btn-primary:hover {
@@ -98,103 +104,142 @@
     box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
 }
 
+.btn-primary-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background-color: #3a8a6a;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-primary-mobile:hover {
+    transform: translateY(-0.18em);
+    box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
+}
+.nav-links a.actif {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 1em;
+    padding: 10px;
+    transform: translateY(-0.18em);
+    box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
+}
+.btn-mobile {
+    position: fixed;
+    display: block;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+}
+
+.btn-desktop {
+    display: none;
+}
+
 /* =========================
-   BOUTON FIXE
+   TABLETTE
 ========================= */
 
-.btn-inscription-fixe {
-    position: fixed;
-    top: 1em;
-    right: 1em;
+@media (min-width: 878px) {
+    .navbar {
+        height: 80px;
+    }
 
-    z-index: 999;
-
-    text-decoration: none;
-}
-
-.btn-inscription-fixe .btn-primary {
-    padding: 0.6em 1.2em;
-    font-size: 0.8em;
-
-    white-space: nowrap;
-
-    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15);
-}
-
-/* bouton desktop/mobile */
-.btn-descop {
-    display: none;
-    flex-shrink: 0;
-}
-
-.disabled a {
-    pointer-events: none;
-    opacity: 0.5;
-    cursor: not-allowed;
+    .nav-links a {
+        font-size: 0.9rem;
+    }
 }
 
 /* =========================
    DESKTOP
 ========================= */
 
-@media (min-width: 864px) {
-    body {
-        padding-bottom: 0;
-    }
-
+@media (min-width: 999px) {
     .navbar {
-        position: fixed;
         top: 0;
         bottom: auto;
-
-        height: 4.5em;
-
-        justify-content: space-between;
-
-        padding: 0 2em;
+        height: 65px;
+        border-top: none;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(8px);
     }
 
-    .img {
+    .nav-container {
+        max-width: 1400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        padding: 0 30px;
+    }
+
+    .logo {
         display: block;
-        width: 9em;
-        position: relative;
-        top: 3em;
     }
 
     .nav-links {
-        justify-content: center;
-        gap: 1.2em;
-        flex: 1;
+        flex: none;
+        gap: 30px;
+        height: auto;
     }
 
     .nav-links li {
-        flex: unset;
+        flex: none;
     }
 
     .nav-links a {
         flex-direction: row;
-        font-size: 0.9em;
-        padding: 0.5em 0.9em;
-        white-space: nowrap;
+        font-size: 1rem;
     }
 
-    .mobile {
-        display: none;
+    .btn-desktop {
+        display: flex;
     }
 
     .btn-mobile {
-        display: none;
+        display: none !important;
+    }
+}
+
+/* =========================
+   GRAND ÉCRAN
+========================= */
+
+@media (min-width: 1200px) {
+    .nav-container {
+        padding: 0 50px;
     }
 
-    .btn-descop {
-        display: block;
+    .nav-links {
+        gap: 40px;
     }
 
-    .btn-inscription-fixe .btn-primary {
-        padding: 0.7em 1.5em;
-        font-size: 0.9em;
+    .logo img {
+        width: 110px;
     }
-    .glass {
-        border-radius: 0 0 20px 20px; /* les deux couin en pas */
+}
+
+/* =========================
+   ULTRA LARGE
+========================= */
+
+@media (min-width: 1600px) {
+    .nav-container {
+        max-width: 1600px;
+    }
+
+    .logo img {
+        width: 190px;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
     }
 }
