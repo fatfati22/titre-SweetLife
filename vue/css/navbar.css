@@ -48,6 +48,7 @@
 .nav-links li {
     flex: 1;
     text-align: center;
+    padding: 10px;
 }
 
 .nav-links a {
@@ -163,6 +164,7 @@
 @media (min-width: 999px) {
     .navbar {
         top: 0;
+
         bottom: auto;
         height: 65px;
         border-top: none;
