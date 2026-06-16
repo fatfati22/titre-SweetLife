@@ -28,19 +28,20 @@
 
     <main<?= !empty($mainClass) ? ' class="' . htmlspecialchars($mainClass) . '"' : '' ?>>
         <?= $contenu ?>
-    </main>
+        </main>
 
-    <footer class="glass-card">
-        <img src="/vue/image/logo.png" alt="logo footer" />
-        <p>site Public</p>
-        <p>Panel admin V3.SweetLife2025</p>
-    </footer>
+        <footer class="glass-card">
+            <img src="/vue/image/logo.png" alt="logo footer" />
+            <p>site Public</p>
+            <p>Panel admin V3.SweetLife2025</p>
+        </footer>
 
-    <?php if (!empty($pageScripts)): ?>
-        <?php foreach ($pageScripts as $js): ?>
-            <script src="/vue/js/<?= htmlspecialchars($js) ?>"></script>
-        <?php endforeach; ?>
-    <?php endif; ?>
-
+        <?php if (!empty($pageScripts)): ?>
+            <?php foreach ($pageScripts as $js): ?>
+                <script src="/vue/js/<?= htmlspecialchars($js) ?>"></script>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <script src="/vue/js/theme.js"></script>
 </body>
+
 </html>

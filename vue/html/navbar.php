@@ -69,12 +69,12 @@
             </ul>
 
             <?php if (isset($_SESSION['user'])) : ?>
-                <a class="btn-primary-mobile btn-desktop"
+                <a class="btn-primary btn-desktop"
                     href="/index.php?route=deconnexion">
                     Déconnexion
                 </a>
             <?php else : ?>
-                <a class="btn-primary-mobile btn-desktop"
+                <a class="btn-primary btn-desktop"
                     href="/index.php?route=inscription">
                     S'inscrire
                 </a>

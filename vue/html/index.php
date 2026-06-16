@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SweetLife</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Cormorant+Garamond&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Cormorant+Garamond&display=swap" rel="stylesheet" />
+
     <link rel="stylesheet" href="/vue/css/note.css" />
     <link rel="stylesheet" href="/vue/css/footer.css" />
     <link rel="stylesheet" href="/vue/css/element-theme.css" />
@@ -17,98 +16,58 @@
     <link rel="stylesheet" href="/vue/css/theme-initial.css" />
     <link rel="stylesheet" href="/vue/css/navbar.css" />
     <link rel="stylesheet" href="/vue/css/style.css" />
-
 </head>
 
 <body class="theme-calme">
+
     <?php include(__DIR__ . '/navbar.php'); ?>
-
-
 
     <main>
         <section class="hero">
             <article class="hero-content">
-                <img
-                    class="mobile-logo"
-                    src="/vue/image/logo.png"
-                    alt="le logo de site SweetLife" />
+
+                <img class="mobile-logo" src="/vue/image/logo.png" alt="logo" />
+
                 <section class="centrer">
                     <h1>
-                        Comment vas-tu
-                        <span class="couleur">aujourd'hui <?php if (isset($_SESSION['user'])): ?>
-
-                                <?php echo $_SESSION['user']['prenom']; ?>
-                                <?php echo $_SESSION['user']['nom']; ?> !
+                        Comment vas-tu aujourd'hui
+                        <span class="couleur">
+                            <?php if (isset($_SESSION['user'])): ?>
+                                <?= $_SESSION['user']['prenom']; ?> <?= $_SESSION['user']['nom']; ?> !
                             <?php else: ?>
-                                Invité!
-                            <?php endif; ?> </span>
+                                Invité !
+                            <?php endif; ?>
+                        </span>
                     </h1>
 
-
-                    <p>
-                        Choisis ton humeur pour recevoir des
-                        recommandations.
-                    </p>
+                    <p>Choisis ton humeur pour recevoir des recommandations.</p>
 
                     <div class="alig">
                         <button class="btn-primary marg">
                             🌸 Choisir mon humeur
                             <a href=".mood-wheel">ici</a>
                         </button>
+
                         <button class="btn-ghost">
-                            <a href="oubli.html">
-                                😬 vous avez oublier de noter votre
-                                humeurs</a>
+                            <a href="oubli.html">😬 vous avez oublié de noter votre humeur</a>
                         </button>
                     </div>
                 </section>
 
-                <!-- FLEUR -->
+                <!-- MOOD WHEEL -->
                 <?php if (isset($_SESSION['user'])) : ?>
-
                     <section class="mood-wheel">
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-joie')">
-                            😊
-                        </button>
 
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-tristesse')">
-                            😢
-                        </button>
+                        <button class="mood-btn" onclick="setTheme('theme-joie')">😊</button>
+                        <button class="mood-btn" onclick="setTheme('theme-tristesse')">😢</button>
+                        <button class="mood-btn" onclick="setTheme('theme-colere')">😠</button>
+                        <button class="mood-btn" onclick="setTheme('theme-fatigue')">😴</button>
+                        <button class="mood-btn" onclick="setTheme('theme-calme')">😌</button>
+                        <button class="mood-btn" onclick="setTheme('theme-stress')">😰</button>
 
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-colere')">
-                            😠
-                        </button>
-
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-fatigue')">
-                            😴
-                        </button>
-
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-calme')">
-                            😌
-                        </button>
-
-                        <button
-                            class="mood-btn"
-                            onclick="setTheme('theme-stress')">
-                            😰
-                        </button>
-
-                        <!-- CENTRE -->
                         <button class="mood-btn center">🌸</button>
                     </section>
-
                 <?php else : ?>
-
                     <section class="mood-wheel">
                         <button class="mood-btn" disabled>😊 🔒</button>
                         <button class="mood-btn" disabled>😢 🔒</button>
@@ -116,34 +75,17 @@
                         <button class="mood-btn" disabled>😴 🔒</button>
                         <button class="mood-btn" disabled>😌 🔒</button>
                         <button class="mood-btn" disabled>😰 🔒</button>
-
-
-                        <!-- CENTRE -->
                         <button class="mood-btn center" disabled>🌸🔒</button>
                     </section>
-
                 <?php endif; ?>
+
             </article>
         </section>
     </main>
 
-    <!-- MODAL NOTE D'HUMEUR -->
+    <!-- MODAL -->
     <div id="modal-note" class="modal-overlay" onclick="fermerModal(event)">
-        <div class="modal-carte" id="modal-carte">
-            <div class="emotion" id="modal-emoji">😊</div>
-            <h1 class="titre">Comment tu te sens ?</h1>
-            <p class="texte-info">Ajoute une note sur ce qui se passe (10 caractères minimum)</p>
-            <textarea
-                class="zone-message"
-                id="modal-textarea"
-                placeholder="Que se passe-t-il en ce moment ?"
-                maxlength="300"></textarea>
-            <div class="compteur" id="modal-compteur">0/300</div>
-            <div class="zone-boutons">
-                <button class="bouton-annuler" onclick="fermerModal()">Annuler</button>
-                <button class="bouton-enregistrer" id="btn-enregistrer" onclick="enregistrerNote()">Enregistrer 🔃</button>
-            </div>
-        </div>
+        <?php include(__DIR__ . '/note.php'); ?>
     </div>
 
     <footer class="glass-card">
@@ -153,80 +95,191 @@
     </footer>
 
     <script>
+        /* =========================
+   TRANSITION FLUIDE
+========================= */
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.style.transition = "background-color 0.4s ease, color 0.4s ease";
+
+            const saved = localStorage.getItem('theme');
+            if (saved) {
+                document.body.className = saved;
+            }
+        });
+
+        /* =========================
+           DATA HUMEURS
+        ========================= */
         const humeurs = {
             'theme-calme': {
                 emoji: '😌',
                 label: 'Calme',
-                nom: 'calme'
+                nom: 'calme',
+                id: 1
             },
             'theme-joie': {
                 emoji: '😊',
                 label: 'Joyeux(se)',
-                nom: 'joie'
+                nom: 'joie',
+                id: 2
             },
             'theme-tristesse': {
                 emoji: '😢',
                 label: 'Triste',
-                nom: 'tristesse'
+                nom: 'tristesse',
+                id: 3
             },
             'theme-colere': {
                 emoji: '😠',
                 label: 'En colère',
-                nom: 'colere'
+                nom: 'colere',
+                id: 4
             },
             'theme-fatigue': {
                 emoji: '😴',
                 label: 'Fatigué(e)',
-                nom: 'fatigue'
+                nom: 'fatigue',
+                id: 5
             },
             'theme-stress': {
                 emoji: '😰',
                 label: 'Stressé(e)',
-                nom: 'stress'
+                nom: 'stress',
+                id: 6
             },
         };
 
+        let humeurCourante = null;
+        let themePrecedent = null;
+
+        /* =========================
+           SET THEME
+        ========================= */
         function setTheme(theme) {
+
+            themePrecedent = document.body.className;
+
             document.body.className = theme;
 
-            const h = humeurs[theme];
+            humeurCourante = humeurs[theme] || null;
+            if (!humeurCourante) return;
+
+            const h = humeurCourante;
+
             document.getElementById('modal-emoji').textContent = h.emoji;
+            document.querySelector('#modal-carte h1.titre').textContent = 'Tu te sens : ' + h.label;
+
             document.getElementById('modal-textarea').value = '';
             document.getElementById('modal-compteur').textContent = '0/300';
             document.getElementById('modal-textarea').classList.remove('erreur');
 
-            // Changer la couleur de la carte selon l'humeur
             document.getElementById('modal-carte').className = 'modal-carte note-' + h.nom;
 
             document.getElementById('modal-note').classList.add('actif');
-            setTimeout(() => document.getElementById('modal-textarea').focus(), 280);
+
+            localStorage.setItem('theme', theme);
+
+            setTimeout(() => {
+                document.getElementById('modal-textarea').focus();
+            }, 280);
         }
 
+        /* =========================
+           ANNULER = RETOUR THEME
+        ========================= */
+        function annulerNote() {
+
+            document.getElementById('modal-note').classList.remove('actif');
+
+            if (themePrecedent) {
+                document.body.className = themePrecedent;
+                localStorage.setItem('theme', themePrecedent);
+            }
+        }
+
+        /* =========================
+           FERMER MODAL
+        ========================= */
         function fermerModal(e) {
             if (e && e.target !== document.getElementById('modal-note')) return;
             document.getElementById('modal-note').classList.remove('actif');
         }
 
+        /* =========================
+           ENREGISTRER NOTE
+        ========================= */
         function enregistrerNote() {
+
             const texte = document.getElementById('modal-textarea').value.trim();
+
             if (texte.length < 10) {
                 const ta = document.getElementById('modal-textarea');
                 ta.classList.add('erreur');
                 setTimeout(() => ta.classList.remove('erreur'), 600);
                 return;
             }
-            // TODO : fetch('?route=humeur&action=noter', { method:'POST', ... })
-            document.getElementById('modal-note').classList.remove('actif');
+
+            const btn = document.getElementById('btn-enregistrer');
+            btn.disabled = true;
+            btn.textContent = 'Enregistrement…';
+
+            const formData = new FormData();
+            formData.append('ajouter', '1');
+            formData.append('description', texte);
+
+            if (humeurCourante) {
+                formData.append('id_humeur', humeurCourante.id);
+            }
+
+            fetch('index.php?route=note', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+
+                    if (response.ok) {
+
+                        document.getElementById('modal-note').classList.remove('actif');
+
+                        const notif = document.createElement('div');
+                        notif.textContent = '✅ Note enregistrée !';
+                        notif.style.cssText =
+                            'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#4CAF50;color:#fff;padding:12px 24px;border-radius:12px;font-weight:bold;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,.2)';
+
+                        document.body.appendChild(notif);
+                        setTimeout(() => notif.remove(), 2500);
+
+                    } else {
+                        alert('Erreur lors de l\'enregistrement.');
+                    }
+                })
+                .catch(() => alert('Erreur réseau.'))
+                .finally(() => {
+                    btn.disabled = false;
+                    btn.textContent = 'Enregistrer 🔃';
+                });
         }
 
-        document.getElementById('modal-textarea').addEventListener('input', function() {
-            document.getElementById('modal-compteur').textContent = this.value.length + '/300';
+        /* =========================
+           COMPTEUR TEXTE
+        ========================= */
+        document.addEventListener('input', (e) => {
+            if (e.target.id === 'modal-textarea') {
+                document.getElementById('modal-compteur').textContent =
+                    e.target.value.length + '/300';
+            }
         });
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') document.getElementById('modal-note').classList.remove('actif');
+        /* =========================
+           ESC CLOSE
+        ========================= */
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.getElementById('modal-note').classList.remove('actif');
+            }
         });
     </script>
+
 </body>
 
 </html>
