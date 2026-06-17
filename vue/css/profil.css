@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
 
+h1 {
+    font-weight: bold;
+}
+
 /*   ORBES EN FOND       */
 .float-orb {
     position: fixed; /* position fixe à l'écran */
     border-radius: 50%; /* forme ronde */
     filter: blur(80px); /* flou pour effet doux */
-    background: rgba(58, 138, 106, 0.3); /* couleur verte translucide */
+    background: rgba(255, 255, 255, 0.25); /* couleur verte translucide */
     z-index: 0; /* derrière les autres éléments */
 }
 
@@ -25,16 +29,16 @@
 
 /*   CARTE STYLE GLASS   */
 .glass-card {
-    background: rgba(160, 220, 195, 0.3); /* fond translucide vert clair */
+    background: rgba(255, 255, 255, 0.18); /* fond translucide vert clair */
     backdrop-filter: blur(16px); /* effet flou derrière */
-    border: 1px solid rgba(100, 200, 160, 0.35); /* bord léger */
+    border: 1px solid rgba(255, 255, 255, 0.35); /* bord léger */
     border-radius: 16px; /* coins arrondis */
     transition: 0.3s; /* animation douce */
 }
 
 .glass-card:hover {
     transform: translateY(-4px); /* monte légèrement au survol */
-    box-shadow: 0 12px 40px rgba(58, 138, 106, 0.3); /* ombre douce */
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.25); /* ombre douce */
 }
 
 /*   LAYOUT DE LA PAGE    */
@@ -60,13 +64,15 @@
     width: 90px; /* largeur de l'avatar */
     height: 90px; /* hauteur */
     border-radius: 50%; /* rond */
-    background: linear-gradient(135deg, #3a8a6a, #5aaa8a); /* dégradé vert */
+    background: rgba(255, 255, 255, 0.25); /* dégradé vert */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 40px; /* taille emoji ou initiales */
     color: white; /* couleur du texte */
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(15px);
 }
 
 p {
@@ -101,8 +107,9 @@ p {
 }
 
 .libelle-info {
-    font-size: 12px; /* texte petit pour label */
-    color: #2a6050; /* couleur verte foncée */
+    font-size: 14px; /* texte petit pour label */
+
+    font-weight: bold;
 }
 
 .valeur-info {
@@ -157,9 +164,7 @@ p {
 .badge-age {
     display: inline-block;
     padding: 0.15rem 0.6rem;
-    border-radius: 2rem;
-    background: rgba(90, 170, 138, 0.25);
-    border: 1px solid rgba(90, 170, 138, 0.45);
+
     font-size: 0.78rem;
     font-weight: 600;
     margin-left: 0.4rem;

@@ -18,13 +18,13 @@
 </article>
 
 <h1>🥗 Repas</h1>
-<p class="sous-titre">Des repas adaptés à ton humeur.</p>
+<p class="sous-titre couleur">Des repas adaptés à ton humeur.</p>
 
 <section class="banniere">
     <span>🌸</span>
     <div>
         <h3>Repas recommandés</h3>
-        <p>Des plats équilibrés pour ton bien-être.</p>
+        <p class="couleur bold">Des plats équilibrés pour ton bien-être.</p>
     </div>
 </section>
 

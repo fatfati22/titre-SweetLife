@@ -4,7 +4,7 @@
     padding: 25px; /* espace intérieur */
     width: fit-content; /* largeur adaptée au contenu */
     display: block; /* élément en bloc */
-    margin: 2em auto; /* centre la carte */
+    margin: 5em auto; /* centre la carte */
 }
 
 /* GRAND EMOJI */
@@ -14,7 +14,9 @@
     cursor: pointer; /* curseur main */
     transition: transform 0.25s ease; /* animation douce */
 }
-
+p {
+    font-weight: bold;
+}
 /* CARTE ARTICLE */
 article {
     background: rgba(255, 255, 255, 0.3); /* fond transparent */

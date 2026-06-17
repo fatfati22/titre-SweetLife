@@ -191,3 +191,14 @@
         font-size: 30px;
     }
 }
+
+
+/* Glass unifié */
+.card,.field input,.field textarea,.field select,.btn-image,.btn-delete,.cancel-btn,.save-btn,.avatar{
+background:rgba(255,255,255,.18)!important;
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.35)!important;
+}
+
+.save-btn{color:#333!important;}

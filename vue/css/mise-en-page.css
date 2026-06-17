@@ -4,10 +4,9 @@
 main {
     padding: 120px 20px 60px; /* espace intérieur */
     max-width: 1200px; /* largeur maximale */
-    margin: auto; /* centre la page */*
-  display: flex: ;
-  flex-direction: column;
-
+    margin: auto; /* centre la page */
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -18,8 +17,12 @@ h1 {
 p.sous-titre {
     margin-bottom: 30px; /* espace dessous */
     color: #5d7d72; /* couleur du texte */
+    font-weight: bold;
 }
 
+.bold {
+    font-weight: bold;
+}
 /* BANNIÈRE */
 section.banniere {
     background: rgba(255, 255, 255, 0.25); /* fond transparent */
