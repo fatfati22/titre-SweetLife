@@ -1,227 +1,272 @@
-* {
-    font-family: "Cormorant Garamond", serif; /* Police du titre */
+/* =====================================================
+   PAGE OUBLI D'HUMEUR - MVC LAYOUT - GLASS EFFECT
+   ===================================================== */
+
+.oubli-page-layout {
+    padding-top: 110px;
 }
 
-/*   CONTAINER PRINCIPAL  */
-
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
 .oubli-container {
-    max-width: 900px; /* largeur maximale */
-    margin: auto; /* centre horizontalement */
-    padding: 20px; /* espace intérieur */
+    width: min(92%, 980px);
+    margin: 0 auto 80px;
 }
 
 .oubli-card {
-    background: rgba(255, 255, 255, 0.2); /* fond semi-transparent */
-    padding: 40px; /* espace intérieur */
-    border-radius: 20px; /* coins arrondis */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ombre légère */
-    text-align: center; /* texte centré */
+    padding: clamp(24px, 4vw, 46px);
+    border-radius: 28px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: 0 18px 50px rgba(31, 38, 135, 0.18);
+
+    color: var(--couleur-texte, #0d2520);
 }
 
-/*   ICÔNE HEADER        */
-
 .oubli-icon {
-    font-size: 70px; /* taille de l'icône */
     display: block;
-    margin-bottom: 15px; /* espace en dessous */
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin-bottom: 14px;
 }
 
 .oubli-title {
-    font-size: 45px; /* taille du titre */
-    color: #3a8a6a; /* couleur verte */
-    margin-bottom: 15px;
+    margin: 0 0 14px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    color: inherit;
 }
 
 .oubli-subtitle {
-    color: #555; /* gris foncé */
-    font-size: 17px; /* taille texte */
-    line-height: 1.6; /* interligne */
-    margin-bottom: 40px;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    opacity: 0.88;
 }
 
-/*   FORMULAIRE          */
-
-.form-group {
-    margin-bottom: 30px; /* espace sous chaque champ */
-    text-align: left; /* texte aligné à gauche */
+.oubli-alert {
+    margin: 0 auto 20px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.form-label {
+.oubli-alert-success {
+    color: #155c3d;
+}
+
+.oubli-alert-error {
+    color: #7a1d1d;
+}
+
+.oubli-form {
+    text-align: left;
+}
+
+.oubli-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.oubli-form-group {
+    margin-bottom: 24px;
+}
+
+.oubli-form-label {
     display: block;
     margin-bottom: 10px;
-    font-size: 17px;
-    font-weight: bold; /* texte en gras */
+    font-size: 1.05rem;
+    font-weight: 800;
 }
 
-/*   CHAMP HEURE          */
+.oubli-form-input,
+.oubli-form-textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 16px;
+    border-radius: 16px;
 
-.time-input-group {
-    display: flex; /* éléments en ligne */
-    gap: 10px; /* espace entre eux */
-    align-items: center; /* centré verticalement */
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    color: var(--couleur-texte, #0d2520);
+    outline: none;
+    font-size: 1rem;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-.time-input {
-    flex: 1; /* prend tout l'espace disponible */
-    padding: 15px;
-    border: 1px solid #ccc; /* bord gris clair */
-    border-radius: 10px; /* coins arrondis */
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
-    min-width: 200px; /* largeur minimale */
+.oubli-form-textarea {
+    resize: vertical;
+    min-height: 110px;
 }
 
-.time-icon {
-    background: #3a8a6a; /* fond vert */
-    color: white; /* texte blanc */
-    padding: 15px 20px;
-    border-radius: 10px;
-    font-size: 14px;
+.oubli-form-input:focus,
+.oubli-form-textarea:focus {
+    border-color: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
 }
-
-/*   SELECTION HUMEUR     */
 
 .mood-grid {
-    display: grid; /* grille */
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
-    gap: 15px; /* espace entre cartes */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+    gap: 14px;
 }
 
 .mood-option {
-    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
-    padding: 20px;
-    border-radius: 15px; /* coins arrondis */
-    text-align: center;
-    cursor: pointer; /* main au survol */
-    border: 2px solid transparent;
-    transition: 0.3s; /* animation douce */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 125px;
+    padding: 18px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+
+    background: linear-gradient(135deg, rgba(255,255,255,0.26), rgba(255,255,255,0.13)),
+                linear-gradient(135deg, var(--humeur-haut), var(--humeur-bas));
+    background-blend-mode: screen;
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    box-shadow: 0 8px 24px rgba(31, 38, 135, 0.12);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.mood-option:hover {
-    background: #dff3ec; /* fond clair au survol */
-    border-color: #3a8a6a; /* contour vert */
+.mood-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
 }
 
+.mood-option:hover,
 .mood-option.selected {
-    background: #3a8a6a; /* fond vert si sélectionné */
-    color: white; /* texte blanc */
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 34px rgba(31, 38, 135, 0.22);
+}
+
+.mood-option.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.68);
+    font-weight: 900;
 }
 
 .mood-emoji {
-    font-size: 45px; /* emoji grand */
-    display: block;
-    margin-bottom: 10px;
+    font-size: 2.6rem;
+    line-height: 1;
 }
 
 .mood-label {
-    font-size: 16px;
-    font-weight: bold;
+    font-weight: 800;
+    text-align: center;
 }
 
-/*   INPUT TEXTUEL       */
-
-.form-input {
-    width: 100%; /* prend toute la largeur */
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
-}
-
-/*   BOUTON PRINCIPAL     */
-
-.btn-primary {
+.oubli-btn-primary {
     width: 100%;
-    background: #3a8a6a; /* fond vert */
-    color: white;
-    border: none;
-    padding: 18px;
-    border-radius: 12px;
-    font-size: 16px;
+    border: 0;
+    border-radius: 18px;
+    padding: 16px 20px;
     cursor: pointer;
-    transition: 0.3s; /* animation douce */
+
+    background: rgba(255, 255, 255, 0.34);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.48);
+
+    color: var(--couleur-texte, #0d2520);
+    font-size: 1rem;
+    font-weight: 900;
+    box-shadow: 0 10px 28px rgba(31, 38, 135, 0.16);
+    transition: transform 0.25s ease, background 0.25s ease;
 }
 
-.btn-primary:hover {
-    background: #2f7057; /* fonce au survol */
+.oubli-btn-primary:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.48);
 }
-
-/*   MESSAGE INFO         */
 
 .info-message {
-    margin-top: 25px;
-    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
-    padding: 20px;
-    border-radius: 15px;
+    margin-top: 22px;
+    padding: 18px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.32);
 }
 
 .info-message span {
-    font-size: 30px; /* icône plus grande */
+    font-size: 1.8rem;
 }
 
-/*   SECTION FOOTER       */
+.info-message p {
+    margin: 0;
+    line-height: 1.5;
+}
 
-.form-footer {
-    text-align: center;
-    margin-top: 30px;
+.oubli-form-footer {
+    margin-top: 26px;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
 }
-
-/*   LIEN RETOUR          */
 
 .back-link {
-    text-decoration: none; /* enlève le soulignement */
-    color: #3a8a6a; /* vert */
-    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+    font-weight: 800;
+    padding: 10px 14px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(255, 255, 255, 0.32);
+    transition: background 0.25s ease, transform 0.25s ease;
 }
 
-/*   CARTE HUMEUR         */
-
-.mood-card {
-    width: 100%;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255, 255, 255, 0.3); /* fond semi-transparent */
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.38);
+    transform: translateY(-2px);
 }
-
-/*   RESPONSIVE           */
 
 @media (max-width: 768px) {
-    .mood-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 colonnes sur tablette */
+    .oubli-page-layout {
+        padding-top: 90px;
     }
 
-    .oubli-title {
-        font-size: 35px; /* titre plus petit */
+    .oubli-container {
+        width: calc(100% - 28px);
+        margin-bottom: 130px;
+    }
+
+    .oubli-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 420px) {
     .mood-grid {
-        grid-template-columns: 1fr; /* 1 colonne sur petit écran */
-    }
-
-    .oubli-card {
-        padding: 20px; /* moins d'espace */
-    }
-
-    .time-input-group {
-        flex-direction: column; /* champs empilés */
-    }
-
-    .time-icon {
-        width: 100%; /* prend toute la largeur */
-        text-align: center; /* centre le contenu */
-    }
-
-    .oubli-title {
-        font-size: 28px; /* titre plus petit */
+        grid-template-columns: 1fr;
     }
 }

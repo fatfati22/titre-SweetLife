@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════════════════════════ */
 
 /* Surcharge du main pour le panel admin */
-main.admin-main {
+.admin-main {
     align-items: flex-start;
     padding-top: 0;
     padding-bottom: 5rem; /* espace pour la navbar mobile en bas */
@@ -215,29 +215,29 @@ main.admin-main {
     margin-bottom: 1.25rem;
 }
 
-.form-row {
+.admin-form-row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
 }
 
-.form-group {
+.admin-form-group {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     margin-bottom: 0.85rem;
 }
 
-.form-group label {
+.admin-form-group label {
     font-size: 0.85rem;
     font-weight: 500;
     opacity: 0.85;
     text-align: left;
 }
 
-.form-group input,
-.form-group select,
-.form-group textarea {
+.admin-form-group input,
+.admin-form-group select,
+.admin-form-group textarea {
     padding: 0.6rem 0.85rem;
     border-radius: 0.6rem;
     border: 1px solid rgba(255,255,255,0.4);
@@ -250,26 +250,26 @@ main.admin-main {
     width: 100%;
 }
 
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
+.admin-form-group input:focus,
+.admin-form-group select:focus,
+.admin-form-group textarea:focus {
     outline: none;
     border-color: rgba(90,170,138,0.8);
     background: rgba(255,255,255,0.3);
 }
 
-.form-group select option {
+.admin-form-group select option {
     background: #2a5a4a;
     color: #fff;
 }
 
-.form-group small {
+.admin-form-group small {
     font-size: 0.75rem;
     opacity: 0.6;
     text-align: left;
 }
 
-.form-group textarea {
+.admin-form-group textarea {
     resize: vertical;
     min-height: 80px;
 }
@@ -303,7 +303,7 @@ main.admin-main {
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.form-actions {
+.admin-form-actions {
     display: flex;
     gap: 0.75rem;
     margin-top: 0.5rem;
@@ -357,13 +357,10 @@ main.admin-main {
 .table-scroll { overflow-x: auto; }
 
 .admin-table {
-    width: 100%;
-    border-collapse: collapse;
     font-size: 0.875rem;
 }
 
 .admin-table th {
-    text-align: left;
     padding: 0.6rem 0.75rem;
     border-bottom: 1px solid rgba(255,255,255,0.3);
     font-weight: 600;
@@ -471,7 +468,7 @@ main.admin-main {
 /* ── PAGE THÈMES ─────────────────────────────────────────────── */
 
 .theme-intro {
-    text-align: left !important;
+    text-align: left;
     opacity: 0.75;
     margin-bottom: 1.25rem;
     font-size: 0.9rem;
@@ -594,8 +591,76 @@ main.admin-main {
 
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
 
-    .form-row { grid-template-columns: 1fr; }
+    .admin-form-row { grid-template-columns: 1fr; }
 
     .admin-table { font-size: 0.78rem; }
     .admin-table th, .admin-table td { padding: 0.4rem 0.5rem; }
+}
+
+/* =====================================================
+   CORRECTION DÉCALAGE ADMIN / NAVBAR
+   ===================================================== */
+
+.admin-main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 0 5.5rem;
+}
+
+.admin-wrapper,
+.admin-content,
+.admin-sidebar {
+    box-sizing: border-box;
+}
+
+.admin-content {
+    min-width: 0;
+    width: 100%;
+}
+
+.admin-table-card,
+.admin-form-card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+@media (min-width: 1099.22px) {
+    .admin-main {
+        padding-top: 80px;
+        padding-bottom: 2rem;
+    }
+
+    .admin-sidebar {
+        top: 80px;
+        min-height: calc(100vh - 80px);
+    }
+}
+
+@media (max-width: 900px) {
+    .admin-wrapper {
+        flex-direction: column;
+    }
+
+    .admin-sidebar {
+        position: static;
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .admin-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+    }
+
+    .admin-content {
+        padding: 1rem;
+    }
 }

@@ -3,7 +3,7 @@
 /* Récupère l'élément emoji par son identifiant */
 const emojiEl = document.getElementById("moodEmoji");
 
-let y = 0;         /* position verticale courante */
+let y = 0; /* position verticale courante */
 let direction = 1; /* sens du mouvement : 1 = vers le bas, -1 = vers le haut */
 
 /* Fonction d'animation en boucle */
@@ -24,7 +24,8 @@ animate(); /* démarre l'animation */
 
 /* Effet d'agrandissement et rotation au clic */
 emojiEl.addEventListener("click", () => {
-    emojiEl.style.transform = "scale(1.4) rotate(10deg)"; /* agrandit et pivote */
+    emojiEl.style.transform =
+        "scale(1.4) rotate(10deg)"; /* agrandit et pivote */
 
     /* Remet la transformation normale après 200ms */
     setTimeout(() => {

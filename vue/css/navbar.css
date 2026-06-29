@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap");
-
 .navbar {
     position: fixed;
     bottom: 0;
@@ -29,8 +27,6 @@
     width: 100px;
     height: auto;
     display: block;
-    position: relative;
-    top: 2em;
 }
 
 /* =========================
@@ -57,22 +53,18 @@
     align-items: center;
     justify-content: center;
     gap: 4px;
+    padding: 10px;
+    border-radius: 1em;
     color: #222;
     text-decoration: none;
     font-size: 0.75rem;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.nav-links a:hover {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 1em;
-    transform: translateY(-0.12em);
-    padding: 10px;
-}
-
+.nav-links a:hover,
 .nav-links a.actif {
-    transform: translateY(-0.18em);
+    background: rgba(255, 255, 255, 0.4);
     box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
 }
 
@@ -124,19 +116,13 @@
     transform: translateY(-0.18em);
     box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
 }
-.nav-links a.actif {
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 1em;
-    padding: 10px;
-    transform: translateY(-0.18em);
-    box-shadow: 0 0.5em 1.25em rgba(255, 255, 255, 0.3);
-}
 .btn-mobile {
     position: fixed;
     display: block;
     top: 15px;
     right: 15px;
     z-index: 1001;
+    width: fit-content;
 }
 
 .btn-desktop {
@@ -203,6 +189,7 @@
 
     .btn-desktop {
         display: flex;
+        width: fit-content;
     }
 
     .btn-mobile {

@@ -1,6 +1,7 @@
 /*   BASE DES CARTES     */
 
-article {
+.recette-card,
+.carte-exercice {
     background: rgba(255, 255, 255, 0.3); /* fond transparent */
     backdrop-filter: blur(15px); /* effet flou */
     -webkit-backdrop-filter: blur(15px); /* compatibilité Safari */
@@ -16,20 +17,22 @@ article {
     position: relative; /* position de base */
 }
 
-article:hover {
+.recette-card:hover,
+.carte-exercice:hover {
     transform: translateY(-6px); /* monte légèrement */
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15); /* ombre plus forte */
 }
 
 /*   TITRES ET TEXTES    */
 
-h2 {
+.recette-card-title,
+.titre-exercice {
     color: #2f6f55; /* couleur verte */
     font-size: 18px; /* taille du titre */
     margin-bottom: 10px; /* espace dessous */
 }
 
-p {
+.recette-card-text {
     color: #5d7d72; /* couleur du texte */
     margin-bottom: 15px; /* espace dessous */
 }
@@ -86,14 +89,14 @@ p {
 
 /*   CARTE REPAS         */
 
-article img {
+.recette-card-img {
     width: 100%; /* image pleine largeur */
     height: 220px; /* hauteur fixe */
     object-fit: cover; /* coupe l’image proprement */
     display: block; /* évite les espaces */
 }
 
-div.contenu {
+.repas-card-content {
     padding: 20px; /* espace intérieur */
 }
 
@@ -111,7 +114,7 @@ div.contenu {
     color: #3a8a6a; /* couleur verte */
 }
 
-button {
+.recette-card-button {
     width: 100%; /* pleine largeur */
     padding: 12px; /* espace intérieur */
     border: none; /* pas de bordure */
@@ -122,11 +125,11 @@ button {
     transition: 0.3s; /* animation douce */
 }
 
-button:hover {
+.recette-card-button:hover {
     background: #2f6f55; /* vert plus foncé */
 }
 
-section.grille {
+.repas-grille {
     display: grid; /* active la grille */
     grid-template-columns: 1fr; /* une colonne */
     gap: 20px; /* espace entre cartes */
@@ -143,15 +146,16 @@ section.grille {
         height: 170px; /* vidéo plus grande */
     }
 
-    h2 {
+    .recette-card-title,
+        .titre-exercice {
         font-size: 20px; /* titre plus grand */
     }
 
-    article img {
+    .recette-card-img {
         height: 240px; /* image plus haute */
     }
 
-    section.grille {
+    .repas-grille {
         grid-template-columns: 1fr 1fr; /* 2 colonnes */
     }
 }
@@ -177,19 +181,20 @@ section.grille {
         padding: 15px; /* plus d’espace */
     }
 
-    h2 {
+    .recette-card-title,
+        .titre-exercice {
         font-size: 22px; /* titre plus grand */
     }
 
-    article img {
+    .recette-card-img {
         height: 260px; /* image plus haute */
     }
 
-    div.contenu {
+    .repas-card-content {
         padding: 25px; /* plus d’espace */
     }
 
-    section.grille {
+    .repas-grille {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
     }
 }
@@ -197,11 +202,12 @@ section.grille {
 /*   PETIT ÉCRAN         */
 
 @media (max-width: 400px) {
-    div.contenu {
+    .repas-card-content {
         padding: 15px; /* moins d’espace */
     }
 
-    h2 {
+    .recette-card-title,
+        .titre-exercice {
         font-size: 20px; /* taille du titre */
     }
 

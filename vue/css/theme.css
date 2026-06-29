@@ -1,74 +1,83 @@
-/* THEMES */
-/* Chaque thème change le fond et la couleur du texte */
+/* =========================
+   THEME AUTOMATIQUE SQL
+   Les couleurs viennent de la table humeur :
+   - couleur_haut
+   - couleur_bas
+   Sans :root : les variables sont mises directement sur <body>.
+   ========================= */
 
-/* THEME CALME           */
-
-.theme-calme {
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: "DM Sans", Arial, sans-serif;
     background: linear-gradient(
         135deg,
-        #e8f5f0,
-        #a8d8c0,
-        #5aaa8a
-    ); /* Fond en dégradé vert doux */
-    color: #0d2520; /* Texte sombre pour contraste */
+        var(--couleur-haut, #e8f5f0),
+        var(--couleur-bas, #5aaa8a)
+    );
+    color: var(--couleur-texte, #0d2520);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* THEME JOIE            */
-
-.theme-joie {
-    background: linear-gradient(
-        135deg,
-        #fff9e6,
-        #ffe066,
-        #ffb347
-    ); /* Fond en dégradé jaune-orange joyeux */
-    color: #2d2000; /* Texte sombre pour bien voir */
+a {
+    color: inherit;
 }
 
-/* THEME TRISTESSE       */
-
-.theme-tristesse {
-    background: linear-gradient(
-        135deg,
-        #e8ecf0,
-        #b8cde0,
-        #7096b8
-    ); /* Fond en dégradé bleu doux triste */
-    color: #1a2535; /* Texte sombre pour contraste */
+.glass,
+.glass-card,
+.card,
+.note-card,
+.repas-card,
+.exercice-card {
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--couleur-texte, #0d2520);
+    border-radius: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(8px);
 }
 
-/* THEME COLERE          */
-
-.theme-colere {
-    background: linear-gradient(
-        135deg,
-        #f5e8e8,
-        #e8a0a0,
-        #b22222
-    ); /* Fond en dégradé rouge colère */
-    color: #2d0a0a; /* Texte sombre pour contraste */
+button,
+.btn,
+.btn-primary,
+input[type="submit"] {
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    background: var(--couleur-bas, #5aaa8a);
+    color: #ffffff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/* THEME FATIGUE         */
-
-.theme-fatigue {
-    background: linear-gradient(
-        135deg,
-        #eeeeee,
-        #cccccc,
-        #aaaaaa
-    ); /* Fond en dégradé gris fatigue */
-    color: #222; /* Texte foncé mais doux */
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-/* THEME STRESS          */
+.couleur {
+    color: var(--couleur-bas, #5aaa8a);
+}
 
-.theme-stress {
-    background: linear-gradient(
-        135deg,
-        #e0f0ff,
-        #89c2ff,
-        #3a86ff
-    ); /* Fond en dégradé bleu vif stress */
-    color: #0a1f44; /* Texte sombre pour contraste */
+.mood-btn {
+    border-color: var(--couleur-bas, #5aaa8a);
+}
+
+input,
+textarea,
+select {
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.65);
+    color: var(--couleur-texte, #0d2520);
+    backdrop-filter: blur(8px);
 }

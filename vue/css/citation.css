@@ -1,0 +1,125 @@
+/* =====================================================
+   CITATION ACCUEIL - MVC
+   La citation est stockée avec la dernière humeur.
+   Elle ne change pas au rechargement.
+   ===================================================== */
+
+.citation-accueil-card {
+    width: min(90%, 720px);
+    margin: 24px auto 10px;
+    padding: 22px 26px;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+
+    color: var(--couleur-texte, #0d2520);
+}
+
+.citation-accueil-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.citation-accueil-icone {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.citation-accueil-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.citation-accueil-header p,
+.citation-accueil-empty,
+.citation-accueil-meta {
+    margin: 4px 0 0;
+    opacity: 0.82;
+}
+
+.citation-accueil-texte {
+    margin: 0;
+    padding: 16px 18px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.18);
+    border-left: 4px solid rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+}
+
+.citation-accueil-meta {
+    text-align: right;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .citation-accueil-card {
+        width: calc(100% - 30px);
+        padding: 18px;
+        margin-top: 18px;
+    }
+
+    .citation-accueil-header {
+        align-items: flex-start;
+    }
+
+    .citation-accueil-icone {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        font-size: 1.6rem;
+    }
+
+    .citation-accueil-texte {
+        font-size: 1rem;
+    }
+}
+
+/* Placement demandé : sous les boutons de choix d'humeur, centré */
+.mood-action-block .citation-accueil-card {
+    width: min(100%, 720px);
+    margin: 18px auto 0;
+}
+
+.citation-scroll-highlight {
+    animation: citationAppearScroll 1.2s ease both, citationGlow 2.4s ease;
+}
+
+@keyframes citationAppearScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes citationGlow {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+    }
+    45% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.34), 0 18px 45px rgba(31, 38, 135, 0.28);
+    }
+}

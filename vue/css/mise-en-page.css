@@ -1,7 +1,7 @@
 /*   STRUCTURE DES PAGES */
 /* (repas + exercices)   */
 
-main {
+.page-layout {
     padding: 120px 20px 60px; /* espace intérieur */
     max-width: 1200px; /* largeur maximale */
     margin: auto; /* centre la page */
@@ -9,12 +9,12 @@ main {
     flex-direction: column;
 }
 
-h1 {
+.page-title {
     font-size: 42px; /* grande taille du titre */
     margin-bottom: 10px; /* espace dessous */
 }
 
-p.sous-titre {
+.page-subtitle {
     margin-bottom: 30px; /* espace dessous */
     color: #5d7d72; /* couleur du texte */
     font-weight: bold;
@@ -24,7 +24,7 @@ p.sous-titre {
     font-weight: bold;
 }
 /* BANNIÈRE */
-section.banniere {
+.page-banner {
     background: rgba(255, 255, 255, 0.25); /* fond transparent */
     border: 1px solid #dceee7; /* bordure claire */
     border-radius: 20px; /* coins arrondis */
@@ -36,6 +36,6 @@ section.banniere {
     margin: 30px auto; /* centre la bannière */
 }
 
-section.banniere span {
+.page-banner-icon {
     font-size: 40px; /* taille de l’icône ou emoji */
 }

@@ -1,105 +1,144 @@
 <?php
-// Vue repas — contenu uniquement
+// Vue repas
+/** @var array $repas */
+/** @var array|null $humeurActuelle */
+
+$categoriesRepas = [];
+$typesRepas = [];
+
+foreach ($repas ?? [] as $r) {
+    if (!empty($r['categorie_id']) && !isset($categoriesRepas[$r['categorie_id']])) {
+        $categoriesRepas[$r['categorie_id']] = $r['categorie'] ?? 'Catégorie';
+    }
+
+    if (!empty($r['type_id']) && !isset($typesRepas[$r['type_id']])) {
+        $typesRepas[$r['type_id']] = $r['type'] ?? 'Type';
+    }
+}
 ?>
-<!-- FILTERS -->
-<input type="radio" name="type" id="all" checked />
-<input type="radio" name="type" id="entree" />
-<input type="radio" name="type" id="plat-principale" />
-<input type="radio" name="type" id="dessert-fruit" />
-<input type="radio" name="type" id="snack" />
 
-<article class="mood-card glass-card">
-    <p>💫 État émotionnel actuel</p>
+<?php include(__DIR__ . '/actuel.php'); ?>
 
-    <section class="affichage-humeur">
-        <span class="big-emoji" id="moodEmoji">😌</span>
-        <h3>Calme & Sereine</h3>
-    </section>
-</article>
+<h1 class="page-title">🥗 Repas</h1>
 
-<h1>🥗 Repas</h1>
-<p class="sous-titre couleur">Des repas adaptés à ton humeur.</p>
+<?php if (!empty($humeurActuelle)): ?>
+    <p class="page-subtitle couleur">
+        Repas adaptés à ta dernière humeur :
+        <strong>
+            <?= htmlspecialchars($humeurActuelle['icone'] ?? '') ?>
+            <?= htmlspecialchars($humeurActuelle['nom'] ?? '') ?>
+        </strong>
+    </p>
+<?php else: ?>
+    <p class="page-subtitle couleur">
+        Choisis d'abord une humeur sur l'accueil pour voir les repas adaptés.
+    </p>
+<?php endif; ?>
 
-<section class="banniere">
-    <span>🌸</span>
+<section class="page-banner">
+    <span class="page-banner-icon">
+        <?= htmlspecialchars($humeurActuelle['icone'] ?? '🌸') ?>
+    </span>
     <div>
         <h3>Repas recommandés</h3>
-        <p class="couleur bold">Des plats équilibrés pour ton bien-être.</p>
+        <p class="couleur bold">
+            Les repas affichés correspondent automatiquement à ta dernière humeur enregistrée.
+        </p>
     </div>
 </section>
 
-<!-- FILTER BUTTONS -->
-<section class="filtres">
-    <label for="all">🌿 Tous</label>
-    <label for="entree">☀️ Entrée</label>
-    <label for="plat-principale">🌤 Plat principal</label>
-    <label for="dessert-fruit">🌙 Dessert / Fruit</label>
-    <label for="snack">🫐 Snack</label>
-</section>
-
-<!-- GRID -->
-<section class="grille">
-    <article data-type="entree">
-        <img
-            src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=600" />
-
-        <div class="contenu">
-            <h2>Granola Soleil</h2>
-            <p>Granola maison et fruits frais.</p>
-
-            <div class="etiquettes">
-                <span>☀️ Matin</span>
-                <span>Vegan</span>
+<?php if (!empty($repas)): ?>
+    <section class="repas-filtres glass-card" aria-label="Filtres repas">
+        <div class="filtre-groupe">
+            <h3>📂 Catégorie</h3>
+            <div class="filtre-boutons">
+                <button class="filtre-btn active" type="button" data-filter-group="category" data-filter-value="all">Tous</button>
+                <?php foreach ($categoriesRepas as $idCategorie => $nomCategorie): ?>
+                    <button class="filtre-btn" type="button" data-filter-group="category" data-filter-value="<?= (int) $idCategorie ?>">
+                        <?= htmlspecialchars($nomCategorie) ?>
+                    </button>
+                <?php endforeach; ?>
             </div>
-
-            <div class="statistiques">
-                <div><strong>320</strong><small>KCAL</small></div>
-                <div><strong>12g</strong><small>PROT</small></div>
-            </div>
-
-            <button>Ajouter</button>
         </div>
-    </article>
 
-    <article data-type="plat-principale">
-        <img
-            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600" />
-
-        <div class="contenu">
-            <h2>Salade Arc-en-Ciel</h2>
-            <p>Riche en antioxydants.</p>
-
-            <div class="etiquettes">
-                <span>🌤 Déjeuner</span>
+        <div class="filtre-groupe">
+            <h3>🍽️ Type de repas</h3>
+            <div class="filtre-boutons">
+                <button class="filtre-btn active" type="button" data-filter-group="type" data-filter-value="all">Tous</button>
+                <?php foreach ($typesRepas as $idType => $nomType): ?>
+                    <button class="filtre-btn" type="button" data-filter-group="type" data-filter-value="<?= (int) $idType ?>">
+                        <?= htmlspecialchars($nomType) ?>
+                    </button>
+                <?php endforeach; ?>
             </div>
-
-            <div class="statistiques">
-                <div><strong>280</strong><small>KCAL</small></div>
-                <div><strong>9g</strong><small>PROT</small></div>
-            </div>
-
-            <button>Ajouter</button>
         </div>
-    </article>
+    </section>
+<?php endif; ?>
 
-    <article data-type="dessert-fruit">
-        <img
-            src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600" />
+<section class="repas-grille">
 
-        <div class="contenu">
-            <h2>Soupe Curcuma</h2>
-            <p>Apaisante et réconfortante.</p>
+    <?php if (!empty($repas)): ?>
 
-            <div class="etiquettes">
-                <span>🌙 Dîner</span>
-            </div>
+        <?php foreach ($repas as $r): ?>
 
-            <div class="statistiques">
-                <div><strong>210</strong><small>KCAL</small></div>
-                <div><strong>5g</strong><small>PROT</small></div>
-            </div>
+            <article
+                class="recette-card"
+                data-category-id="<?= htmlspecialchars((string) ($r['categorie_id'] ?? '')) ?>"
+                data-type-id="<?= htmlspecialchars((string) ($r['type_id'] ?? '')) ?>"
+            >
 
-            <button>Ajouter</button>
-        </div>
-    </article>
+                <img class="recette-card-img" src="<?= htmlspecialchars($r['photo'] ?? '') ?>" alt="<?= htmlspecialchars($r['titre'] ?? '') ?>">
+
+                <div class="repas-card-content">
+
+                    <h2 class="recette-card-title">
+                        <?= htmlspecialchars($r['titre'] ?? '') ?>
+                    </h2>
+
+                    <p class="recette-card-text">
+                        <?= htmlspecialchars($r['description'] ?? '') ?>
+                    </p>
+
+                    <div class="etiquettes">
+                        <span>📂 <?= htmlspecialchars($r['categorie'] ?? '') ?></span>
+                        <span>🍽️ <?= htmlspecialchars($r['type'] ?? '') ?></span>
+                        <span><?= htmlspecialchars($r['humeur_icone'] ?? '😊') ?> <?= htmlspecialchars($r['humeur'] ?? '') ?></span>
+                    </div>
+
+                    <div class="statistiques">
+                        <div>
+                            <strong><?= htmlspecialchars($r['duree'] ?? '0') ?></strong>
+                            <small>MIN</small>
+                        </div>
+                    </div>
+
+                    <button class="recette-card-button" type="button">
+                        Ajouter
+                    </button>
+
+                </div>
+
+            </article>
+
+        <?php endforeach; ?>
+
+        <article class="recette-card glass-card repas-no-result" hidden>
+            <h2 class="recette-card-title">Aucun repas trouvé</h2>
+            <p>Aucun repas ne correspond à cette catégorie et ce type de repas.</p>
+        </article>
+
+    <?php else: ?>
+
+        <article class="recette-card glass-card">
+            <?php if (empty($humeurActuelle)): ?>
+                <h2 class="recette-card-title">Aucune humeur sélectionnée</h2>
+                <p>Va sur l'accueil, choisis une humeur et enregistre une note pour recevoir des repas adaptés.</p>
+            <?php else: ?>
+                <h2 class="recette-card-title">Aucun repas pour cette humeur</h2>
+                <p>L'administrateur peut ajouter des repas pour l'humeur <?= htmlspecialchars($humeurActuelle['nom'] ?? '') ?>.</p>
+            <?php endif; ?>
+        </article>
+
+    <?php endif; ?>
+
 </section>

@@ -14,6 +14,22 @@ $section = $_GET['section'] ?? 'humeurs';
 $message = '';
 $erreur  = '';
 
+function normaliserThemeAdmin($texte)
+{
+    $texte = trim((string) $texte);
+    if ($texte === '') {
+        return 'humeur';
+    }
+
+    $texte = iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $texte);
+    $texte = strtolower($texte);
+    $texte = preg_replace('/[^a-z0-9]+/', '-', $texte);
+    $texte = trim($texte, '-');
+
+    return $texte !== '' ? $texte : 'humeur';
+}
+
+
 // ─── ACTIONS POST ────────────────────────────────────────────────────────────
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -21,9 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($action === 'creer_humeur') {
         $nom    = trim($_POST['nom']    ?? '');
         $icone  = trim($_POST['icone']  ?? '');
-        $couleur = trim($_POST['couleur'] ?? '');
-        if ($nom && $icone && $couleur) {
-            creerHumeur($nom, $icone, $couleur);
+        $theme = normaliserThemeAdmin($_POST['theme'] ?? ($_POST['nom'] ?? ''));
+        $couleur_haut = trim($_POST['couleur_haut'] ?? '');
+        $couleur_bas = trim($_POST['couleur_bas'] ?? '');
+        if ($nom && $icone && $couleur_haut && $couleur_bas) {
+            creerHumeur($nom, $icone, $theme, $couleur_haut, $couleur_bas);
             $message = "✅ Humeur « $nom » créée avec succès.";
         } else {
             $erreur = "Tous les champs sont obligatoires.";
@@ -36,9 +54,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id     = (int)($_POST['id']     ?? 0);
         $nom    = trim($_POST['nom']    ?? '');
         $icone  = trim($_POST['icone']  ?? '');
-        $couleur = trim($_POST['couleur'] ?? '');
-        if ($id && $nom && $icone && $couleur) {
-            modifierHumeur($id, $nom, $icone, $couleur);
+        $theme = normaliserThemeAdmin($_POST['theme'] ?? ($_POST['nom'] ?? ''));
+        $couleur_haut = trim($_POST['couleur_haut'] ?? '');
+        $couleur_bas = trim($_POST['couleur_bas'] ?? '');
+        if ($id && $nom && $icone && $theme && $couleur_haut && $couleur_bas) {
+            modifierHumeur($id, $nom, $icone, $theme, $couleur_haut, $couleur_bas);
             $message = "✅ Humeur mise à jour.";
         }
         $section = 'humeurs';
@@ -185,6 +205,7 @@ $stats      = getStats();
 $pageTitle  = 'Administration';
 $mainClass  = 'admin-main';
 $pageStyles = ['admin.css'];
+$pageScripts = ['admin.js'];
 
 ob_start();
 require_once __DIR__ . '/../vue/html/admin.php';

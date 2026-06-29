@@ -8,6 +8,7 @@
         <title>SweetLife – Inscription</title>
 
         <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/commun.css" />
         <link rel="stylesheet" href="../css/authentification.css" />
     </head>
 
@@ -22,12 +23,12 @@
         <!-- MAIN -->
         <main class="page-inscription">
             <section
-                class="carte"
+                class="auth-card"
                 action="../controller/inscritController.php"
                 method="POST"
             >
                 <!-- LOGO -->
-                <header class="logo-carte">
+                <header class="auth-logo-card">
                     <img src="../image/logo.png" alt="logo du site SweetLife" />
 
                     <h1>Sweet<span>life</span></h1>
@@ -41,7 +42,7 @@
                 </header>
 
                 <!-- INFORMATIONS -->
-                <section class="carte-info">
+                <section class="auth-info-card">
                     <p>Suivi de tes humeurs au quotidien</p>
 
                     <p>Exercices & repas adaptés à toi</p>
@@ -50,13 +51,13 @@
                 </section>
 
                 <form
-                    class="carte form-inscription"
+                    class="auth-card form-inscription"
                     action="../../controller/inscritController.php"
                     method="POST"
                 >
                     <!-- NOM -->
 
-                    <section class="champ champ-nom">
+                    <section class="auth-field">
                         <label for="nom">Nom</label>
                         <input
                             type="text"
@@ -70,7 +71,7 @@
 
                     <!-- PRÉNOM -->
 
-                    <section class="champ champ-prenom">
+                    <section class="auth-field">
                         <label for="prenom">Prénom</label>
                         <input
                             type="text"
@@ -84,7 +85,7 @@
 
                     <!-- EMAIL -->
 
-                    <section class="champ champ-email">
+                    <section class="auth-field">
                         <label for="email">Adresse e-mail</label>
                         <input
                             type="email"
@@ -98,7 +99,7 @@
 
                     <!-- MOT DE PASSE -->
 
-                    <section class="champ champ-password">
+                    <section class="auth-field">
                         <label for="password">Mot de passe</label>
                         <input
                             type="password"
@@ -113,7 +114,7 @@
 
                     <!-- CONFIRMATION MOT DE PASSE -->
 
-                    <section class="champ champ-confirm-password">
+                    <section class="auth-field">
                         <label for="confirm-password"
                             >Confirmer le mot de passe</label
                         >
@@ -135,14 +136,14 @@
                 </form>
 
                 <!-- CONNEXION -->
-                <p class="lien-seconnecter">
+                <p class="auth-login-link">
                     Déjà membre ?
 
                     <a href="connexion.html"> Se connecter </a>
                 </p>
 
                 <!-- RETOUR -->
-                <nav class="retour">
+                <nav class="auth-retour">
                     <a href="index.php"> ← Retour à l'accueil </a>
                 </nav>
             </section>

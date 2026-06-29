@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>SweetLife – Connexion</title>
         <link rel="stylesheet" href="/vue/css/theme-initial.css" />
-        <link rel="stylesheet" href="/vue/css/theme-initial.css" />
+    <link rel="stylesheet" href="/vue/css/commun.css" />
         <link rel="stylesheet" href="/vue/css/authentification.css" />
     </head>
 
@@ -20,9 +20,9 @@
         <!-- MAIN -->
         <main class="page-connexion">
             <!-- FORMULAIRE (CARTE) -->
-            <section class="carte">
+            <section class="auth-card">
                 <!-- LOGO -->
-                <header class="logo-carte">
+                <header class="auth-logo-card">
                     <img
                         src="/vue/image/logo.png"
                         alt="logo du site SweetLife"
@@ -37,7 +37,7 @@
                 </header>
 
                 <!-- INFORMATIONS -->
-                <section class="carte-info">
+                <section class="auth-info-card">
                     <p>Retrouve ton suivi émotionnel</p>
                     <p>Accède à tes exercices personnalisés</p>
                     <p>Continue ton voyage bien-être</p>
@@ -45,7 +45,7 @@
 
                 <!-- FORMULAIRE (CORRIGÉ) -->
                 <form
-                    class="champ"
+                    class="auth-field"
                     action="../../controller/connexionController.php"
                     method="POST"
                 >
@@ -72,7 +72,7 @@
                 </form>
 
                 <!-- OPTIONS -->
-                <section class="options">
+                <section class="connexion-options">
                     <label class="souvenir-moi" for="remember">
                         <input type="checkbox" id="remember" name="remember" />
                         Se souvenir de moi
@@ -90,7 +90,7 @@
                 </p>
 
                 <!-- RETOUR -->
-                <nav class="retour">
+                <nav class="auth-retour">
                     <a href="index.html"> ← Retour à l'accueil </a>
                 </nav>
             </section>

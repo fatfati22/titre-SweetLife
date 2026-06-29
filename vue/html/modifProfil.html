@@ -9,53 +9,51 @@
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="../css/navbar.css" />
         <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/commun.css" />
         <link rel="stylesheet" href="../css/element-theme.css" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/humeur.css" />
         <link rel="stylesheet" href="../css/theme.css" />
         <link rel="stylesheet" href="../css/modifProfil.css" />
     </head>
 
     <body>
-        <div class="container">
-            <h1 class="page-title">✏️ Modifier mon profil</h1>
+        <div class="modif-profil-container">
+            <h1 class="modif-profil-title">✏️ Modifier mon profil</h1>
 
-            <div class="card">
-                <div class="profile-section">
-                    <div class="avatar">S</div>
+            <div class="modif-profil-card">
+                <div class="modif-profil-section">
+                    <div class="modif-profil-avatar">S</div>
 
-                    <div class="profile-info">
+                    <div class="modif-profil-info">
                         <h5>PHOTO DE PROFIL</h5>
 
                         <p>Téléchargez une photo ou utilisez vos initiales</p>
 
-                        <div class="profile-buttons">
-                            <button class="btn-image">
+                        <div class="modif-profil-buttons">
+                            <button class="modif-profil-image-btn">
                                 📷 Choisir une image
                             </button>
 
-                            <button class="btn-delete">🗑 Supprimer</button>
+                            <button class="modif-profil-delete-btn">🗑 Supprimer</button>
                         </div>
                     </div>
                 </div>
 
-                <div class="form-section">
-                    <div class="row">
-                        <div class="field">
+                <div class="modif-profil-form-section">
+                    <div class="modif-profil-row">
+                        <div class="modif-profil-field">
                             <label>PRÉNOM</label>
                             <input type="text" value="Sophie" />
                         </div>
 
-                        <div class="field">
+                        <div class="modif-profil-field">
                             <label>NOM</label>
                             <input type="text" value="Leblanc" />
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="field full">
+                    <div class="modif-profil-row">
+                        <div class="modif-profil-field modif-profil-full">
                             <label>ADRESSE EMAIL</label>
                             <input
                                 type="email"
@@ -64,13 +62,13 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="field">
+                    <div class="modif-profil-row">
+                        <div class="modif-profil-field">
                             <label>DATE DE NAISSANCE</label>
                             <input type="date" value="1990-05-15" />
                         </div>
 
-                        <div class="field">
+                        <div class="modif-profil-field">
                             <label>GENRE</label>
                             <select>
                                 <option>Femme</option>
@@ -79,8 +77,8 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="field">
+                    <div class="modif-profil-row">
+                        <div class="modif-profil-field">
                             <label>TÉLÉPHONE (OPTIONNEL)</label>
                             <input type="text" value="06 12 34 56 78" />
                         </div>
@@ -88,21 +86,21 @@
                         <div></div>
                     </div>
 
-                    <div class="row">
-                        <div class="field full">
+                    <div class="modif-profil-row">
+                        <div class="modif-profil-field modif-profil-full">
                             <label>BIO / À PROPOS DE MOI</label>
 
-                            <textarea class="bio">
+                            <textarea class="modif-profil-bio">
                                     Passionnée de yoga et de méditation. Je cherche à cultiver la sérénité au quotidien et à partager des moments de bien-être avec la communauté SweetLife.</textarea
                             >
                         </div>
                     </div>
                 </div>
 
-                <div class="footer">
-                    <button class="cancel-btn">❌ Annuler</button>
+                <div class="modif-profil-actions">
+                    <button class="modif-profil-cancel-btn">❌ Annuler</button>
 
-                    <button class="save-btn">
+                    <button class="modif-profil-save-btn">
                         💾 Enregistrer les modifications
                     </button>
                 </div>

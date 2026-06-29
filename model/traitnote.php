@@ -4,7 +4,7 @@ require_once __DIR__ . '/bdd-config.php';
 function ajouterNote($description, $id_user)
 {
     global $conn;
-    $sql = "INSERT INTO note (description, id_user) VALUES (?, ?)";
+    $sql = "INSERT INTO note (description, date_creation, id_user) VALUES (?, NOW(), ?)";
     $stmt = mysqli_prepare($conn, $sql);
     if (!$stmt) return false;
     mysqli_stmt_bind_param($stmt, "si", $description, $id_user);

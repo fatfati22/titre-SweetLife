@@ -1,86 +1,13 @@
-/* MODIFICATIONS DE THEME */
-/* Ce fichier change les couleurs selon le thème choisi */
+/* Couleurs des éléments avec le thème SQL */
 
-/* THEME CALME           */
-
-body.theme-calme .btn-primary {
-    background-color: #3a8a6a; /* Bouton principal vert calme */
+body .btn-primary {
+    background-color: var(--couleur-bas, #5aaa8a);
 }
 
-body.theme-calme .couleur {
-    color: #3a8a6a; /* Texte vert calme */
+body .couleur {
+    color: var(--couleur-bas, #5aaa8a);
 }
 
-body.theme-calme .mood-btn {
-    border-color: #5aaa8a; /* Bordure des boutons d'humeur vert clair */
-}
-
-/* THEME JOIE            */
-
-body.theme-joie .btn-primary {
-    background-color: #ffb347 !important; /* Bouton principal orange joyeux */
-}
-
-body.theme-joie .couleur {
-    color: #ffb347 !important; /* Texte orange joyeux */
-}
-
-body.theme-joie .mood-btn {
-    border-color: #ffe066 !important; /* Bordure des boutons d'humeur jaune */
-}
-
-/* THEME TRISTESSE       */
-
-body.theme-tristesse .btn-primary {
-    background-color: #7096b8 !important; /* Bouton principal bleu triste */
-}
-
-body.theme-tristesse .couleur {
-    color: #7096b8 !important; /* Texte bleu triste */
-}
-
-body.theme-tristesse .mood-btn {
-    border-color: #b8cde0 !important; /* Bordure des boutons d'humeur bleu clair */
-}
-
-/* THEME COLERE          */
-
-body.theme-colere .btn-primary {
-    background-color: #b22222 !important; /* Bouton principal rouge colère */
-}
-
-body.theme-colere .couleur {
-    color: #b22222 !important; /* Texte rouge colère */
-}
-
-body.theme-colere .mood-btn {
-    border-color: #e8a0a0 !important; /* Bordure des boutons d'humeur rose clair */
-}
-
-/* THEME FATIGUE         */
-
-body.theme-fatigue .btn-primary {
-    background-color: #aaaaaa !important; /* Bouton principal gris fatigue */
-}
-
-body.theme-fatigue .couleur {
-    color: #aaaaaa !important; /* Texte gris fatigue */
-}
-
-body.theme-fatigue .mood-btn {
-    border-color: #cccccc !important; /* Bordure des boutons d'humeur gris clair */
-}
-
-/* THEME STRESS          */
-
-body.theme-stress .btn-primary {
-    background-color: #3a86ff !important; /* Bouton principal bleu stress */
-}
-
-body.theme-stress .couleur {
-    color: #3a86ff !important; /* Texte bleu stress */
-}
-
-body.theme-stress .mood-btn {
-    border-color: #89c2ff !important; /* Bordure des boutons d'humeur bleu clair */
+body .mood-btn {
+    border-color: var(--couleur-bas, #5aaa8a);
 }

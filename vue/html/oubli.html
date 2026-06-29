@@ -10,6 +10,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/commun.css" />
         <link rel="stylesheet" href="../css/humeur.css" />
         <link rel="stylesheet" href="../css/oubli.css" />
     </head>
@@ -30,8 +31,8 @@
 
                 <!-- FORM -->
                 <form>
-                    <section class="form-group">
-                        <label class="form-label">🕐 À quelle heure ?</label>
+                    <section class="oubli-form-group">
+                        <label class="oubli-form-label">🕐 À quelle heure ?</label>
 
                         <div class="time-input-group">
                             <input
@@ -43,8 +44,8 @@
                         </div>
                     </section>
 
-                    <section class="form-group">
-                        <p class="form-label">😌 Quelle était ton humeur ?</p>
+                    <section class="oubli-form-group">
+                        <p class="oubli-form-label">😌 Quelle était ton humeur ?</p>
 
                         <div class="mood-grid">
                             <button type="button" class="mood-option">
@@ -79,12 +80,12 @@
                         </div>
                     </section>
 
-                    <section class="form-group">
-                        <label class="form-label">📝 Notes (optionnel)</label>
+                    <section class="oubli-form-group">
+                        <label class="oubli-form-label">📝 Notes (optionnel)</label>
 
                         <input
                             type="text"
-                            class="form-input"
+                            class="oubli-form-input"
                             placeholder="Exemple : après le déjeuner..."
                         />
                     </section>
@@ -103,13 +104,13 @@
                 </form>
 
                 <!-- SECTION (remplace footer) -->
-                <section class="form-footer">
+                <section class="oubli-form-footer">
                     <a href="index.html" class="back-link">
                         ← Retour à l'accueil
                     </a>
 
-                    <div class="mood-card glass-card">
-                        <p>💫 État émotionnel actuel</p>
+                    <div class="mood-card mood-glass-card glass-card">
+                        <p class="mood-card-text">💫 État émotionnel actuel</p>
 
                         <div class="affichage-humeur">
                             <span class="big-emoji" id="moodEmoji">😌</span>

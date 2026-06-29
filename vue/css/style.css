@@ -1,4 +1,4 @@
-main {
+.accueil-main {
     flex: 1; /* Prend tout l'espace disponible */
     display: flex; /* Flex pour centrer le contenu */
     justify-content: center; /* Centrer horizontalement */
@@ -51,7 +51,7 @@ main {
     margin-top: 2em;
 }
 
-h1 {
+.accueil-title {
     font-family: "Cormorant Garamond", serif; /* Police du titre */
     font-size: 1.875rem; /* Taille du titre */
     font-weight: 300; /* Texte léger */
@@ -60,7 +60,7 @@ h1 {
     white-space: pre-line; /* Respect des sauts de ligne */
 }
 
-h3 {
+.accueil-subtitle {
     text-align: center; /* Centré */
     font-family: "Cormorant Garamond", serif; /* Même police que h1 */
     font-size: 1.7rem; /* Taille du sous-titre */
@@ -70,7 +70,7 @@ h3 {
     color: #3a8a6a; /* Couleur verte */
 }
 
-p {
+.accueil-text {
     text-align: center; /* Texte centré */
 }
 
@@ -127,12 +127,12 @@ p {
         align-items: center; /* Centré verticalement */
     }
 
-    h1 {
+    .accueil-title {
         font-size: 3.75rem; /* Texte plus grand sur grand écran */
         text-align: left; /* Aligné à gauche */
     }
 
-    p {
+    .accueil-text {
         text-align: left; /* Texte aligné à gauche */
     }
 
@@ -150,5 +150,303 @@ p {
 
     .mobile-logo {
         display: none;
+    }
+}
+
+
+/* Message invité placé sous le bouton "Choisir mon humeur" */
+.mood-action-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.mood-login-message {
+    margin: 0;
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--couleur-texte, #0d2520);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.mood-login-message-under-title {
+    max-width: 320px;
+}
+
+
+/* =========================
+   ACCUEIL AVANT CONNEXION
+   ========================= */
+
+.alig {
+    align-items: flex-start;
+}
+
+.mood-action-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.mood-login-message {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--couleur-texte, #0d2520);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.mood-login-message-under-title {
+    max-width: 330px;
+}
+
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--couleur-texte, #0d2520);
+    min-height: 44px;
+}
+
+@media screen and (max-width: 870px) {
+    .alig {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+/* =========================
+   MESSAGE CHOISIR HUMEUR AU CLIC
+   ========================= */
+
+.mood-info-message {
+    margin: 0;
+    padding: 0.75rem 1.1rem;
+    border-radius: 1rem;
+
+    background: rgba(255, 255, 255, 0.24);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    color: var(--couleur-texte, #0d2520);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+.mood-info-message[hidden] {
+    display: none;
+}
+
+.mood-info-message.is-visible {
+    display: block;
+    animation: moodMessagePop 0.25s ease both;
+}
+
+.mood-info-message-under-title {
+    max-width: 360px;
+}
+
+@keyframes moodMessagePop {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   BOUTON OUBLI HUMEUR - ACCUEIL
+   placé à côté de "Choisir mon humeur"
+   ========================= */
+
+.mood-main-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-oubli-humeur {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.625rem 1.25rem;
+
+    border-radius: 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: var(--couleur-texte, #0d2520);
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-oubli-humeur:hover {
+    background: rgba(255, 255, 255, 0.34);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+@media screen and (min-width: 871px) {
+    .mood-main-actions {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}
+
+/* =====================================================
+   CITATION ACCUEIL - citation gardée jusqu'au changement d'humeur
+   ===================================================== */
+.citation-accueil-card {
+    width: min(90%, 720px);
+    margin: 24px auto 10px;
+    padding: 22px 26px;
+
+    background: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+
+    color: var(--couleur-texte, #0d2520);
+}
+
+.citation-accueil-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.citation-accueil-icone {
+    width: 54px;
+    height: 54px;
+    min-width: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 2rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+.citation-accueil-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.citation-accueil-header p,
+.citation-accueil-empty,
+.citation-accueil-meta {
+    margin: 4px 0 0;
+    opacity: 0.82;
+}
+
+.citation-accueil-texte {
+    margin: 0;
+    padding: 16px 18px;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.18);
+    border-left: 4px solid rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+}
+
+.citation-accueil-meta {
+    text-align: right;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .citation-accueil-card {
+        width: calc(100% - 30px);
+        padding: 18px;
+        margin-top: 18px;
+    }
+
+    .citation-accueil-header {
+        align-items: flex-start;
+    }
+
+    .citation-accueil-icone {
+        width: 46px;
+        height: 46px;
+        min-width: 46px;
+        font-size: 1.6rem;
+    }
+
+    .citation-accueil-texte {
+        font-size: 1rem;
+    }
+}
+
+/* Citation sous "Choisir mon humeur" + "J’ai oublié une émotion" */
+.mood-action-block .citation-accueil-card {
+    width: min(100%, 720px);
+    margin: 18px auto 0;
+}
+
+.citation-scroll-highlight {
+    animation: citationAppearScroll 1.2s ease both, citationGlow 2.4s ease;
+}
+
+@keyframes citationAppearScroll {
+    0% {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes citationGlow {
+    0%, 100% {
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.18);
+    }
+    45% {
+        box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.34), 0 18px 45px rgba(31, 38, 135, 0.28);
     }
 }

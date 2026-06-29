@@ -3,6 +3,7 @@
 .mood-card {
     padding: 25px; /* espace intérieur */
     width: fit-content; /* largeur adaptée au contenu */
+    height: fit-content;
     display: block; /* élément en bloc */
     margin: 5em auto; /* centre la carte */
 }
@@ -14,11 +15,11 @@
     cursor: pointer; /* curseur main */
     transition: transform 0.25s ease; /* animation douce */
 }
-p {
+.mood-card-text {
     font-weight: bold;
 }
 /* CARTE ARTICLE */
-article {
+.mood-glass-card {
     background: rgba(255, 255, 255, 0.3); /* fond transparent */
     backdrop-filter: blur(15px); /* effet flou */
     -webkit-backdrop-filter: blur(15px); /* compatibilité Safari */

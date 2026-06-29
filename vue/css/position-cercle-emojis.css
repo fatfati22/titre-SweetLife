@@ -1,66 +1,102 @@
-/*   POSITION DES BOUTONS EN CERCLE   */
+/* ROUE DES HUMEURS */
 
-.mood-btn:nth-child(1) {
-    --pos: rotate(0deg) translate(6.875rem) rotate(0deg); /* place le premier bouton en haut */
-    transform: var(--pos); /* applique la position */
+.mood-wheel {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    margin: 4rem auto;
 }
 
-.mood-btn:nth-child(2) {
-    --pos: rotate(60deg) translate(6.875rem) rotate(-60deg); /* deuxième bouton à 60° */
-    transform: var(--pos);
+/* TOUS LES BOUTONS HUMEURS */
+
+.mood-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+    border: 2px solid #5aaa8a;
+
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.7rem;
+    cursor: pointer;
+
+    transform: translate(-50%, -50%) rotate(var(--angle))
+        translate(var(--rayon)) rotate(calc(-1 * var(--angle)));
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-.mood-btn:nth-child(3) {
-    --pos: rotate(120deg) translate(6.875rem) rotate(-120deg); /* troisième bouton à 120° */
-    transform: var(--pos);
-}
-
-.mood-btn:nth-child(4) {
-    --pos: rotate(180deg) translate(6.875rem) rotate(-180deg); /* quatrième bouton en bas */
-    transform: var(--pos);
-}
-
-.mood-btn:nth-child(5) {
-    --pos: rotate(240deg) translate(6.875rem) rotate(-240deg); /* cinquième bouton à 240° */
-    transform: var(--pos);
-}
-
-.mood-btn:nth-child(6) {
-    --pos: rotate(300deg) translate(6.875rem) rotate(-300deg); /* sixième bouton à 300° */
-    transform: var(--pos);
-}
-
-/*   EFFET AU SURVOL (HOVER)   */
+/* HOVER */
 
 .mood-btn:hover {
-    transform: var(--pos) scale(1.6); /* agrandit le bouton quand la souris passe dessus */
-    box-shadow: 0 0.75rem 1.875rem rgba(0, 0, 0, 0.3); /* ajoute une ombre */
-    z-index: 10; /* place le bouton au-dessus des autres */
+    transform: translate(-50%, -50%) rotate(var(--angle))
+        translate(var(--rayon)) rotate(calc(-1 * var(--angle))) scale(1.25);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    z-index: 10;
 }
 
-/*   BOUTON DU CENTRE   */
+/* FLEUR AU CENTRE */
 
 .mood-btn.center {
-    transform: none !important; /* pas de rotation pour le bouton central */
-    width: 4rem; /* largeur */
-    height: 4rem; /* hauteur */
-    margin: -2.1875rem; /* ajuste la position au centre */
-    font-size: 1.875rem; /* taille du texte/emoji */
-    z-index: 5; /* position au-dessus de certains éléments */
-    background: rgba(255, 255, 255, 0.35); /* fond semi-transparent */
+    width: 75px;
+    height: 75px;
+
+    font-size: 2.2rem;
+    z-index: 5;
+
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.5);
 }
 
-/*   CARTE STYLE GLASS   */
+/* La fleur ne bouge pas comme les autres */
 
-.glass-card {
-    padding: 1.25rem; /* espace intérieur */
-    border-radius: 1rem; /* coins arrondis */
-    backdrop-filter: blur(0.9375rem); /* effet flou derrière */
-    background: rgba(255, 255, 255, 0.25); /* fond transparent */
-    transition: 0.3s; /* animation douce au changement */
+.mood-btn.center:hover {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-.glass-card:hover {
-    transform: translateY(-0.3125rem); /* monte un peu au survol */
-    box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.2); /* ajoute une ombre */
+
+/* Humeurs bloquées quand l'utilisateur n'est pas connecté */
+.mood-btn-locked,
+.mood-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(0.35);
+    pointer-events: none;
+}
+
+.mood-btn-locked:hover,
+.mood-btn:disabled:hover {
+    transform: translate(-50%, -50%) rotate(var(--angle))
+        translate(var(--rayon)) rotate(calc(-1 * var(--angle)));
+    box-shadow: none;
+}
+
+.mood-lock {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }

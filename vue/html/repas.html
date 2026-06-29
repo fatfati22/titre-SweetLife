@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../css/humeur.css" />
         <link rel="stylesheet" href="../css/navbar.css" />
         <link rel="stylesheet" href="../css/theme-initial.css" />
+        <link rel="stylesheet" href="../css/commun.css" />
         <link rel="stylesheet" href="../css/carte.css" />
         <link rel="stylesheet" href="../css/filtre-repas.css" />
         <link rel="stylesheet" href="../css/mise-en-page.css" />
@@ -15,11 +16,11 @@
 
     <body>
         <!-- FILTERS -->
-        <input type="radio" name="type" id="all" checked />
-        <input type="radio" name="type" id="entree" />
-        <input type="radio" name="type" id="plat-principale" />
-        <input type="radio" name="type" id="dessert-fruit" />
-        <input type="radio" name="type" id="snack" />
+        <input class="repas-filtre-radio" type="radio" name="type" id="all" checked />
+        <input class="repas-filtre-radio" type="radio" name="type" id="entree" />
+        <input class="repas-filtre-radio" type="radio" name="type" id="plat-principale" />
+        <input class="repas-filtre-radio" type="radio" name="type" id="dessert-fruit" />
+        <input class="repas-filtre-radio" type="radio" name="type" id="snack" />
 
         <header>
             <nav class="navbar glass">
@@ -39,9 +40,9 @@
             <button class="btn-primary" type="button">s'inscrire</button>
         </a>
 
-        <main>
-            <article class="mood-card glass-card">
-                <p>💫 État émotionnel actuel</p>
+        <main class="page-layout">
+            <article class="mood-card mood-glass-card glass-card">
+                <p class="mood-card-text">💫 État émotionnel actuel</p>
 
                 <section class="affichage-humeur">
                     <span class="big-emoji" id="moodEmoji">😌</span>
@@ -49,11 +50,11 @@
                 </section>
             </article>
 
-            <h1>🥗 Repas</h1>
-            <p class="sous-titre couleur">Des repas adaptés à ton humeur.</p>
+            <h1 class="page-title">🥗 Repas</h1>
+            <p class="page-subtitle couleur">Des repas adaptés à ton humeur.</p>
 
-            <section class="banniere">
-                <span>🌸</span>
+            <section class="page-banner">
+                <span class="page-banner-icon">🌸</span>
                 <div>
                     <h3 class="couleur">Repas recommandés</h3>
                     <p>Des plats équilibrés pour ton bien-être.</p>
@@ -61,7 +62,7 @@
             </section>
 
             <!-- FILTER BUTTONS -->
-            <section class="filtres">
+            <section class="repas-filtres">
                 <label for="all">🌿 Tous</label>
                 <label for="entree">☀️ Entrée</label>
                 <label for="plat-principale">🌤 Plat principal</label>
@@ -70,15 +71,15 @@
             </section>
 
             <!-- GRID -->
-            <section class="grille">
-                <article data-type="entree">
-                    <img
+            <section class="repas-grille">
+                <article class="recette-card" data-type="entree">
+                    <img class="recette-card-img"
                         src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?w=600"
                     />
 
-                    <div class="contenu">
-                        <h2>Granola Soleil</h2>
-                        <p>Granola maison et fruits frais.</p>
+                    <div class="repas-card-content">
+                        <h2 class="recette-card-title">Granola Soleil</h2>
+                        <p class="recette-card-text">Granola maison et fruits frais.</p>
 
                         <div class="etiquettes">
                             <span>☀️ Matin</span>
@@ -90,18 +91,18 @@
                             <div><strong>12g</strong><small>PROT</small></div>
                         </div>
 
-                        <button>Ajouter</button>
+                        <button class="recette-card-button">Ajouter</button>
                     </div>
                 </article>
 
-                <article data-type="plat-principale">
-                    <img
+                <article class="recette-card" data-type="plat-principale">
+                    <img class="recette-card-img"
                         src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600"
                     />
 
-                    <div class="contenu">
-                        <h2>Salade Arc-en-Ciel</h2>
-                        <p>Riche en antioxydants.</p>
+                    <div class="repas-card-content">
+                        <h2 class="recette-card-title">Salade Arc-en-Ciel</h2>
+                        <p class="recette-card-text">Riche en antioxydants.</p>
 
                         <div class="etiquettes">
                             <span>🌤 Déjeuner</span>
@@ -112,18 +113,18 @@
                             <div><strong>9g</strong><small>PROT</small></div>
                         </div>
 
-                        <button>Ajouter</button>
+                        <button class="recette-card-button">Ajouter</button>
                     </div>
                 </article>
 
-                <article data-type="dessert-fruit">
-                    <img
+                <article class="recette-card" data-type="dessert-fruit">
+                    <img class="recette-card-img"
                         src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600"
                     />
 
-                    <div class="contenu">
-                        <h2>Soupe Curcuma</h2>
-                        <p>Apaisante et réconfortante.</p>
+                    <div class="repas-card-content">
+                        <h2 class="recette-card-title">Soupe Curcuma</h2>
+                        <p class="recette-card-text">Apaisante et réconfortante.</p>
 
                         <div class="etiquettes">
                             <span>🌙 Dîner</span>
@@ -134,7 +135,7 @@
                             <div><strong>5g</strong><small>PROT</small></div>
                         </div>
 
-                        <button>Ajouter</button>
+                        <button class="recette-card-button">Ajouter</button>
                     </div>
                 </article>
             </section>

@@ -1,106 +1,143 @@
-/*   FILTRES DES REPAS   */
+/* =========================
+   REPAS - FILTRES GLASS EFFECT
+   Effet glass sur les deux blocs :
+   📂 Catégorie + 🍽️ Type de repas
+   ========================= */
 
-/* Cache les boutons radio */
-input[type="radio"] {
-    display: none;
+.repas-filtres {
+    width: 100%;
+    margin: 24px auto 30px;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
-/* BOUTONS DES FILTRES */
-.filtres {
-    display: flex; /* met les boutons en ligne */
-    flex-wrap: wrap; /* retour à la ligne si besoin */
-    gap: 10px; /* espace entre boutons */
-    margin-bottom: 20px; /* espace dessous */
+/* Les deux filtres ont exactement le même design glass */
+.repas-filtres .filtre-groupe {
+    position: relative;
+    overflow: hidden;
+
+    padding: 20px;
+    min-height: 120px;
+
+    background: rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 32px rgba(31, 38, 135, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+
+    color: var(--couleur-texte, #0d2520);
 }
 
-.filtres label {
-    padding: 10px 14px; /* espace intérieur */
-    border-radius: 25px; /* coins arrondis */
+/* Petit reflet glass */
+.repas-filtres .filtre-groupe::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 
-    /* EFFET VERRE */
-    background: rgba(255, 255, 255, 0.15); /* fond transparent */
-    backdrop-filter: blur(10px); /* effet flou */
-    -webkit-backdrop-filter: blur(10px); /* compatibilité Safari */
-
-    border: 1px solid rgba(255, 255, 255, 0.3); /* bordure légère */
-    color: inherit; /* garde la couleur du texte */
-
-    cursor: pointer; /* curseur main */
-    transition: 0.3s; /* animation douce */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* ombre légère */
-    font-size: 14px; /* taille du texte */
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.28),
+        rgba(255, 255, 255, 0.06) 45%,
+        rgba(255, 255, 255, 0.02)
+    );
 }
 
-.filtres label:hover {
-    background: rgba(58, 138, 106, 0.35); /* fond vert au survol */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure plus visible */
-    transform: translateY(-2px); /* monte légèrement */
+.repas-filtres .filtre-groupe h3 {
+    position: relative;
+    z-index: 1;
+
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--couleur-texte, #0d2520);
 }
 
-/*   BOUTON ACTIF        */
+.repas-filtres .filtre-boutons {
+    position: relative;
+    z-index: 1;
 
-#all:checked ~ main label[for="all"],
-#entree:checked ~ main label[for="entree"],
-#plat-principale:checked ~ main label[for="plat-principale"],
-#dessert-fruit:checked ~ main label[for="dessert-fruit"],
-#snack:checked ~ main label[for="snack"] {
-    background: rgba(58, 138, 106, 0.6); /* fond vert */
-    color: white; /* texte blanc */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* bordure claire */
-    backdrop-filter: blur(12px); /* effet flou */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-/*   FILTRAGE DES CARTES */
+/* Les boutons dans les deux filtres sont aussi glass */
+.repas-filtres .filtre-btn {
+    border: 1px solid rgba(255, 255, 255, 0.42);
+    border-radius: 999px;
+    padding: 10px 16px;
 
-/* Affiche toutes les cartes */
-#all:checked ~ main .grille article {
-    display: block;
-}
+    background: rgba(255, 255, 255, 0.20) !important;
+    color: var(--couleur-texte, #0d2520);
 
-/* Cache tout puis affiche seulement les entrées */
-#entree:checked ~ main .grille article {
-    display: none;
-}
-#entree:checked ~ main .grille [data-type="entree"] {
-    display: block;
-}
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
 
-/* Cache tout puis affiche seulement les plats principaux */
-#plat-principale:checked ~ main .grille article {
-    display: none;
-}
-#plat-principale:checked ~ main .grille [data-type="plat-principale"] {
-    display: block;
-}
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.24);
 
-/* Cache tout puis affiche seulement les desserts/fruits */
-#dessert-fruit:checked ~ main .grille article {
-    display: none;
-}
-#dessert-fruit:checked ~ main .grille [data-type="dessert-fruit"] {
-    display: block;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
-/* Cache tout puis affiche seulement les snacks */
-#snack:checked ~ main .grille article {
-    display: none;
-}
-#snack:checked ~ main .grille [data-type="snack"] {
-    display: block;
+.repas-filtres .filtre-btn:hover,
+.repas-filtres .filtre-btn.active {
+    background: rgba(255, 255, 255, 0.36) !important;
+    border-color: rgba(255, 255, 255, 0.62);
+    transform: translateY(-2px);
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.16),
+        inset 0 1px 0 rgba(255, 255, 255, 0.32);
 }
 
-/*   RESPONSIVE          */
+.repas-no-result {
+    grid-column: 1 / -1;
+}
 
-/* Tablette : 2 colonnes */
+@media (max-width: 768px) {
+    .repas-filtres {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .repas-filtres .filtre-groupe {
+        padding: 16px;
+        border-radius: 22px;
+    }
+
+    .repas-filtres .filtre-btn {
+        padding: 9px 13px;
+        font-size: 0.92rem;
+    }
+}
+
 @media (min-width: 768px) {
-    .grille {
+    .repas-grille {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-/* Ordinateur : 3 colonnes */
 @media (min-width: 1024px) {
-    .grille {
+    .repas-grille {
         grid-template-columns: repeat(3, 1fr);
     }
 }

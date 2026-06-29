@@ -2,9 +2,9 @@
 // Vue connexion — contenu uniquement, incluse par connexionController.php
 ?>
 <main class="page-connexion">
-    <section class="carte">
+    <section class="auth-card">
         <!-- LOGO -->
-        <header class="logo-carte">
+        <header class="auth-logo-card">
             <img src="/vue/image/logo.png" alt="logo du site SweetLife" />
             <h1>Sweet<span>life</span></h1>
             <span>Bon Retour 🌸</span>
@@ -13,7 +13,7 @@
         </header>
 
         <!-- INFOS -->
-        <section class="carte-info">
+        <section class="auth-info-card">
             <p>Retrouve ton suivi émotionnel</p>
             <p>Accède à tes exercices personnalisés</p>
             <p>Continue ton voyage bien-être</p>
@@ -25,7 +25,7 @@
         <?php endif; ?>
 
         <!-- FORMULAIRE -->
-        <form class="champ" action="/index.php?route=connexion" method="POST">
+        <form class="auth-field" action="/index.php?route=connexion" method="POST">
             <label for="mail">Adresse e-mail</label>
             <input type="email" id="mail" name="mail" placeholder="Email" required />
 
@@ -36,7 +36,7 @@
         </form>
 
         <!-- OPTIONS -->
-        <section class="options">
+        <section class="connexion-options">
             <label class="souvenir-moi" for="remember">
                 <input type="checkbox" id="remember" name="remember" />
                 Se souvenir de moi
@@ -51,7 +51,7 @@
         </p>
 
         <!-- RETOUR -->
-        <nav class="retour">
+        <nav class="auth-retour">
             <a href="/index.php?route=accueil">← Retour à l'accueil</a>
         </nav>
     </section>

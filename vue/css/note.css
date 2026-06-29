@@ -1,4 +1,4 @@
-.carte {
+.note-card {
     display: block;
     margin: 4em auto;
     width: 100%;
@@ -43,7 +43,7 @@
    TITRE
  */
 
-.titre {
+.note-title {
     /* taille mobile */
     font-size: 30px;
 
@@ -60,7 +60,7 @@
    TEXTE INFO
  */
 
-.texte-info {
+.note-info-text {
     font-size: 15px;
 
     color: #537064;
@@ -72,7 +72,7 @@
    TEXTAREA
  */
 
-.zone-message {
+.note-message-zone {
     /* prend toute la largeur */
     width: 100%;
 
@@ -103,7 +103,7 @@
 
 /* placeholder */
 
-.zone-message::placeholder {
+.note-message-zone::placeholder {
     color: #7d8c87;
 }
 
@@ -111,7 +111,7 @@
    COMPTEUR
  */
 
-.compteur {
+.note-counter {
     text-align: right;
 
     margin-top: 10px;
@@ -125,7 +125,7 @@
    ZONE BOUTONS
  */
 
-.zone-boutons {
+.note-buttons-zone {
     display: flex;
 
     /* 
@@ -143,7 +143,7 @@
    STYLE GENERAL BOUTONS
  */
 
-button {
+.note-button {
     border: none;
 
     border-radius: 40px;
@@ -208,7 +208,7 @@ button {
 */
 
 @media (min-width: 768px) {
-    .carte {
+    .note-card {
         padding: 40px;
     }
 
@@ -216,26 +216,26 @@ button {
         font-size: 62px;
     }
 
-    .titre {
+    .note-title {
         font-size: 42px;
     }
 
-    .texte-info {
+    .note-info-text {
         font-size: 16px;
     }
 
-    .zone-message {
+    .note-message-zone {
         font-size: 22px;
     }
 
-    .zone-boutons {
+    .note-buttons-zone {
         /* boutons côte à côte */
         flex-direction: row;
 
         justify-content: center;
     }
 
-    button {
+    .note-button {
         /* largeur automatique */
         width: auto;
     }
@@ -291,7 +291,7 @@ button {
 }
 
 /* override des styles de note.css hérités */
-.modal-carte .carte {
+.modal-carte .note-card {
     all: unset;
 }
 
@@ -301,7 +301,7 @@ button {
     display: block;
 }
 
-.modal-carte .titre {
+.modal-carte .note-title {
     font-size: 32px;
     font-family: "Cormorant Garamond", Georgia, serif;
     font-weight: 400;
@@ -309,13 +309,13 @@ button {
     margin-bottom: 8px;
 }
 
-.modal-carte .texte-info {
+.modal-carte .note-info-text {
     font-size: 15px;
     color: #6b7f78;
     margin-bottom: 22px;
 }
 
-.modal-carte .zone-message {
+.modal-carte .note-message-zone {
     width: 100%;
     min-width: 100%;
     min-height: 160px;
@@ -331,18 +331,18 @@ button {
     color: #3d5049;
 }
 
-.modal-carte .zone-message::placeholder {
+.modal-carte .note-message-zone::placeholder {
     color: #8faa9f;
 }
 
-.modal-carte .compteur {
+.modal-carte .note-counter {
     text-align: right;
     margin-top: 8px;
     color: #8faa9f;
     font-size: 14px;
 }
 
-.modal-carte .zone-boutons {
+.modal-carte .note-buttons-zone {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -398,7 +398,7 @@ button {
     .modal-carte {
         padding: 28px 20px 24px;
     }
-    .modal-carte .zone-boutons {
+    .modal-carte .note-buttons-zone {
         flex-direction: column;
     }
     .modal-carte .bouton-annuler,
@@ -411,8 +411,8 @@ button {
    TEXTAREA ERREUR
    ============================== */
 
-.zone-message.erreur {
-    border-color: #e05050 !important;
+.note-message-zone.erreur {
+    border-color: #e05050;
     animation: shake 0.4s ease;
 }
 
@@ -437,7 +437,7 @@ button {
 .modal-carte.note-calme {
     background: #f0f7f4;
 }
-.modal-carte.note-calme .zone-message {
+.modal-carte.note-calme .note-message-zone {
     background: #dff0e8;
     border-color: #a9d1c0;
     color: #3d5049;
@@ -458,7 +458,7 @@ button {
 .modal-carte.note-joie {
     background: #fffbee;
 }
-.modal-carte.note-joie .zone-message {
+.modal-carte.note-joie .note-message-zone {
     background: #fff3cc;
     border-color: #ffe066;
     color: #5a4000;
@@ -480,7 +480,7 @@ button {
 .modal-carte.note-tristesse {
     background: #f0f4f8;
 }
-.modal-carte.note-tristesse .zone-message {
+.modal-carte.note-tristesse .note-message-zone {
     background: #dce8f4;
     border-color: #b8cde0;
     color: #1a2535;
@@ -501,7 +501,7 @@ button {
 .modal-carte.note-colere {
     background: #fdf2f2;
 }
-.modal-carte.note-colere .zone-message {
+.modal-carte.note-colere .note-message-zone {
     background: #fbe0e0;
     border-color: #e8a0a0;
     color: #3d1010;
@@ -522,7 +522,7 @@ button {
 .modal-carte.note-fatigue {
     background: #f4f4f4;
 }
-.modal-carte.note-fatigue .zone-message {
+.modal-carte.note-fatigue .note-message-zone {
     background: #e8e8e8;
     border-color: #cccccc;
     color: #333;
@@ -543,7 +543,7 @@ button {
 .modal-carte.note-stress {
     background: #f0f5ff;
 }
-.modal-carte.note-stress .zone-message {
+.modal-carte.note-stress .note-message-zone {
     background: #dceeff;
     border-color: #89c2ff;
     color: #0a1f44;
@@ -558,4 +558,44 @@ button {
 }
 .modal-carte.note-stress .bouton-enregistrer:hover {
     background: #1f56c0;
+}
+
+/* ==============================
+   THEME NOTE AUTOMATIQUE SQL
+   Fonctionne aussi pour les nouvelles humeurs créées dans l'admin.
+   ============================== */
+
+.modal-carte[data-theme-sql="1"] {
+    background: linear-gradient(
+        135deg,
+        var(--note-couleur-haut, #f4f8f6),
+        rgba(255, 255, 255, 0.94),
+        var(--note-couleur-bas, #dff0e8)
+    );
+}
+
+.modal-carte[data-theme-sql="1"] .emotion {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.modal-carte[data-theme-sql="1"] .note-message-zone {
+    background: rgba(255, 255, 255, 0.58);
+    border-color: var(--note-couleur-bas, #a9d1c0);
+}
+
+.modal-carte[data-theme-sql="1"] .bouton-annuler {
+    background: rgba(255, 255, 255, 0.62);
+    border-color: var(--note-couleur-bas, #a9d1c0);
+}
+
+.modal-carte[data-theme-sql="1"] .bouton-enregistrer {
+    background: var(--note-couleur-bas, #2d6b50);
 }

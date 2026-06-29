@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap");
-
-h1 {
+.profil-title {
     font-weight: bold;
 }
 
@@ -25,20 +23,6 @@ h1 {
     height: 280px;
     bottom: -50px; /* position bas */
     left: -40px; /* position gauche */
-}
-
-/*   CARTE STYLE GLASS   */
-.glass-card {
-    background: rgba(255, 255, 255, 0.18); /* fond translucide vert clair */
-    backdrop-filter: blur(16px); /* effet flou derrière */
-    border: 1px solid rgba(255, 255, 255, 0.35); /* bord léger */
-    border-radius: 16px; /* coins arrondis */
-    transition: 0.3s; /* animation douce */
-}
-
-.glass-card:hover {
-    transform: translateY(-4px); /* monte légèrement au survol */
-    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.25); /* ombre douce */
 }
 
 /*   LAYOUT DE LA PAGE    */
@@ -75,7 +59,7 @@ h1 {
     backdrop-filter: blur(15px);
 }
 
-p {
+.profil-text {
     padding: 5px;
 }
 
@@ -116,30 +100,7 @@ p {
     font-size: 14px; /* texte un peu plus grand pour valeur */
 }
 
-/*   BOUTONS             */
-.btn-primary {
-    background: #3a8a6a; /* vert */
-    color: white; /* texte blanc */
-    padding: 12px 24px;
-    border-radius: 30px;
-    text-decoration: none; /* pas de souligné */
-}
-
-.btn-ghost {
-    border: 1px solid #3a8a6a; /* contour vert */
-    padding: 10px 20px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: #3a8a6a; /* texte vert */
-}
-
-.btn-danger {
-    background: rgba(178, 34, 34, 0.1); /* rouge clair */
-    color: #b22222; /* texte rouge foncé */
-    padding: 10px 20px;
-    border-radius: 30px;
-}
-
+/*   BOUTONS : styles communs dans commun.css */
 .ligne-actions {
     display: flex; /* ligne */
     justify-content: center; /* centré horizontalement */
@@ -174,4 +135,83 @@ p {
 /* Input date — style cohérent */
 .input-naissance {
     color-scheme: light;
+}
+
+/* =====================================================
+   CORRECTION GLASS EFFECT — PAGE PROFIL
+   ===================================================== */
+
+.conteneur-page {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.enveloppe-profil {
+    position: relative;
+    z-index: 1;
+}
+
+.en-tete-profil,
+.mood-card,
+.carte-info-profil,
+.badge-age,
+.ligne-actions .btn-ghost {
+    background: rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.16) !important;
+}
+
+.en-tete-profil,
+.mood-card,
+.carte-info-profil {
+    border-radius: 24px !important;
+}
+
+.en-tete-profil:hover,
+.mood-card:hover,
+.carte-info-profil:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(31, 38, 135, 0.24) !important;
+}
+
+.grand-avatar {
+    background: rgba(255, 255, 255, 0.24) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.champ-info,
+.affichage-humeur {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 16px;
+    padding: 12px 14px;
+    margin: 10px 0;
+}
+
+.ligne-actions .btn-ghost {
+    color: var(--couleur-texte, #0d2520) !important;
+}
+
+.ligne-actions .btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.32) !important;
+    transform: translateY(-2px);
+}
+
+.float-orb {
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .conteneur-page {
+        padding-top: 95px;
+        padding-bottom: 100px;
+    }
 }

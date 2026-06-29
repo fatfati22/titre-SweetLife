@@ -12,72 +12,65 @@
             <ul class="nav-links">
 
                 <li>
-                    <a href="/index.php?route=accueil"
-                        <?= $route === 'accueil' ? 'class="actif"' : '' ?>>
+                    <a href="/index.php?route=accueil" <?= $route === 'accueil' ? 'class="actif"' : '' ?>>
                         🏠 <span>Accueil</span>
                     </a>
                 </li>
 
                 <?php if (isset($_SESSION['user'])) : ?>
 
-                    <li>
-                        <a href="/index.php?route=exercice"
-                            <?= $route === 'exercice' ? 'class="actif"' : '' ?>>
-                            🧘 <span>Exercices</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="/index.php?route=exercice" <?= $route === 'exercice' ? 'class="actif"' : '' ?>>
+                        🧘 <span>Exercice</span>
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="/index.php?route=repas"
-                            <?= $route === 'repas' ? 'class="actif"' : '' ?>>
-                            🥗 <span>Repas</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="/index.php?route=repas" <?= $route === 'repas' ? 'class="actif"' : '' ?>>
+                        🥗 <span>Repas</span>
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="/index.php?route=historique"
-                            <?= $route === 'historique' ? 'class="actif"' : '' ?>>
-                            📊 <span>Historique</span>
-                        </a>
-                    </li>
+                <li>
+                    <a href="/index.php?route=historique" <?= $route === 'historique' ? 'class="actif"' : '' ?>>
+                        📊 <span>Historique</span>
+                    </a>
+                </li>
 
-                    <li>
-                        <a href="/index.php?route=profil"
-                            <?= $route === 'profil' ? 'class="actif"' : '' ?>>
-                            👤 <span>Profil</span>
-                        </a>
-                    </li>
 
-                    <?php if (($_SESSION['user']['role'] ?? '') === 'admin') : ?>
-                        <li>
-                            <a href="/index.php?route=admin"
-                                <?= $route === 'admin' ? 'class="actif"' : '' ?>>
-                                ⚙️ <span>Admin</span>
-                            </a>
-                        </li>
-                    <?php endif; ?>
+                <li>
+                    <a href="/index.php?route=profil" <?= $route === 'profil' ? 'class="actif"' : '' ?>>
+                        👤 <span>Profil</span>
+                    </a>
+                </li>
+
+                <?php if (($_SESSION['user']['role'] ?? '') === 'admin') : ?>
+                <li>
+                    <a href="/index.php?route=admin" <?= $route === 'admin' ? 'class="actif"' : '' ?>>
+                        ⚙️ <span>Admin</span>
+                    </a>
+                </li>
+                <?php endif; ?>
 
                 <?php else : ?>
 
-                    <li class="disabled"><a href="#">🧘 <span>Exercices</span></a></li>
-                    <li class="disabled"><a href="#">🥗 <span>Repas</span></a></li>
-                    <li class="disabled"><a href="#">📊 <span>Historique</span></a></li>
-                    <li class="disabled"><a href="#">👤 <span>Profil</span></a></li>
+                <li class="disabled"><a href="#">🧘 <span>Exercices</span></a></li>
+                <li class="disabled"><a href="#">🥗 <span>Repas</span></a></li>
+                <li class="disabled"><a href="#">📊 <span>Historique</span></a></li>
+                <li class="disabled"><a href="#">👤 <span>Profil</span></a></li>
 
                 <?php endif; ?>
 
             </ul>
 
             <?php if (isset($_SESSION['user'])) : ?>
-                <a class="btn-primary btn-desktop"
-                    href="/index.php?route=deconnexion">
-                    Déconnexion
-                </a>
+            <a class="btn-primary btn-desktop" href="/index.php?route=deconnexion">
+                Déconnexion
+            </a>
             <?php else : ?>
-                <a class="btn-primary btn-desktop"
-                    href="/index.php?route=inscription">
-                    S'inscrire
-                </a>
+            <a class="btn-primary btn-desktop" href="/index.php?route=inscription">
+                S'inscrire
+            </a>
             <?php endif; ?>
 
         </div>
@@ -86,15 +79,13 @@
 
 
     <?php if (isset($_SESSION['user'])) : ?>
-        <a class="btn-primary btn-mobile"
-            href="/index.php?route=deconnexion">
-            Déconnexion
-        </a>
+    <a class="btn-primary btn-mobile" href="/index.php?route=deconnexion">
+        Déconnexion
+    </a>
     <?php else : ?>
-        <a class="btn-primary btn-mobile"
-            href="/index.php?route=inscription">
-            S'inscrire
-        </a>
+    <a class="btn-primary btn-mobile" href="/index.php?route=inscription">
+        S'inscrire
+    </a>
     <?php endif; ?>
 
 

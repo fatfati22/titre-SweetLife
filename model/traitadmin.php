@@ -21,19 +21,19 @@ function getHumeurById($id)
     return mysqli_fetch_assoc($res);
 }
 
-function creerHumeur($nom, $icone, $couleur)
+function creerHumeur($nom, $icone, $theme, $couleur_haut, $couleur_bas)
 {
     global $conn;
-    $stmt = mysqli_prepare($conn, "INSERT INTO humeur (nom, icone, couleur) VALUES (?, ?, ?)");
-    mysqli_stmt_bind_param($stmt, "sss", $nom, $icone, $couleur);
+    $stmt = mysqli_prepare($conn, "INSERT INTO humeur (nom, icone, theme, couleur_haut, couleur_bas) VALUES (?, ?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "sssss", $nom, $icone, $theme, $couleur_haut, $couleur_bas);
     return mysqli_stmt_execute($stmt);
 }
 
-function modifierHumeur($id, $nom, $icone, $couleur)
+function modifierHumeur($id, $nom, $icone, $theme, $couleur_haut, $couleur_bas)
 {
     global $conn;
-    $stmt = mysqli_prepare($conn, "UPDATE humeur SET nom=?, icone=?, couleur=? WHERE id=?");
-    mysqli_stmt_bind_param($stmt, "sssi", $nom, $icone, $couleur, $id);
+    $stmt = mysqli_prepare($conn, "UPDATE humeur SET nom=?, icone=?, theme=?, couleur_haut=?, couleur_bas=? WHERE id=?");
+    mysqli_stmt_bind_param($stmt, "sssssi", $nom, $icone, $theme, $couleur_haut, $couleur_bas, $id);
     return mysqli_stmt_execute($stmt);
 }
 

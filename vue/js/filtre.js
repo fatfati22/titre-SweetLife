@@ -1,32 +1,64 @@
-/* Filtrage des éléments par catégorie */
-
 document.addEventListener("DOMContentLoaded", () => {
-    /* Récupère tous les éléments à filtrer */
-    const items = document.querySelectorAll(".item");
-    /* Récupère tous les boutons radio de filtre */
-    const radios = document.querySelectorAll('input[name="type"]');
+    const cards = document.querySelectorAll(".repas-grille .recette-card:not(.repas-no-result)");
+    const buttons = document.querySelectorAll(".filtre-btn");
+    const noResult = document.querySelector(".repas-no-result");
 
-    /* Filtre les éléments selon la catégorie choisie */
-    function filter(category) {
-        items.forEach((item) => {
-            if (category === "all") {
-                /* Affiche tous les éléments si la catégorie est "all" */
-                item.style.display = "block";
-            } else {
-                /* Affiche uniquement les éléments de la catégorie sélectionnée */
-                item.style.display = item.classList.contains(category)
-                    ? "block"
-                    : "none";
-            }
-        });
+    if (!cards.length || !buttons.length) {
+        return;
     }
 
-    /* Écoute les changements sur les boutons radio */
-    radios.forEach((radio) => {
-        radio.addEventListener("change", (e) => {
-            filter(e.target.id); /* filtre selon l'identifiant du bouton coché */
+    const filters = {
+        category: "all",
+        type: "all",
+    };
+
+    function updateActiveButton(clickedButton) {
+        const group = clickedButton.dataset.filterGroup;
+
+        document
+            .querySelectorAll(`.filtre-btn[data-filter-group="${group}"]`)
+            .forEach((button) => button.classList.remove("active"));
+
+        clickedButton.classList.add("active");
+    }
+
+    function applyFilters() {
+        let visibleCount = 0;
+
+        cards.forEach((card) => {
+            const cardCategory = card.dataset.categoryId || "";
+            const cardType = card.dataset.typeId || "";
+
+            const matchCategory = filters.category === "all" || cardCategory === filters.category;
+            const matchType = filters.type === "all" || cardType === filters.type;
+            const isVisible = matchCategory && matchType;
+
+            card.hidden = !isVisible;
+
+            if (isVisible) {
+                visibleCount += 1;
+            }
+        });
+
+        if (noResult) {
+            noResult.hidden = visibleCount !== 0;
+        }
+    }
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const group = button.dataset.filterGroup;
+            const value = button.dataset.filterValue || "all";
+
+            if (!group || !(group in filters)) {
+                return;
+            }
+
+            filters[group] = value;
+            updateActiveButton(button);
+            applyFilters();
         });
     });
 
-    filter("all"); /* affiche tout au chargement de la page */
+    applyFilters();
 });

@@ -447,3 +447,240 @@
 .hist-card--colere .point-carte {
     background: #b22222;
 }
+
+/* =========================
+   HISTORIQUE MVC - AJOUTS
+   ========================= */
+
+.resume-hist {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 20px;
+}
+
+.resume-item {
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.35);
+    text-align: center;
+}
+
+.resume-nombre {
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1b4332;
+}
+
+.resume-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #2f6f55;
+}
+
+.btn-menu-deroulant,
+.btn-mois,
+.btn-retour-accueil {
+    text-decoration: none;
+}
+
+.carte-hist {
+    background: linear-gradient(135deg, var(--hist-haut), var(--hist-bas));
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.carte-hist .emotion-carte,
+.carte-hist .point-carte {
+    color: #1b4332;
+}
+
+.carte-hist .point-carte {
+    background: #1b4332;
+}
+
+.note-carte-vide {
+    opacity: 0.65;
+    font-style: italic;
+}
+
+.btn-retour-accueil {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    color: #1b4332;
+    font-weight: 600;
+}
+
+@media (min-width: 700px) {
+    .resume-hist {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* =====================================================
+   CORRECTION GLASS EFFECT - HISTORIQUE
+   Cette partie force un rendu verre transparent.
+   Elle évite les cartes blanches opaques.
+   ===================================================== */
+
+.contenu-principal-hist {
+    color: var(--couleur-texte, #0d2520);
+}
+
+.en-tete-hist,
+.resume-hist,
+.filtres-hist,
+.etat-vide,
+.carte-hist,
+.resume-item,
+.libelle-periode,
+.panneau-mois,
+.btn-menu-deroulant,
+.btn-mois,
+.btn-retour-accueil {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+.resume-hist,
+.filtres-hist,
+.etat-vide {
+    background: rgba(255, 255, 255, 0.16) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.16) !important;
+    border-radius: 24px;
+}
+
+.resume-item,
+.libelle-periode {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.24) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.btn-menu-deroulant,
+.btn-mois,
+.btn-retour-accueil {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.26) !important;
+    color: var(--couleur-texte, #0d2520) !important;
+    box-shadow: 0 6px 18px rgba(31, 38, 135, 0.08);
+}
+
+.btn-menu-deroulant:hover,
+.btn-menu-deroulant.actif,
+.btn-mois:hover,
+.btn-mois.actif,
+.btn-retour-accueil:hover {
+    background: rgba(255, 255, 255, 0.26) !important;
+    border-color: rgba(255, 255, 255, 0.38) !important;
+    color: var(--couleur-texte, #0d2520) !important;
+}
+
+.carte-hist {
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.14) !important;
+    border: 1px solid rgba(255, 255, 255, 0.30) !important;
+    box-shadow: 0 8px 30px rgba(31, 38, 135, 0.14) !important;
+}
+
+.carte-hist::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, var(--hist-haut), var(--hist-bas));
+    opacity: 0.34;
+    pointer-events: none;
+}
+
+.carte-hist::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.06));
+    pointer-events: none;
+}
+
+.carte-hist > * {
+    position: relative;
+    z-index: 1;
+}
+
+.carte-hist:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 38px rgba(31, 38, 135, 0.22) !important;
+}
+
+.emoji-carte {
+    min-width: 46px;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.20);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.note-carte {
+    margin-top: 12px;
+    padding: 12px 14px !important;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    color: var(--couleur-texte, #0d2520) !important;
+}
+
+.heure-carte,
+.sous-titre-hist,
+.resume-label {
+    color: var(--couleur-texte, #0d2520) !important;
+    opacity: 0.72;
+}
+
+.titre-hist,
+.resume-nombre,
+.emotion-carte,
+.libelle-periode,
+.point-carte {
+    color: var(--couleur-texte, #0d2520) !important;
+}
+
+.point-carte {
+    background: var(--couleur-texte, #0d2520) !important;
+}
+
+
+/* Message succès après ajout d'une humeur oubliée */
+.historique-alert-success {
+    width: min(92%, 900px);
+    margin: 0 auto 1.2rem;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--couleur-texte, #0d2520);
+}
+
+
+/* Mise en évidence automatique après ajout d'une émotion oubliée */
+.carte-hist-highlight {
+    outline: 3px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.22), 0 16px 40px rgba(31, 38, 135, 0.28);
+    animation: sweetlife-highlight 1.4s ease-in-out 2;
+}
+
+@keyframes sweetlife-highlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+    100% { transform: scale(1); }
+}

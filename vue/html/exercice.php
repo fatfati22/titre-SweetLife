@@ -1,150 +1,90 @@
 <?php
-// Vue exercice — contenu uniquement
+/** @var array $exercices */
+/** @var array|null $humeurActuelle */
 ?>
-<article class="mood-card glass-card">
-                <p>💫 État émotionnel actuel</p>
 
-                <section class="affichage-humeur">
-                    <span class="big-emoji" id="moodEmoji">😌</span>
-                    <h3>Calme & Sereine</h3>
-                </section>
+<?php include(__DIR__ . '/actuel.php'); ?>
+
+<section class="exercice-header">
+    <h1 class="page-title exercice-title">🧘 Exercices</h1>
+
+    <?php if (!empty($humeurActuelle)): ?>
+        <p class="page-subtitle exercice-subtitle">
+            Exercices adaptés à ta dernière humeur :
+            <strong>
+                <?= htmlspecialchars($humeurActuelle['icone'] ?? '') ?>
+                <?= htmlspecialchars($humeurActuelle['nom'] ?? '') ?>
+            </strong>
+        </p>
+    <?php else: ?>
+        <p class="page-subtitle exercice-subtitle">
+            Choisis d'abord une humeur sur l'accueil pour voir les exercices adaptés.
+        </p>
+    <?php endif; ?>
+</section>
+
+<section class="page-banner">
+    <span class="page-banner-icon">
+        <?= htmlspecialchars($humeurActuelle['icone'] ?? '🧘') ?>
+    </span>
+    <div>
+        <h3>Exercices recommandés</h3>
+        <p class="couleur bold">
+            Les exercices affichés correspondent automatiquement à ta dernière humeur enregistrée.
+        </p>
+    </div>
+</section>
+
+<section class="grille-exercices">
+
+    <?php if (!empty($exercices)): ?>
+
+        <?php foreach ($exercices as $exercice): ?>
+
+            <article class="carte-exercice">
+
+                <iframe width="100%" height="200"
+                    src="https://www.youtube.com/embed/<?= htmlspecialchars($exercice['video']) ?>" allowfullscreen>
+                </iframe>
+
+                <div class="contenu-exercice">
+
+                    <h2 class="titre-exercice">
+                        <?= htmlspecialchars($exercice['titre']) ?>
+                    </h2>
+
+                    <p class="texte-exercice">
+                        <?= htmlspecialchars($exercice['description']) ?>
+                    </p>
+
+                    <div class="etiquettes">
+                        <span class="etiquette"><?= (int)$exercice['duree'] ?> min</span>
+                        <span class="etiquette">
+                            <?= htmlspecialchars($exercice['humeur_icone'] ?? '😊') ?>
+                            <?= htmlspecialchars($exercice['humeur']) ?>
+                        </span>
+                    </div>
+
+                </div>
+
             </article>
-            <section>
-                <h1 class="titre">🧘 Exercices</h1>
-                <p class="sous-titre">Choisis un exercice selon ton humeur</p>
-            </section>
 
-            <section class="grille-exercices">
-                <article class="carte-exercice stress calme colere">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/YRJ_rglDRVk"
-                        allowfullscreen
-                    >
-                    </iframe>
+        <?php endforeach; ?>
 
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Respiration 4-7-8</h2>
-                        <p class="texte-exercice">
-                            Technique rapide pour calmer le stress et retrouver
-                            le calme.
-                        </p>
+    <?php else: ?>
 
-                        <div class="etiquettes">
-                            <span class="etiquette">3 min</span>
-                            <span class="etiquette">Respiration</span>
-                        </div>
-                    </div>
-                </article>
+        <article class="carte-exercice">
+            <div class="contenu-exercice">
+                <?php if (empty($humeurActuelle)): ?>
+                    <h2 class="titre-exercice">Aucune humeur sélectionnée</h2>
+                    <p class="texte-exercice">Va sur l'accueil, choisis une humeur et enregistre une note pour recevoir des exercices adaptés.</p>
+                <?php else: ?>
+                    <h2 class="titre-exercice">Aucun exercice pour cette humeur</h2>
+                    <p class="texte-exercice">L'administrateur peut ajouter des exercices pour l'humeur <?= htmlspecialchars($humeurActuelle['nom'] ?? '') ?>.</p>
+                <?php endif; ?>
+            </div>
+        </article>
 
-                <article class="carte-exercice joie fatigue">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/IKDH4YHxgJk"
-                        allowfullscreen
-                    >
-                    </iframe>
+    <?php endif; ?>
 
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Danse Libre</h2>
-                        <p class="texte-exercice">
-                            Bouge librement et exprime ton énergie.
-                        </p>
-
-                        <div class="etiquettes">
-                            <span class="etiquette">5 min</span>
-                            <span class="etiquette">Danse</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="carte-exercice stress fatigue calme">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/inpok4MKVLM"
-                        allowfullscreen
-                    >
-                    </iframe>
-
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Méditation Flash</h2>
-                        <p class="texte-exercice">
-                            Reviens au calme grâce à une méditation guidée.
-                        </p>
-
-                        <div class="etiquettes">
-                            <span class="etiquette">3 min</span>
-                            <span class="etiquette">Méditation</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="carte-exercice colere stress">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/ml6cT4AZdqI"
-                        allowfullscreen
-                    >
-                    </iframe>
-
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Sprint sur Place</h2>
-                        <p class="texte-exercice">
-                            Libère ton énergie avec un cardio rapide.
-                        </p>
-
-                        <div class="etiquettes">
-                            <span class="etiquette">2 min</span>
-                            <span class="etiquette">Cardio</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="carte-exercice fatigue calme">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/g_tea8ZNk5A"
-                        allowfullscreen
-                    >
-                    </iframe>
-
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Étirements Doux</h2>
-                        <p class="texte-exercice">
-                            Étire ton corps et relâche les tensions.
-                        </p>
-
-                        <div class="etiquettes">
-                            <span class="etiquette">5 min</span>
-                            <span class="etiquette">Stretching</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="carte-exercice tristesse calme fatigue">
-                    <iframe
-                        width="100%"
-                        height="200"
-                        src="https://www.youtube.com/embed/v7AYKMP6rOE"
-                        allowfullscreen
-                    >
-                    </iframe>
-
-                    <div class="contenu-exercice">
-                        <h2 class="titre-exercice">Yoga du Soir</h2>
-                        <p class="texte-exercice">
-                            Relaxation douce pour terminer la journée.
-                        </p>
-
-                        <div class="etiquettes">
-                            <span class="etiquette">10 min</span>
-                            <span class="etiquette">Yoga</span>
-                        </div>
-                    </div>
-                </article>
-            </section>
+</section>

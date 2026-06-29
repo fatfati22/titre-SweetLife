@@ -1,238 +1,112 @@
 <?php
-// Vue historique — contenu uniquement
+$nomsMois = [
+    1 => 'Janvier', 2 => 'Février', 3 => 'Mars', 4 => 'Avril',
+    5 => 'Mai', 6 => 'Juin', 7 => 'Juillet', 8 => 'Août',
+    9 => 'Septembre', 10 => 'Octobre', 11 => 'Novembre', 12 => 'Décembre'
+];
 ?>
+
 <section class="en-tete-hist">
-                <h1 class="titre-hist">📊 Historique</h1>
-                <p class="sous-titre-hist">
-                    Retrouve toutes tes émotions enregistrées
-                </p>
-            </section>
+    <h1 class="titre-hist">📊 Historique</h1>
+    <p class="sous-titre-hist">Retrouve toutes tes émotions enregistrées</p>
+</section>
 
-            <!-- FILTRES -->
-            <section class="filtres-hist glass-card">
-                <div class="ligne-filtres">
-                    <!-- Dernières 24h -->
-                    <div class="enveloppe-menu-deroulant">
-                        <button
-                            class="btn-menu-deroulant"
-                            id="btn-24h"
-                            onclick="selectPeriod('24h')"
-                        >
-                            <span class="icone-menu">⏰</span>
-                            <span class="libelle-menu">Dernières 24h</span>
-                            <span class="fleche-menu" id="arrow-24h">▾</span>
-                        </button>
-                    </div>
+<?php if (!empty($messageHistorique)): ?>
+    <section class="historique-alert-success glass-card">
+        ✅ <?= htmlspecialchars($messageHistorique) ?><?php if (!empty($highlightHistoriqueId)): ?><br><small>La carte ajoutée est mise en évidence automatiquement.</small><?php endif; ?>
+    </section>
+<?php endif; ?>
 
-                    <!-- 2025 -->
-                    <div class="enveloppe-menu-deroulant">
-                        <button
-                            class="btn-menu-deroulant"
-                            id="btn-2025"
-                            onclick="toggleYear('2025')"
-                        >
-                            <span class="icone-menu">📅</span>
-                            <span class="libelle-menu">2025</span>
-                            <span class="fleche-menu" id="arrow-2025">▾</span>
-                        </button>
-                        <div class="panneau-mois" id="panneau-mois-2025">
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'janvier', this)"
-                            >
-                                Janvier
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'février', this)"
-                            >
-                                Février
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'mars', this)"
-                            >
-                                Mars
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'avril', this)"
-                            >
-                                Avril
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'mai', this)"
-                            >
-                                Mai
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'juin', this)"
-                            >
-                                Juin
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'juillet', this)"
-                            >
-                                Juillet
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'août', this)"
-                            >
-                                Août
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'septembre', this)"
-                            >
-                                Septembre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'octobre', this)"
-                            >
-                                Octobre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'novembre', this)"
-                            >
-                                Novembre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2025', 'décembre', this)"
-                            >
-                                Décembre
-                            </button>
+<section class="resume-hist glass-card">
+    <article class="resume-item">
+        <span class="resume-nombre"><?= (int) $statsHistorique['total'] ?></span>
+        <span class="resume-label">émotions enregistrées</span>
+    </article>
+    <article class="resume-item">
+        <span class="resume-nombre"><?= (int) $statsHistorique['dernieres_24h'] ?></span>
+        <span class="resume-label">dernières 24h</span>
+    </article>
+    <article class="resume-item">
+        <span class="resume-nombre"><?= (int) $statsHistorique['ce_mois'] ?></span>
+        <span class="resume-label">ce mois-ci</span>
+    </article>
+</section>
+
+<section class="filtres-hist glass-card">
+    <div class="ligne-filtres">
+        <div class="enveloppe-menu-deroulant">
+            <a class="btn-menu-deroulant <?= $filtre === 'tout' ? 'actif' : '' ?>" href="index.php?route=historique">
+                <span class="icone-menu">🌸</span>
+                <span class="libelle-menu">Tout</span>
+            </a>
+        </div>
+
+        <div class="enveloppe-menu-deroulant">
+            <a class="btn-menu-deroulant <?= $filtre === '24h' ? 'actif' : '' ?>" href="index.php?route=historique&periode=24h">
+                <span class="icone-menu">⏰</span>
+                <span class="libelle-menu">Dernières 24h</span>
+            </a>
+        </div>
+
+        <?php foreach ($anneesDisponibles as $anneeItem): ?>
+            <div class="enveloppe-menu-deroulant">
+                <button class="btn-menu-deroulant <?= ($annee === (int) $anneeItem) ? 'actif' : '' ?>" type="button" onclick="toggleYear('<?= (int) $anneeItem ?>')">
+                    <span class="icone-menu">📅</span>
+                    <span class="libelle-menu"><?= (int) $anneeItem ?></span>
+                    <span class="fleche-menu" id="arrow-<?= (int) $anneeItem ?>">▾</span>
+                </button>
+
+                <div class="panneau-mois <?= ($annee === (int) $anneeItem) ? 'ouvert' : '' ?>" id="panneau-mois-<?= (int) $anneeItem ?>">
+                    <?php foreach ($nomsMois as $numeroMois => $nomMois): ?>
+                        <a class="btn-mois <?= ($annee === (int) $anneeItem && $mois === (int) $numeroMois) ? 'actif' : '' ?>"
+                           href="index.php?route=historique&annee=<?= (int) $anneeItem ?>&mois=<?= (int) $numeroMois ?>">
+                            <?= htmlspecialchars($nomMois) ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="libelle-periode">
+        <span>📌 <?= htmlspecialchars($libellePeriode) ?></span>
+    </div>
+</section>
+
+<section class="resultats-hist">
+    <?php if (empty($historique)): ?>
+        <div class="etat-vide">
+            <span class="icone-vide">🌸</span>
+            <p>Aucune émotion enregistrée pour cette période.</p>
+            <a class="btn-retour-accueil" href="index.php?route=accueil">Choisir une humeur</a>
+        </div>
+    <?php else: ?>
+        <div class="grille-cartes">
+            <?php foreach ($historique as $ligne): ?>
+                <?php
+                    $date = new DateTime($ligne['date_enregistrement'], new DateTimeZone('Europe/Paris'));
+                    $couleurHaut = $ligne['couleur_haut'] ?: '#ffffff';
+                    $couleurBas = $ligne['couleur_bas'] ?: '#e8f5f0';
+                ?>
+                <article id="humeur-<?= (int) $ligne['id'] ?>" class="carte-hist <?= (!empty($highlightHistoriqueId) && (int) $highlightHistoriqueId === (int) $ligne['id']) ? 'carte-hist-highlight' : '' ?>" style="--hist-haut: <?= htmlspecialchars($couleurHaut) ?>; --hist-bas: <?= htmlspecialchars($couleurBas) ?>;">
+                    <div class="dessus-carte">
+                        <span class="emoji-carte"><?= htmlspecialchars($ligne['icone'] ?? '🌸') ?></span>
+                        <div class="info-carte">
+                            <span class="emotion-carte"><?= htmlspecialchars($ligne['nom'] ?? 'Humeur') ?></span>
+                            <span class="heure-carte">
+                                <?= htmlspecialchars($date->format('d/m/Y à H:i')) ?>
+                            </span>
                         </div>
+                        <span class="point-carte"></span>
                     </div>
 
-                    <!-- 2026 -->
-                    <div class="enveloppe-menu-deroulant">
-                        <button
-                            class="btn-menu-deroulant"
-                            id="btn-2026"
-                            onclick="toggleYear('2026')"
-                        >
-                            <span class="icone-menu">📅</span>
-                            <span class="libelle-menu">2026</span>
-                            <span class="fleche-menu" id="arrow-2026">▾</span>
-                        </button>
-                        <div class="panneau-mois" id="panneau-mois-2026">
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'janvier', this)"
-                            >
-                                Janvier
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'février', this)"
-                            >
-                                Février
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'mars', this)"
-                            >
-                                Mars
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'avril', this)"
-                            >
-                                Avril
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'mai', this)"
-                            >
-                                Mai
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'juin', this)"
-                            >
-                                Juin
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'juillet', this)"
-                            >
-                                Juillet
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'août', this)"
-                            >
-                                Août
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'septembre', this)"
-                            >
-                                Septembre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'octobre', this)"
-                            >
-                                Octobre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'novembre', this)"
-                            >
-                                Novembre
-                            </button>
-                            <button
-                                class="btn-mois"
-                                onclick="selectMonth('2026', 'décembre', this)"
-                            >
-                                Décembre
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Période sélectionnée -->
-                <div class="libelle-periode" id="libelle-periode">
-                    <span id="texte-periode">Sélectionne une période</span>
-                </div>
-            </section>
-
-            <!-- RÉSULTATS -->
-            <section class="resultats-hist" id="resultats-hist">
-                <div class="etat-vide" id="etat-vide">
-                    <span class="icone-vide">🌸</span>
-                    <p>Choisis une période pour voir ton historique</p>
-                </div>
-
-                <!--
-                    ZONE CARDS — à remplir depuis le backend.
-                    Exemple de structure d'une carte-info :
-
-                    <div class="grille-cartes">
-                        <article class="carte-hist hist-card--joie">
-                            <div class="dessus-carte">
-                                <span class="emoji-carte">😊</span>
-                                <div class="info-carte">
-                                    <span class="emotion-carte">Joie</span>
-                                    <span class="heure-carte">08h30</span>
-                                </div>
-                                <span class="point-carte"></span>
-                            </div>
-                            <p class="note-carte">Note de l'utilisateur ici.</p>
-                        </article>
-                    </div>
-
-                    Classes disponibles par émotion :
-                    hist-card--joie / hist-card--calme / hist-card--stress
-                    hist-card--fatigue / hist-card--tristesse / hist-card--colere
-                -->
-                <div class="grille-cartes" id="grille-cartes"></div>
-            </section>
+                    <?php if (!empty($ligne['note_description'])): ?>
+                        <p class="note-carte"><?= nl2br(htmlspecialchars($ligne['note_description'])) ?></p>
+                    <?php else: ?>
+                        <p class="note-carte note-carte-vide">Aucune note ajoutée.</p>
+                    <?php endif; ?>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</section>

@@ -31,7 +31,7 @@
 }
 
 /* CARTE PRINCIPALE */
-.carte {
+.auth-card {
     max-width: 480px; /* largeur maximale */
     width: 100%; /* prend toute la place disponible */
     background: rgba(255, 255, 255, 0.4); /* fond transparent */
@@ -43,12 +43,12 @@
 }
 
 /* LOGO */
-.logo-carte {
+.auth-logo-card {
     text-align: center; /* centre le contenu */
     margin-bottom: 30px; /* espace en bas */
 }
 
-.logo-carte img {
+.auth-logo-card img {
     width: 200px; /* taille du logo */
     border-radius: 50%; /* image ronde */
     margin-bottom: 15px; /* espace sous l’image */
@@ -56,25 +56,25 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* ombre légère */
 }
 
-.logo-carte h1 {
+.auth-logo-card h1 {
     font-family: "Cormorant Garamond", serif; /* police du titre */
     font-size: 28px; /* taille du texte */
     color: #1b4332; /* couleur foncée */
 }
 
-.logo-carte h1 span {
+.auth-logo-card h1 span {
     color: #2d6a4f; /* couleur verte */
     font-style: italic; /* texte en italique */
 }
 
-.logo-carte p {
+.auth-logo-card p {
     color: #2d6a4f; /* couleur verte */
     font-size: 14px; /* taille du texte */
     margin-top: 8px; /* espace au-dessus */
 }
 
 /* CARTE INFO */
-.carte-info {
+.auth-info-card {
     padding: 20px 25px; /* espace intérieur */
     border-radius: 15px; /* coins arrondis */
     background: rgba(76, 175, 80, 0.25); /* fond vert transparent */
@@ -87,16 +87,16 @@
     margin: 20px auto; /* centre la carte */
 }
 
-.carte-info p {
+.auth-info-card p {
     margin: 10px 0; /* espace entre paragraphes */
 }
 
 /* FORMULAIRE */
-.champ {
+.auth-field {
     margin-bottom: 18px; /* espace entre champs */
 }
 
-.champ label {
+.auth-field label {
     display: block; /* passe à la ligne */
     font-size: 12px; /* petite taille */
     font-weight: 600; /* texte plus épais */
@@ -106,7 +106,7 @@
     letter-spacing: 0.5px; /* espace entre lettres */
 }
 
-.champ input {
+.auth-field input {
     width: 100%; /* prend toute la largeur */
     padding: 12px 16px; /* espace intérieur */
     border-radius: 40px; /* coins très arrondis */
@@ -118,13 +118,13 @@
     transition: 0.2s; /* animation douce */
 }
 
-.champ input:focus {
+.auth-field input:focus {
     border-color: #2d6a4f; /* bordure verte au clic */
     background: white; /* fond blanc */
 }
 
 /* OPTIONS (connexion seulement) */
-.options {
+.connexion-options {
     display: flex;
     flex-direction: column; /* éléments en colonne */
     gap: 12px; /* espace entre éléments */
@@ -182,7 +182,7 @@
 
 /* LIENS */
 .lien-sinscrire,
-.lien-seconnecter {
+.auth-login-link {
     text-align: center; /* texte centré */
     margin-top: 20px; /* espace au-dessus */
     font-size: 14px;
@@ -190,29 +190,29 @@
 }
 
 .lien-sinscrire a,
-.lien-seconnecter a {
+.auth-login-link a {
     color: #2d6a4f; /* vert */
     font-weight: 600;
     text-decoration: none;
 }
 
 .lien-sinscrire a:hover,
-.lien-seconnecter a:hover {
+.auth-login-link a:hover {
     text-decoration: underline; /* souligne au survol */
 }
 
-.retour {
+.auth-retour {
     text-align: center;
     margin-top: 20px;
 }
 
-.retour a {
+.auth-retour a {
     color: #1b4332;
     text-decoration: none;
     font-size: 13px;
 }
 
-.retour a:hover {
+.auth-retour a:hover {
     color: #2d6a4f;
 }
 
@@ -244,15 +244,15 @@
 /*   TABLETTE 481px      */
 
 @media (min-width: 481px) {
-    .carte {
+    .auth-card {
         padding: 30px 25px; /* plus d’espace */
     }
 
-    .logo-carte h1 {
+    .auth-logo-card h1 {
         font-size: 30px; /* texte plus grand */
     }
 
-    .options {
+    .connexion-options {
         flex-direction: row; /* met en ligne */
         align-items: center;
         justify-content: space-between;
@@ -271,7 +271,7 @@
         display: flex; /* affiche les liens */
     }
 
-    .carte {
+    .auth-card {
         padding: 30px 20px;
     }
 }
@@ -279,7 +279,7 @@
 /*   ORDINATEUR 1024px   */
 
 @media (min-width: 1024px) {
-    .carte {
+    .auth-card {
         max-width: 520px; /* carte plus large */
         padding: 40px 35px; /* plus d’espace intérieur */
     }

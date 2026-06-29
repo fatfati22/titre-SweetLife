@@ -1,0 +1,140 @@
+/* ==========================================================
+   COMMUN — variables, base visuelle, boutons, formulaires, tableaux
+   ========================================================== */
+
+:root {
+    --couleur-principale: #3a8a6a;
+    --couleur-principale-foncee: #2f6f55;
+    --couleur-texte: #0d2520;
+    --couleur-texte-secondaire: #5d7d72;
+    --couleur-danger: #b22222;
+    --rayon-carte: 1rem;
+    --rayon-bouton: 2rem;
+    --ombre-carte: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --ombre-carte-hover: 0 12px 35px rgba(0, 0, 0, 0.15);
+    --espace-page-haut: 120px;
+    --espace-page-horizontal: 20px;
+}
+
+/* Liens */
+.lien-reset {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Effet verre commun */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: var(--rayon-carte);
+    transition: 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--ombre-carte-hover);
+}
+
+/* Mise en page commune des pages liste */
+.page-layout {
+    padding: var(--espace-page-haut) var(--espace-page-horizontal) 60px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    margin-bottom: 30px;
+    color: var(--couleur-texte-secondaire);
+    font-weight: 700;
+}
+
+.page-banner {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid #dceee7;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: fit-content;
+    margin: 30px auto;
+}
+
+.page-banner-icon {
+    font-size: 40px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+/* Boutons */
+.btn-primary,
+.btn-ghost,
+.btn-danger {
+    display: inline-block;
+    border-radius: var(--rayon-bouton);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: var(--couleur-principale);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+}
+
+.btn-primary:hover {
+    background: var(--couleur-principale-foncee);
+}
+
+.btn-ghost {
+    border: 1px solid var(--couleur-principale);
+    background: transparent;
+    color: var(--couleur-principale);
+    padding: 10px 20px;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: rgba(178, 34, 34, 0.1);
+    color: var(--couleur-danger);
+    border: none;
+    padding: 10px 20px;
+}
+
+/* Formulaires : styles spécifiques conservés dans les CSS de page quand leur design diffère. */
+
+/* Tableaux communs */
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.75rem;
+    text-align: left;
+}
